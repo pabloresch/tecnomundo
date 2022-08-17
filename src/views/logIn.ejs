@@ -9,7 +9,7 @@
         
     <!-- MAIN -->
     <main>
-        <section class="section-set-display formulario">
+        <section class="section-set-display formulario" id="form-LogIn-Register">
             <!--Ingreso de usuario registrado-->
             <article class="formulario-login">
                 
@@ -21,7 +21,7 @@
                         <br>
                         <input class= "input-formulario" type="email" name="correo" id="correo" placeholder="abc@hotmail.com" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
                         <br>
-                        <div class="text-danger" id="nameError"></div>
+                        <div class="text-danger" id="nameErrorLogIn"></div>
                         <% if(typeof(errors) != 'undefined' && errors.correo){%>
                             <span class="text-danger"> 
                               <%= errors.correo.msg %>
@@ -61,7 +61,7 @@
             </article>
 
             <!--Creacion de usuario nuevo-->
-            <article class="formulario-registro">    
+            <article class="formulario-registro" id="articleRegister">    
                
                 
                 <form action="/user/login" method="POST" id="registro" enctype="multipart/form-data">
@@ -74,64 +74,70 @@
                         <input 
                         type="text" 
                         name="fullName" 
-                        id="name" 
+                        id="nameRg" 
                         class= "input-formulario <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.fullName : null %>" >
                     </label>
+                    <div class="text-danger" id="nameRgErr"></div>
                     <% if(locals.errors && errors.fullName) { %>
-                    <div class="text-danger">
+                    <samp class="text-danger">
                     <%= errors.fullName.msg %>
-                    </div>
+                    </samp>
                     <% } %>
 
                     <label class="label-bold" for="name">Apellido
-                        <input class= "input-formulario" type="text" name="lastName" id="name"  value="<%= locals.oldData ? oldData.lastName : null %>">
+                        <input class= "input-formulario" type="text" name="lastName" id="lastNameRg"  value="<%= locals.oldData ? oldData.lastName : null %>">
                     </label>
+                    <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
                     <% if(locals.errors && errors.lastName) { %>
-                    <div class="text-danger">
+                    <samp class="text-danger">
                         <%= errors.lastName.msg %>
-                    </div>
+                    </samp>
                         <% } %>
 
                     <label class="label-bold" for="email">Email
-                        <input class= "input-formulario" type="email" name="email" id="email"  value="<%= locals.oldData ? oldData.email: null %>">
+                        <input class= "input-formulario" type="email" name="email" id="emailRg"  value="<%= locals.oldData ? oldData.email: null %>">
                     </label>
+                    <div class="text-danger" id="emailRgErr"></div>
                     <% if(locals.errors && errors.email) { %>
-                    <div class="text-danger">
+                    <samp class="text-danger">
                         <%= errors.email.msg %>
-                    </div>
+                    </samp>
                         <% } %>
 
                     <label class="label-bold" for="password">Contraseña
-                        <input class= "input-formulario" type="password" name="password" id="password" placeholder="Contraseña" >
+                        <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
                     </label>
+                    <div class="text-danger" id="passwordRgErr"></div>
                     <% if(locals.errors && errors.password) { %>
-                    <div class="text-danger">
+                    <samp class="text-danger">
                         <%= errors.password.msg %>
-                    </div>
+                    </samp>
                         <% } %>
 
                     <label class="label-bold"  for="passconfcon"> Confirmar Contraseña
-                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfcon" placeholder=" Confirmar contraseña" >
+                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder=" Confirmar contraseña" >
                     </label>
+                    <div class="text-danger" id="passconfconRgErr"></div>
                     <% if(locals.errors && errors.passconfcon) { %>
-                        <div class="text-danger">
+                        <samp class="text-danger">
                             <%= errors.passconfcon.msg %>
-                        </div>
+                        </samp>
                             <% } %>
                     <br>
                     <label class="label-bold"  for="avatar"> Imagen de Perfil
                         <input class= "input-formulario" type="file" name="avatar" id="avatar" >
                     </label>
+                    <div class="text-danger" id="avatarErr"></div>
                     <% if(locals.errors && errors.avatar) { %>
-                        <div class="text-danger">
+                        <samp class="text-danger">
                             <%= errors.avatar.msg %>
-                        </div>
+                        </samp>
                             <% } %>
 
                  
 
-                    <input  class='submit-login' type="submit" value="Registrar">
+                    <input  class='submit-login' type="submit" value="Registrar" id="buttonRegister">
                 </form>
                 
             </article>
