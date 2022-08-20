@@ -3,7 +3,6 @@
 <html>
      <!-- HEAD -->
      <%- include('./partials/head') %>
-     <script type="text/javascript" src="path/to/zxcvbn.js"></script>
 <body>
     <!-- HEADER -->
     <%- include('./partials/header') %>
@@ -20,7 +19,7 @@
 
                     <label class="label-bold" for="correo">Usuario
                         <br>
-                        <input class= "input-formulario" type="email" name="correo" id="correo" placeholder="abc@hotmail.com" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
+                        <input class= "input-formulario" type="email" name="correo" id="correo" placeholder="Aprobanos el Sprint 7" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
                         <br>
                         <div class="text-danger" id="nameErrorLogIn"></div>
                         <% if(typeof(errors) != 'undefined' && errors.correo){%>
@@ -32,7 +31,7 @@
                     </label>
 
                     <label class="label-bold" for="contrasena">Contraseña
-                        <input class= "input-formulario"  type="password" name="contrasena" id="contrasena" placeholder="Contraseña" >
+                        <input class= "input-formulario"  type="password" name="contrasena" id="contrasena" placeholder="Por favor" >
                         <br>
                         <% if(typeof(errors) != 'undefined' && errors.contrasena){%>
                             <span class="text-danger">
@@ -77,6 +76,7 @@
                         name="fullName" 
                         id="nameRg" 
                         class= "input-formulario <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                        placeholder="Jere"
                         value="<%= locals.oldData ? oldData.fullName : null %>" >
                     </label>
                     <div class="text-danger" id="nameRgErr"></div>
@@ -87,7 +87,7 @@
                     <% } %>
 
                     <label class="label-bold" for="name">Apellido
-                        <input class= "input-formulario" type="text" name="lastName" id="lastNameRg"  value="<%= locals.oldData ? oldData.lastName : null %>">
+                        <input class= "input-formulario" type="text" name="lastName" id="lastNameRg" placeholder="Castillo" value="<%= locals.oldData ? oldData.lastName : null %>">
                     </label>
                     <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
                     <% if(locals.errors && errors.lastName) { %>
@@ -97,7 +97,7 @@
                         <% } %>
 
                     <label class="label-bold" for="email">Email
-                        <input class= "input-formulario" type="email" name="email" id="emailRg"  value="<%= locals.oldData ? oldData.email: null %>">
+                        <input class= "input-formulario" type="email" name="email" id="emailRg" placeholder='jeremias.castillo@digitalhouse.com' value="<%= locals.oldData ? oldData.email: null %>">
                     </label>
                     <div class="text-danger" id="emailRgErr"></div>
                     <% if(locals.errors && errors.email) { %>
@@ -107,15 +107,15 @@
                         <% } %>
 
                     <label class="label-bold" for="password">Contraseña
-                        <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
+                        <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Sos un capo!" >
                     </label>
-                    <!--div class="text-danger" id="passwordRgErr"></div-->
-                    <ul class="passwordList" id="ulPasswordRg">
+                    <div class="text-danger" id="passwordRgErr"></div>
+                    <!--ul class="passwordList" id="ulPasswordRg">
                         <li id="upper">Debes colocar una mayúscula</li>
                         <li id="lower">Debes colocar una minúscula</li>
                         <li id="num">Debes colocar un número</li>
                         <li id="charter">Debes colocar un caracter especial</li>
-                    </ul>
+                    </ul-->
                     <% if(locals.errors && errors.password) { %>
                     <samp class="text-danger">
                         <%= errors.password.msg %>
@@ -123,7 +123,7 @@
                         <% } %>
 
                     <label class="label-bold"  for="passconfcon"> Confirmar Contraseña
-                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder=" Confirmar contraseña" >
+                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder="Lo repito, sos un capo!" >
                     </label>
                     <div class="text-danger" id="passconfconRgErr"></div>
                     <% if(locals.errors && errors.passconfcon) { %>
