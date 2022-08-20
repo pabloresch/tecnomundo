@@ -37,20 +37,54 @@ window.addEventListener('load', function(){
   
   //Validacion del nombre. Este imput no debe contener menos de dos caracteres
   formRegister.nameRg.addEventListener('blur', function(){
-    nameRgErr.innerHTML = 'El nombre debe tener 2 caracteres o más'
+    if(formRegister.nameRg.value.length<2){
+      nameRgErr.innerText= 'El nombre debe tener 2 caracteres o más'
+    } else {
+      nameRgErr.innerText= ''
+    }
   })
   //Validacion del apellido. Este imput no debe contener menos de dos caracteres
   formRegister.lastNameRg.addEventListener('blur', function(){
-   lastNameRgErr.innerHTML = 'El apellido debe tener 2 caracteres o más'
+    if(formRegister.lastNameRg.value.length<2){
+      lastNameRgErr.innerText = 'El apellido debe tener 2 caracteres o más'
+    } else {
+      lastNameRgErr.innerText = ''
+    }
   })
   //Validacion del email. Debe ser un mail váilido, no debe repetirse en la database
   formRegister.emailRg.addEventListener('blur', function(){
-   emailRgErr.innerHTML = 'El email debe ser válido.'
-   emailRgErr.innerHTML += ' Este email ya se encuentra registrado'
+   
+    //Genero la expresión regular que me valida el mail
+    let regValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+    
+
+    //Si regValidation no es correcto envío el error
+    if (!regValidation.test(formRegister.emailRg.value)){
+      emailRgErr.innerText = 'Mail invalido'
+  } else {
+    emailRgErr.innerText = ''
+  }
+ 
   })
+ 
   //Validacion del password. Debe tener 8 caracteres mínimos, debe tener mayusculas y minusculas, un número y un caracter especial
   formRegister.passwordRg.addEventListener('focus', function(){
-    passwordRgErr.innerHTML = 'Debe tener 8 caracteres mínimos, debe tener mayusculas y minusculas, un número y un caracter especial'
+    //Declaro las expresiones regulares para validar
+    //Una letra mayuscúla
+    let upper = new RegExp('^(?=.*[A-Z])')
+    //Una letra minúscula
+    let lower = new RegExp('^(?=.*[a-z])')
+    //Un número
+    let num = new RegExp('^(?=.*[0-9])')
+    //Un caracter especial
+    let charter = new RegExp('^(?=.*[!¡@*#.$&%])')
+    //8 caracterres como mínimo
+    let len = new RegExp('^(?=.{8,})')
+    
+    formRegister.passwordRg.addEventListener('change', function(){
+
+    })
+    //passwordRgErr.innerHTML = 'Debe tener 8 caracteres mínimos, debe tener mayusculas y minusculas, un número y un caracter especial'
   })
   //Validacion del passconfcon. Deben coincidir las contraseñas
   formRegister.passconfconRg.addEventListener('focus', function(){

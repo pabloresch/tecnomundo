@@ -3,6 +3,7 @@
 <html>
      <!-- HEAD -->
      <%- include('./partials/head') %>
+     <script type="text/javascript" src="path/to/zxcvbn.js"></script>
 <body>
     <!-- HEADER -->
     <%- include('./partials/header') %>
@@ -108,7 +109,13 @@
                     <label class="label-bold" for="password">Contraseña
                         <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
                     </label>
-                    <div class="text-danger" id="passwordRgErr"></div>
+                    <!--div class="text-danger" id="passwordRgErr"></div-->
+                    <ul class="passwordList" id="ulPasswordRg">
+                        <li id="upper">Debes colocar una mayúscula</li>
+                        <li id="lower">Debes colocar una minúscula</li>
+                        <li id="num">Debes colocar un número</li>
+                        <li id="charter">Debes colocar un caracter especial</li>
+                    </ul>
                     <% if(locals.errors && errors.password) { %>
                     <samp class="text-danger">
                         <%= errors.password.msg %>
