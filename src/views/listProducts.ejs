@@ -77,6 +77,17 @@
                     <h2 class="products-title">Todos Los Productos</h2>
                 </div>
                 <!-- Tarjeta de producto -->
+
+                <% if (products.length==0){%>
+                    <div class="searchProductNotFound">
+                        <h2>El producto no se encontró!</h2>
+                       
+                        <img src="/images/istockphoto-599486444-1024x1024.jpg" class="productNotFound" style="width: 30%">
+                    </div>
+                    
+                <% } %>
+
+
                 <% products.forEach (item => { %>
                 <div class="col-12 col-sm-6 col-lg-3"> 
                     <section class='article-style-celulares article01'>
