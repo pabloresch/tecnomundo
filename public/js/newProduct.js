@@ -23,6 +23,8 @@ window.addEventListener('load', ()=> {
 
     let formNewProduct = document.querySelector('#formNewProduct');
 
+    let newProductError = document.querySelector('#newProductError');
+
     //on time validations
     let erroresNewProduct = {};
 
@@ -177,15 +179,19 @@ window.addEventListener('load', ()=> {
             if(discountNewProduct.value <= 0) {
                 erroresNewProduct.discount = 'Ingrese un valor mayor a 0';
                 discountError.innerHTML = erroresNewProduct.discount;
+                console.log(Object.keys(erroresNewProduct).length);
             } else {
                 discountError.innerHTML = '';
             }
         });
 
         //errors
-        if(Object.keys(erroresNewProduct) > 1) {
+        if(Object.keys(erroresNewProduct).length > 0) {
             e.preventDefault();
-            alert('Ingrese los datos correctos');
+            newProductError.innerHTML = 'Ingrese los datos correctos';
+            erroresNewProduct = {};
+        } else {
+            newProductError.innerHTML = '';
         };
     });
 });
