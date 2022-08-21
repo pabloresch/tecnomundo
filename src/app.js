@@ -23,7 +23,7 @@ const usersRoutes = require ('./routes/usersRoutes');
 const port = 3000;
 
 // views
-app.use(express.static(path.join(__dirname,'views')));
+// app.use(express.static(path.join(__dirname,'views')));
 // public
 app.use(express.static(path.join(__dirname,'../public')));
 // Decode Form URL Encoded Data
@@ -33,6 +33,7 @@ app.use(methodOverride ('_method'));
 
 //EJS
 app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, "views"));
 
 //Para mantener en sesion al usuario
 app.use(session({

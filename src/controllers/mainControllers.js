@@ -21,7 +21,7 @@ const controller = {
     searchedProducts: (req,res) =>{
         db.Product.findAll({where:{section:'lo mas buscado'}})
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts'), { products: products });
+                return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
     },
@@ -29,7 +29,7 @@ const controller = {
     phones: (req,res) =>{
         db.Product.findAll({where:{category:'phones'}})
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts'), { products: products });
+                return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
     },
@@ -37,7 +37,7 @@ const controller = {
     tablets: (req,res) =>{
         db.Product.findAll({where:{category:'tablets'}})
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts'), { products: products });
+                return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
     },
@@ -45,7 +45,7 @@ const controller = {
     laptops: (req,res) =>{
         db.Product.findAll({where:{category:'laptops'}})
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts'), { products: products });
+                return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
     },
@@ -55,7 +55,7 @@ const controller = {
         const search = req.query.search
         db.Product.findAll({where:{name: {[Op.like]:'%'+search+'%'}}})
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts'), { products: products });
+                return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
     }

@@ -11,7 +11,7 @@ const controller = {
     
 
     login: (req, res) => {
-        res.render(path.join(__dirname,'../views/logIn.ejs'))},
+        res.render('logIn.ejs')},
 
     processRegister: (req,res)=>{
 
@@ -22,7 +22,7 @@ const controller = {
 
         if(resultValidation.errors.length > 0){
 
-            return res.render(path.join(__dirname,'../views/logIn'), {
+            return res.render('logIn', {
 
                 errors : resultValidation.mapped(),
                 oldData : req.body
@@ -40,7 +40,7 @@ const controller = {
         })
         .then(userInDB => {
             if(userInDB.length > 0){
-                return res.render('login', {
+                return res.render('logIn', {
     
                     errors : {
                         email: {
@@ -62,7 +62,7 @@ const controller = {
                         }
                     )
                     .then(()=> {
-                        return res.render(path.join(__dirname,'../views/logIn.ejs'))    
+                        return res.render('logIn.ejs')    
                 })
             }
         })
@@ -86,7 +86,7 @@ const controller = {
             }
             return res.redirect('/');
         } else {
-            res.render(path.resolve(__dirname, '../views/logIn'),{errors:errors.mapped(),old:req.body});
+            res.render('logIn',{errors:errors.mapped(),old:req.body});
         }
         
 

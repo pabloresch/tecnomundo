@@ -6,13 +6,13 @@ const db = require ('./../database/models')
 const controllers = {
 
     cart : (req, res) => {
-        res.render(path.join(__dirname,'../views/productCart.ejs'));
+        res.render('productCart.ejs');
     },
 
     productDetail : (req, res) => {
         db.Product.findByPk(req.params.id)
             .then((product) => {
-                return res.render(path.join(__dirname, '../views/productDetail.ejs'), { product: product });
+                return res.render('productDetail.ejs', { product: product });
             })
             .catch(error => res.send(error));
     },
@@ -20,13 +20,13 @@ const controllers = {
     listProducts :(req, res)=> {
         db.Product.findAll()
             .then((products) => {
-                return res.render(path.join(__dirname,'../views/listProducts.ejs'), { products: products });
+                return res.render('listProducts.ejs', { products: products });
             })
             .catch(error => res.send(error));
     },
    
     newProduct: (req, res) => {
-        res.render(path.join(__dirname,'../views/newProduct.ejs'));
+        res.render('newProduct.ejs');
     },
         
     store: (req, res) => {
@@ -63,7 +63,7 @@ const controllers = {
             let productToEdit = await db.Product.findAll({where: {id: req.params.id}})
             
 
-            res.render (path.join(__dirname,'../views/productEdit.ejs'), {productToEdit: productToEdit})
+            res.render ('productEdit.ejs', {productToEdit: productToEdit})
         },
         
         editProduct: async (req, res) => {
