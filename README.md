@@ -123,3 +123,9 @@ node_modules
     $ npm install cookie-parser
 </li>
 </ol>
+
+### Expresiones regulares
+
+<ol>
+<li>Validación de emal en front con JavaScript: https://www.w3resource.com/javascript/form/email-validation.php</li>
+</ol>
