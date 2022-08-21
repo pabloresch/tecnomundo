@@ -1,12 +1,12 @@
 window.addEventListener('load', ()=> {
     //query selectors
-    let titleNewProduct = document.querySelector('#name');
+    let titleNewProduct = document.querySelector('#nameNewProduct');
     let titleError = document.querySelector('#titleError');
 
     let descriptionNewProduct = document. querySelector('#description');
     let descriptionError = document.querySelector('#descriptionError');
 
-    let imagesNewProduct = document.querySelector('#images');
+    let imagesNewProduct = document.querySelector('#imagesNewProduct');
     let imagesError = document.querySelector('#imagesError');
 
     let brandNewProduct = document.querySelector('#brandNewProduct');
