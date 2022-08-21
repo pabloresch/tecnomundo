@@ -61,10 +61,11 @@ window.addEventListener('load', function(){
       });
   
       //errors
-      if(Object.keys(error) > 1) {
+      if(Object.keys(error).length > 0) {
         e.preventDefault();
         emailLogInErr.innerHTML = '';
         emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
+        error = {};
       };
       //--- END LOGIN ---//
     });
