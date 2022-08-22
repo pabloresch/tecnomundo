@@ -80,63 +80,75 @@
                         placeholder="Jere"
                         value="<%= locals.oldData ? oldData.fullName : null %>" >
                     </label>
-                    <div class="text-danger" id="nameRgErr"></div>
-                    <% if(locals.errors && errors.fullName) { %>
-                    <samp class="text-danger">
-                    <%= errors.fullName.msg %>
-                    </samp>
-                    <% } %>
+                    <div>
+                        <div class="text-danger" id="nameRgErr"></div>
+                        <% if(locals.errors && errors.fullName) { %>
+                        <samp class="text-danger">
+                        <%= errors.fullName.msg %>
+                        </samp>
+                        <% } %>
+                        
+                    </div>
 
                     <label class="label-bold" for="name">Apellido
                         <input class= "input-formulario" type="text" name="lastName" id="lastNameRg" placeholder="Castillo" value="<%= locals.oldData ? oldData.lastName : null %>">
                     </label>
-                    <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
-                    <% if(locals.errors && errors.lastName) { %>
-                    <samp class="text-danger">
-                        <%= errors.lastName.msg %>
-                    </samp>
-                        <% } %>
+                    <div>
+                        <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
+                        <% if(locals.errors && errors.lastName) { %>
+                        <samp class="text-danger">
+                            <%= errors.lastName.msg %>
+                        </samp>
+                            <% } %>
+                    </div>
 
                     <label class="label-bold" for="email">Email
                         <input class= "input-formulario" type="email" name="email" id="emailRg" placeholder='jeremias.castillo@digitalhouse.com' value="<%= locals.oldData ? oldData.email: null %>">
                     </label>
-                    <div class="text-danger" id="emailRgErr"></div>
-                    <% if(locals.errors && errors.email) { %>
-                    <samp class="text-danger">
-                        <%= errors.email.msg %>
-                    </samp>
-                        <% } %>
+                    <div>
+                        <div class="text-danger" id="emailRgErr"></div>
+                        <% if(locals.errors && errors.email) { %>
+                        <samp class="text-danger">
+                            <%= errors.email.msg %>
+                        </samp>
+                            <% } %>
+                    </div>
 
                     <label class="label-bold" for="password">Contraseña
                         <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Sos un capo!" >
                     </label>
-                    <div class="text-danger" id="passwordRgErr"></div>
-                    <% if(locals.errors && errors.password) { %>
-                    <samp class="text-danger">
-                        <%= errors.password.msg %>
-                    </samp>
-                        <% } %>
+                    <div>
+                        <div class="text-danger" id="passwordRgErr"></div>
+                        <% if(locals.errors && errors.password) { %>
+                        <samp class="text-danger">
+                            <%= errors.password.msg %>
+                        </samp>
+                            <% } %>
+                    </div>
 
                     <label class="label-bold"  for="passconfcon"> Confirmar Contraseña
                         <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder="Lo repito, sos un capo!" >
                     </label>
+                    <div>
                     <div class="text-danger" id="passconfconRgErr"></div>
                     <% if(locals.errors && errors.passconfcon) { %>
                         <samp class="text-danger">
                             <%= errors.passconfcon.msg %>
                         </samp>
                             <% } %>
-                    <br>
+                    </div>        
+                    
                     <label class="label-bold"  for="avatar"> Imagen de Perfil
                         <input class= "input-formulario" type="file" name="avatar" id="avatar" >
                     </label>
-                    <div class="text-danger" id="avatarErr"></div>
-                    <% if(locals.errors && errors.avatar) { %>
-                        <samp class="text-danger">
-                            <%= errors.avatar.msg %>
-                        </samp>
-                            <% } %>
-
+                    <div>
+                        <div class="text-danger" id="avatarErr"></div>
+                        <% if(locals.errors && errors.avatar) { %>
+                            <samp class="text-danger">
+                                <%= errors.avatar.msg %>
+                            </samp>
+                                <% } %>
+                    </div>
                  
 
                     <input  class='submit-login' type="submit" value="Registrar" id="buttonRegister">
@@ -154,6 +166,6 @@
 
     <!-- FOOTER -->
     <%- include('./partials/footer') %>
-<script src="/js/validaciones.js"></script>
+<!-- <script src="/js/validaciones.js"></script> -->
  </body>
 </html>

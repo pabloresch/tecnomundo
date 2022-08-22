@@ -1,6 +1,7 @@
 const fs = require ('fs');
 const path = require ('path');
 const db = require ('./../database/models')
+const { validationResult }= require('express-validator');
 
 
 const controllers = {
@@ -30,6 +31,19 @@ const controllers = {
     },
         
     store: (req, res) => {
+        const errors = validationResult(req);
+        
+
+        if(errors.errors.length > 0){
+
+            return res.render('newProduct.ejs', {
+
+                errors : errors.mapped(),
+                oldData : req.body
+
+            });
+        } 
+
         db.Product.create(
             {
            name: req.body.name,
@@ -67,6 +81,21 @@ const controllers = {
         },
         
         editProduct: async (req, res) => {
+            const errors = await validationResult(req);
+           
+
+            if(errors.errors.length > 0){
+                let productToEdit = await db.Product.findAll({where: {id: req.params.id}})
+
+                return res.render('productEdit.ejs', {
+    
+                    errors : errors.mapped(),
+                    oldData : req.body,
+                    productToEdit: productToEdit
+    
+                });
+            }
+
             let product = await db.Product.findByPk(req.params.id)
             let oldImage = product.image_product
             let updateProduct = await db.Product.update(
