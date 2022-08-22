@@ -2,29 +2,77 @@ window.addEventListener('load', function(){
   
   /**************************************LogIn**************************************/
 
-    let formLogIn = document.querySelector('#login')
-    let buttonLogIn = document.querySelector('.submit-login')
-    let nameErrorLogIn = document.querySelector('#nameErrorLogIn')
-    let correo = document.querySelector('#correo')
+  //queySelectors
+  let emailLogIn = document.querySelector('#emailLogIn');
+  let emailLogInErr = document.querySelector('#emailLogInErr');
+  let passwordLogIn = document.querySelector('#passwordLogIn');
+  let passwordLogInErr = document.querySelector('#passwordLogInErr');
+  let formLogIn = document.querySelector('#login');
 
-    console.log(formLogIn.correo.value)
+  //on time validations
+  let error = {};
+  let regExp = /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
 
-  buttonLogIn.addEventListener('click', function(event) {
-      event.preventDefault();
-      let errores = {};
-      
-
-    if(correo.value.length < 1) {
-        errores.correo = 'Este campo debe estar completo'
-    }
-
-    if(Object.keys(errores).length >= 1) {
-        nameErrorLogIn.innerHTML = (errores.correo) ? errores.correo : '';
-
+  //--- Log In ---//
+  //email
+  emailLogIn.addEventListener('blur', () => {
+    if(emailLogIn.value == '') {
+      error.emailLogIn = 'Este campo es obligatorio';
+      emailLogInErr.innerHTML = error.emailLogIn;
+    } else if(!emailLogIn.value.match(regExp)) {
+      error.emailLogIn = 'Correo invalido';
+      emailLogInErr.innerHTML = error.emailLogIn;
     } else {
-        formLogIn.submit()
+      emailLogInErr.innerHTML = '';
     }
-  })
+  });
+
+  //contrasena
+  passwordLogIn.addEventListener('blur', () => {
+    if(passwordLogIn.value == '') {
+      error.passwordLogIn = 'Este campo es obligatorio';
+      passwordLogInErr.innerHTML = error.passwordLogIn;
+      console.log(Object.keys(error).length);
+    } else {
+      passwordLogInErr.innerHTML = '';
+    }
+  });
+
+  //prevent default
+  formLogIn.addEventListener('submit', (e) => {
+    //email
+    emailLogIn.addEventListener('blur', () => {
+      if(emailLogIn.value == '') {
+        error.emailLogIn = 'Este campo es obligatorio';
+        emailLogInErr.innerHTML = error.emailLogIn;
+      } else if(!emailLogIn.value.match(regExp)) {
+        error.emailLogIn = 'Correo invalido';
+        emailLogInErr.innerHTML = error.emailLogIn;
+      } else {
+        emailLogInErr.innerHTML = '';
+      }
+    });
+    
+    //contrasena
+    passwordLogIn.addEventListener('blur', () => {
+      if(passwordLogIn.value == '') {
+        error.passwordLogIn = 'Este campo es obligatorio';
+        passwordLogInErr.innerHTML = error.passwordLogIn;
+      } else {
+        passwordLogInErr.innerHTML = '';
+      }
+    });
+
+    //errors
+    if(Object.keys(error).length > 0) {
+      e.preventDefault();
+      emailLogInErr.innerHTML = '';
+      emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
+      error = {};
+    };
+    //--- END LOGIN ---//
+  });
+
   /**************************************Register**************************************/
   //Capturo el formulario de Registro completo
   let formRegister = document.querySelector('#registro')
@@ -129,7 +177,7 @@ window.addEventListener('load', function(){
 
 
   //Validacion del formulario completo. Si surje un solo error el formulario no se envía
-  formRegister.addEventListener('submit', function(e){
+  formRegister.addEventListener('submit', function(event){
 
     //Expresión regular para valida email
     let regValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
@@ -143,54 +191,33 @@ window.addEventListener('load', function(){
     //Cocateno if de los imput y si hay un error no se envía el formulario
     //Imput Nombre
     if(formRegister.nameRg.value.length<2){
-      e.preventDefault()
+      event.preventDefault()
       return alert ('Ups! No has completado bien el formulario de registro')
     } else 
     //Imput Apellido
     if(formRegister.lastNameRg.value.length<2){
-      e.preventDefault() 
+      event.preventDefault() 
       return alert ('Ups! No has completado bien el formulario de registro')
     } else  
     //Imput email
     if(!regValidation.test(formRegister.emailRg.value)){
-      e.preventDefault()
+      event.preventDefault()
       return alert ('Ups! No has completado bien el formulario de registro')
     }else 
     //Imput contraseña
     if(formRegister.passwordRg.value.length<8){
-      e.preventDefault()
+      event.preventDefault()
       return alert ('Ups! No has completado bien el formulario de registro')
     }else  
     //Imput confirma contraseña
     if(formRegister.passconfconRg.value != formRegister.passwordRg.value){
-      e.preventDefault()
+      event.preventDefault()
       return alert ('Ups! No has completado bien el formulario de registro')
     }else 
     //Imput avatar
     if(!extPermitidas.exec(archivoRuta)){
-      e.preventDefault()
+      event.preventDefault()
       return alert ('Ups! No has completado bien el formulario de registro')
     }  
   });
 })
-
-
-
-
-/*
-  //Validacion del password. Debe tener 8 caracteres mínimos, debe tener mayusculas y minusculas, un número y un caracter especial
-  formRegister.passwordRg.addEventListener('focus', function(){
-    //Declaro las expresiones regulares para validar
-    //Una letra mayuscúla
-    let upper = new RegExp('^(?=.*[A-Z])')
-    //Una letra minúscula
-    let lower = new RegExp('^(?=.*[a-z])')
-    //Un número
-    let num = new RegExp('^(?=.*[0-9])')
-    //Un caracter especial
-    let charter = new RegExp('^(?=.*[!¡@*#.$&%])')
-    //8 caracterres como mínimo
-    let len = new RegExp('^(?=.{8,})')
-  //passwordRgErr.innerHTML = 'Debe tener 8 caracteres mínimos, debe tener mayusculas y minusculas, un número y un caracter especial'
-  })
-*/
