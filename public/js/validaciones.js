@@ -41,7 +41,7 @@ window.addEventListener('load', function(){
   //prevent default
   formLogIn.addEventListener('submit', (e) => {
     //email
-    emailLogIn.addEventListener('blur', () => {
+    // emailLogIn.addEventListener('blur', () => {
       if(emailLogIn.value == '') {
         error.emailLogIn = 'Este campo es obligatorio';
         emailLogInErr.innerHTML = error.emailLogIn;
@@ -51,23 +51,24 @@ window.addEventListener('load', function(){
       } else {
         emailLogInErr.innerHTML = '';
       }
-    });
+    // });
     
     //contrasena
-    passwordLogIn.addEventListener('blur', () => {
+    // passwordLogIn.addEventListener('blur', () => {
       if(passwordLogIn.value == '') {
         error.passwordLogIn = 'Este campo es obligatorio';
         passwordLogInErr.innerHTML = error.passwordLogIn;
       } else {
         passwordLogInErr.innerHTML = '';
       }
-    });
+    // });
 
     //errors
     if(Object.keys(error).length > 0) {
       e.preventDefault();
-      emailLogInErr.innerHTML = '';
-      emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
+      return alert ('Ups! No has completado bien el formulario de login')
+      // emailLogInErr.innerHTML = '';
+      // emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
       error = {};
     };
     //--- END LOGIN ---//
