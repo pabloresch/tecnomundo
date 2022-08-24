@@ -317,6 +317,7 @@ h2{
     transition: all 300ms ease;
 }
 
+
 /*hover submit-ver producto*/
 .submit-verProducto:hover{
     transform: scale(1.1);
