@@ -35,11 +35,12 @@ const upLoadFile = multer({storage})
 //Ejecucion de las validaciones para el formulario de registro
 
 const validationsRegister = [
-    body('fullName').notEmpty().withMessage('Tienes que ingresar su nombre'),
-    body('lastName').notEmpty().withMessage('Tienes que ingresar su apellido'),
-    body('email').notEmpty().withMessage('Tienes que ingresar su email').bail()
+    body('fullName').notEmpty().withMessage('Tienes que ingresar tu nombre')
+    .isLength({ min: 2 }).withMessage('El nombre del articulo debe tener al menos 2 caracteres.'),
+    body('lastName').notEmpty().withMessage('Tienes que ingresar tu apellido'),
+    body('email').notEmpty().withMessage('Tienes que ingresar tu email').bail()
     .isEmail(). withMessage('Ingrese un email valido'),
-    body('password').notEmpty().withMessage('Tienes que ingresar su contraseña'),
+    body('password').notEmpty().withMessage('Tienes que ingresar tu contraseña'),
     body('passconfcon').custom((value, {req}) =>{
         if(req.body.password == value ){
             return true    // Si yo retorno un true  no se muestra el error     
@@ -69,7 +70,8 @@ const validationsRegister = [
 //Ejecucion de las validaciones para el formulario de ingreso
 const validationsLogin = [
     //Validacion en el back del mail
-    body('correo').isEmail().withMessage('Por favor, ingrese un formato de mail válido'),
+    body('correo').notEmpty().withMessage('Debes ingresar un usuario')
+    .isEmail().withMessage('Por favor, ingrese un formato de mail válido'),
     //Validacion en el back de la contraseña
     body('contrasena').notEmpty().withMessage('Por favor, escriba su contraseña'),
     //Si pasa las dos validaciones anteriores, se verifica en el array de archivosUsers que exista el usuario
