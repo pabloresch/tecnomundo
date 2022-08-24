@@ -287,17 +287,122 @@ h2{
 
 /*modificado*/
 
-.filtrados{
-    display: none;
+
+.btn-filter {
+    display: flex;
+    margin: 30px auto ;
+    background-color:#dee7e6;;
+    border: 5px double; 
+}
+
+.filter-icon {
+    font-size: 18px;
+    color: 1c063b
+}
+
+.filter {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c063b;
+    margin: 0 20px;
+}
+
+.filter-menu {
+    background-color: white;
+    width: 100vw;
+    height: 1120vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    transition: all .5s ease;
+    text-align: center;
+    
+    
+}
+
+
+.header-filter {
+    background-color: #dee7e6;  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px
+    
+}
+.arrow-left{
+    border: 1px solid black;
+    border-radius: 36px;
+    padding:10px;
+    background-color: white;
+    font-size: 26px;
+
+}
+
+.clean.brand {
+    background-color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid;
+    font-weight: bolder;
+
+}
+
+.panel-division {
+    height: 25px;
+    margin: 15px 0px;
+    background-color: #dee7e6;
+}
+
+.categoria {
+    text-align: left;
+}
+
+.filter-title {
+    font-weight: bolder;
+    text-align: left;
+    margin: 25px 0px;
+}
+.panel-price{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.panel-price a{
+    margin: auto 0px;
+}
+
+.panel-title a {
+    font-weight: bolder;
+}
+
+.clean.price {
+    background-color: white;
+    padding: 6px;
+    font-size: 8px;
+    border: 1px solid;
+    font-weight: bolder;
+}
+
+.panel-opcion {
+    text-align: left;
+    margin-left: 37vw;
+    font-size: 14px;
+}
+.display-block {
+    display: block
+}
+
+.products-title {
+    margin: 30px 0px;
 }
 .article-style-celulares {
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-bottom: 10px;
+    margin: 20px auto;
     transition: all 300ms ease;
-    width: 90%;
-    
-   
+    width: 55%;
+
 }
 
 .article-style-celulares:hover{
@@ -316,7 +421,6 @@ h2{
     border-radius: 8px;
     transition: all 300ms ease;
 }
-
 
 /*hover submit-ver producto*/
 .submit-verProducto:hover{
@@ -540,15 +644,6 @@ footer {
 
         /*main listado productos*/
 
-    .main-listaProductos{
-            display: flex;
-            
-        }
-
-    .filtrados{
-            display: none;
-        }
-
     .celulares{
         display: flex;
         flex-wrap: wrap;
@@ -572,6 +667,17 @@ footer {
 
 }
 
+
+@media (min-width: 500px) {
+
+    .filter-menu {
+        width: 60vw;
+    }
+
+    .panel-opcion {
+        margin-left: 21vw;
+    }
+}
 @media (min-width: 761px) {
    
     /* HOME */
@@ -584,12 +690,47 @@ footer {
         display: flex;
         margin-right: 25px;
         margin-top: 20px;
+        width: 30vw;
        
     }
 
-    .filtros-aplicados ul{
-        list-style: none;
-        padding-left: 20px;
+    .filter-menu {
+    background-color: white;
+    width: 100%;
+    position: static;
+    top: 0;
+    left: 0;
+    z-index: none;
+    transition: none;
+    text-align: center;
+    
+}
+
+.panel-opcion {
+    margin-left: 5vw;
+}
+
+.btn-filter {
+    display: none;
+}
+
+.container {
+    width: 30vw;
+}
+
+.arrow-left{
+   display: none;
+
+}
+    
+
+    .active{
+        transform: translate(0px);
+     
+     }
+
+    .width-100 {
+        width: 100%;
     }
 
     .marcas, .precios{
@@ -624,6 +765,17 @@ footer {
         width: 12vw;
     
     }
+
+    /* FILTRADOS */
+
+        .main-listaProductos{
+            display: flex;
+            
+        } */
+
+     .filtrados{
+            display: none;
+        }
 
     /* FOOTER */
 
