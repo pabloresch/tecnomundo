@@ -20,7 +20,7 @@ const mainRoutes = require ('./routes/mainRoutes');
 const usersRoutes = require ('./routes/usersRoutes');
 
 //Declaracion de puertos
-const port = 3000;
+const port = 3001;
 
 // views
 // app.use(express.static(path.join(__dirname,'views')));

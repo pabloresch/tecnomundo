@@ -10,204 +10,136 @@
     <!-- HEADER -->
     <%- include('./partials/header') %>
         
-<<<<<<< HEAD
-    <!-- MAIN -->
-    <main class="main-login">
-        <div class="main">  	
+    <main class="mainLogin">
+        <div class="main"> 
+            	
             <input type="checkbox" id="chk" aria-hidden="true">
+            <div class="signup">
+                <form action="/user/login" method="POST" id="registro" enctype="multipart/form-data">
+                    <label for="chk" aria-hidden="true">Creá tu cuenta</label>
+                    
     
-                <div class="login">
-                    <form action="/user" method="post" id="login">
-                        <label for="chk" aria-hidden="true">Ingresa</label>
-                        <input class= "input-formulario" type="email" name="correo" id="correo" placeholder="abc@hotmail.com" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
-                     <% if(typeof(errors) != 'undefined' && errors.correo){%>
-                            <span class="text-danger"> 
-                              <%= errors.correo.msg %>
-                            </span>
-                     <%}%> 
-                     <input class= "input-formulario"  type="password" name="contrasena" id="contrasena" placeholder="Contraseña" >
                        
-=======
-    <!-- MAIN --> 
-    <main>
-        <section class="section-set-display formulario" id="form-LogIn-Register">
-            <!--Ingreso de usuario registrado-->
-            <article class="formulario-login">
-                
-                <form action="/user" method="post" id="login">
-                    <h2>Ingresá</h2>
-                    <br>
+                        <input 
+                            type="text" 
+                            name="fullName" 
+                            id="nameRg" 
+                            class= "input-formulario <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                            placeholder="Nombre"
+                            value="<%= locals.oldData ? oldData.fullName : null %>" >
+                       
+                        
+                            <div class="text-danger" id="nameRgErr"></div>
+                            <% if(locals.errors && errors.fullName) { %>
+                            <samp class="text-danger">
+                            <%= errors.fullName.msg %>
+                            </samp>
+                            <% } %>
+                            
+    
+                    
+                        <input class= "input-formulario" type="text" name="lastName" id="lastNameRg" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
+                       
+                        
+                            <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
+                            <% if(locals.errors && errors.lastName) { %>
+                            <samp class="text-danger">
+                                <%= errors.lastName.msg %>
+                            </samp>
+                                <% } %>
+                       
+    
+                        
+                        <input class= "input-formulario" type="email" name="email" id="emailRg" placeholder='Email' value="<%= locals.oldData ? oldData.email: null %>">
+                        
+                       
+                            <div class="text-danger" id="emailRgErr"></div>
+                            <% if(locals.errors && errors.email) { %>
+                            <samp class="text-danger">
+                                <%= errors.email.msg %>
+                            </samp>
+                                <% } %>
+                        
+    
+                        
+                        <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
+                        
+                        
+                            <div class="text-danger" id="passwordRgErr"></div>
+                            <% if(locals.errors && errors.password) { %>
+                            <samp class="text-danger">
+                                <%= errors.password.msg %>
+                            </samp>
+                                <% } %>
+                        
+    
+                       
+                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder="Confirmar contraseña" >
+                       
+                        
+                         <div class="text-danger" id="passconfconRgErr"></div>
+                        <% if(locals.errors && errors.passconfcon) { %>
+                            <samp class="text-danger">
+                                <%= errors.passconfcon.msg %>
+                            </samp>
+                                <% } %>
+                       
+                        
+                       
+                        <input class= "input-formulario" type="file" name="avatar" id="avatar" placeholder="Imagen de Perfil">
+                        
+                        
+                            <div class="text-danger" id="avatarErr"></div>
+                            <% if(locals.errors && errors.avatar) { %>
+                                <samp class="text-danger">
+                                    <%= errors.avatar.msg %>
+                                </samp>
+                                    <% } %>
+                        
+                     
+    
+                        <input  class='submit-login' type="submit" value="Registrar" id="buttonRegister">
+                </form>
+            </div>
 
-                    <label class="label-bold" for="correo">Usuario 
-                        <br>
-                        <input class= "input-formulario" type="email" name="correo" id="emailLogIn" placeholder="Aprobanos el Sprint 7" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
-                        <br>
+            <!-- login -->
+                <div class="login">
+                <form  action="/user" method="post" id="login"> 
+                    <label for="chk" aria-hidden="true">Ingresá</label>
+                    <input class= "input-formulario" type="email" name="correo" id="emailLogIn" placeholder="Email" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
+                    
                         <div class="text-danger" id="emailLogInErr"></div>
                         <% if(typeof(errors) != 'undefined' && errors.correo){%>
                             <span class="text-danger"> 
                               <%= errors.correo.msg %>
                             </span>
                          <%}%>
-                         <br>
-                    </label>
-
-                    <label class="label-bold" for="contrasena">Contraseña
-                        <input class= "input-formulario"  type="password" name="contrasena" id="passwordLogIn" placeholder="Por favor" >
-                        <br>
-                        <div class="text-danger" id="passwordLogInErr"></div>
->>>>>>> fd794e22ffb8b1b913c8945f19dc2c7a2a7ee9ea
-                        <% if(typeof(errors) != 'undefined' && errors.contrasena){%>
-                            <span class="text-danger">
-                              <%= errors.contrasena.msg %>
-                            </span>
-                         <%}%>
-                            
-                       
-                        <button><input type="submit" value="Ingresar"></button>
-                        <label class="label-bold" for="recordarme">
-                            <div class="recuerdame-box">
-                                Recordarme
-                                <input class="input-formulario-rcuerdame" type="checkbox" name="recordarme" id="recordarme">
-                            </div>
-                        </label>
-                        <a href="#" >¿Olvidaste tu contraseña?</a>
+                    <input class= "input-formulario"  type="password" name="contrasena" id="passwordLogIn" placeholder="Contraseña" >
                          
-                        
-                </form>
-                </div>
-    
-                <div class="signup">
-                    <form action="/user/login" method="POST" id="registro" enctype="multipart/form-data">
-                        <label for="chk" aria-hidden="true">Creá tu cuenta</label>
-
-                        <input 
-                            type="text" 
-                            name="fullName" 
-                            id="name" 
-                            class= "<%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.fullName : null %>" >
-                       
-                        <% if(locals.errors && errors.fullName) { %>
-                        <div class="text-danger">
-                        <%= errors.fullName.msg %>
-                        </div>
-                        <% } %>
-    
-                        
-                            <input  type="text" name="lastName" id="name"  value="<%= locals.oldData ? oldData.lastName : null %>">
-                        
-                        <% if(locals.errors && errors.lastName) { %>
-                        <div class="text-danger">
-                            <%= errors.lastName.msg %>
-                        </div>
-                            <% } %>
-    
-                        
-                            <input  type="email" name="email" id="email"  value="<%= locals.oldData ? oldData.email: null %>">
-                        
-                        <% if(locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %>
-                        </div>
-                            <% } %>
-    
-                       
-                            <input  type="password" name="password" id="password" placeholder="Contraseña" >
-                       
-                        <% if(locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %>
-                        </div>
-                            <% } %>
-    
-                        
-                            <input  type="password" name="passconfcon" id="passconfcon" placeholder=" Confirmar contraseña" >
-                        
-                        <% if(locals.errors && errors.passconfcon) { %>
-                            <div class="text-danger">
-                                <%= errors.passconfcon.msg %>
-                            </div>
-                                <% } %>
-                        
-                        
-                            <input type="file" name="avatar" id="avatar" >
-                    
-                        <% if(locals.errors && errors.avatar) { %>
-                            <div class="text-danger">
-                                <%= errors.avatar.msg %>
-                            </div>
-                                <% } %>
-    
-                     
-    
-                        <input  class='submit-login' type="submit" value="Registrar">
-                    </form>
-                    
-                        <!-- <input type="email" name="email" placeholder="Email" required="">
-                        <input type="password" name="pswd" placeholder="Password" required="">
-                        <button>Login</button> -->
-                    </form>
-                </div>
-        </div>
-    </body>
-       
-
-        
-        <!-- <section class="section-set-display formulario" >
-          
-            <!--Ingreso de usuario registrado-->
-<!--             
-            <article class="formulario-login">
-                <div class="login">
-                <form action="/user" method="post" id="login">
-                    <h2>Ingresá</h2>
-                    <label class="label-bold" for="correo">Usuario
-                    <input class= "input-formulario" type="email" name="correo" id="correo" placeholder="abc@hotmail.com" minlength="5" maxlength="30"  value="<%= typeof old != 'undefined' ? old.correo : '' %>">
-                     <% if(typeof(errors) != 'undefined' && errors.correo){%>
-                            <span class="text-danger"> 
-                              <%= errors.correo.msg %>
-                            </span>
-                     <%}%> 
-                        
-                    </label>
-
-                    <label class="label-bold" for="contrasena">Contraseña
-                        <input class= "input-formulario"  type="password" name="contrasena" id="contrasena" placeholder="Contraseña" >
-                       
-                        <% if(typeof(errors) != 'undefined' && errors.contrasena){%>
-                            <span class="text-danger">
-                              <%= errors.contrasena.msg %>
-                            </span>
-                         <%}%>
+                         <div class="text-danger" id="passwordLogInErr"></div>
+                         <% if(typeof(errors) != 'undefined' && errors.contrasena){%>
+                             <span class="text-danger">
+                               <%= errors.contrasena.msg %>
+                             </span>
+                          <%}%>
+                          
                          
-                    </label>
-
-                    <label class="label-bold" for="recordarme">
-                        <div class="recuerdame-box">
+                    
+                          <input  class='submit-login buttonLogin' type="submit" value="Ingresar">
+                          <div class="recuerdame-box">
                             Recordarme
-                            <input class="input-formulario-rcuerdame" type="checkbox" name="recordarme" id="recordarme">
+                            <input class="input-formulario-rcuerdame" type="checkbox" name="recordarme" id="recordarme" style="width: 10px;">
                         </div>
-                    </label>
-
-                   
-                    <input  class='submit-login' type="submit" value="Ingresar">
-                    <input  class='submit-login' type="submit" value="Ingresar con Facebook">
-                    <input  class='submit-login' type="submit" value="Ingresar con Google">
-                    
-
-                    <a href="#" >¿Olvidaste tu contraseña?</a>
-
                 </form>
-            </div>
-
-            </article> -->
+                </div>
+                
+    
+                
+        </div>
+        
 
             <!--Creacion de usuario nuevo-->
-<<<<<<< HEAD
-            <!-- <article class="formulario-registro">    
-=======
-            <article class="formulario-registro" id="articleRegister">    
->>>>>>> fd794e22ffb8b1b913c8945f19dc2c7a2a7ee9ea
+            <!-- <article class="formulario-registro" id="articleRegister">    
                
                 
                 <form action="/user/login" method="POST" id="registro" enctype="multipart/form-data">
@@ -281,10 +213,7 @@
                             <%= errors.passconfcon.msg %>
                         </samp>
                             <% } %>
-<<<<<<< HEAD
-=======
                     </div>        
->>>>>>> fd794e22ffb8b1b913c8945f19dc2c7a2a7ee9ea
                     
                     <label class="label-bold"  for="avatar"> Imagen de Perfil
                         <input class= "input-formulario" type="file" name="avatar" id="avatar" >
@@ -304,15 +233,13 @@
                 
             </article>
         
-        
         </section>
         <section class="section-set-display">
             <div class="btn-whatsapp">
                 <a href="https://api.whatsapp.com/send/?phone=+54 11 36346889&text=Tecnomundo!" target="_blank" title="¡Dejanos tu mensaje!"><img src="images/whatsapp-logo.png" alt="whatsapp logo"></a> 
             </div>
-        </section>
-     -->
-     </main> 
+        </section> --> 
+     </main>
 
     <!-- FOOTER -->
     <%- include('./partials/footer') %>
