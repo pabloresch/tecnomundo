@@ -56,6 +56,10 @@ La retrospectiva se centra en mejorar como equipo, su objetivo es mejorar la din
     <li><em>Dejar de hacer:</em> en este sprint tuvimos el error de no respetar las consignas y avanzar con la de nuestros pares. Esto claramente no se volverá a realizar ya que, conlleva a una desigualdad en la realización del trabajo. 
 </ul>
 
+<<<<<<< HEAD
+
+
+
 ## Retro Sprint 6:
 <ul>
     <li><em>Comenzar a hacer:</em> Si bien utilizamos otras herramientas de comunicación para la organización y division de tareas en el grupo, es fundamental amigarnos con el uso de Trello.
@@ -63,4 +67,5 @@ La retrospectiva se centra en mejorar como equipo, su objetivo es mejorar la din
     <li><em>Continuar haciendo:</em> la comunicación que se formó en el grupo sigue siendo buena y constante. Ademas, cabe destacar que hemos aprendido a pedir ayudar a los demas integrantes del grupo cuando nos encontramos con algun problema en el código.
     <li><em>Hacer menos:</em> lograr terminar el sprint un dia antes de la fecha de entrega. 
     <li><em>Dejar de hacer:</em> realizar grandes cambios que no están planificados en la división de tarea sin hacer una puesta en común previa..
+>>>>>>> fd794e22ffb8b1b913c8945f19dc2c7a2a7ee9ea
 </ul>

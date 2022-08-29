@@ -12,13 +12,13 @@
       <section class="section-set-display carrusel">
         <div class="slider-frame">
           <ul>
-            <li>
+            
               <img
-                src="images/banner/Banner1.png"
+                src="images/banner/banner32.png"
                 alt="Ofertas"
               />
-            </li>
-            <li>
+            
+            <!-- <li>
               <img
                 src="images/banner/Banner2.png"
                 alt="Ofertas"
@@ -35,30 +35,31 @@
                 src="images/banner/Banner4.png"
                 alt="Ofertas"
               />
-            </li>
+            </li> -->
           </ul>
         </div>
       </section>
       <!-- Carrusel end -->
       <!-- Info -->
+      
       <section class="section-set-display info">
-        <div>
+        <div class="containerInfo">
           <ul>
             <li>
               <div class="info-li">
-                <i class="fa-regular fa-credit-card"></i>
+                <!-- <i class="fa-regular fa-credit-card"></i> -->
                 <h3>Recibimos todas las tarjetas</h3>
               </div>
             </li>
             <li>
               <div class="info-li">
-                <i class="fa-solid fa-truck-arrow-right"></i>
+                <!-- <i class="fa-solid fa-truck-arrow-right"></i> -->
                 <h3>Envío gratis a todo el país</h3>
               </div>
             </li>
             <li>
               <div class="info-li">
-                <i class="fa-solid fa-check"></i>
+                <!-- <i class="fa-solid fa-check"></i> -->
                 <h3>12 meses de garantía</h3>
               </div>
             </li>
@@ -66,48 +67,76 @@
         </div>
       </section>
       <!-- INFO end -->
-    
-      <h2><a href="/searchedProducts">Lo más buscado</a></h2>
+
+   
+
+      
+      <div>
+           <h2 class="typing seccion1"><a href="/searchedProducts">Lo más buscado</a></h2>
+
+      </div>
+      
       <section class="section-set-display sección01">
+        <div class="swiper mySwiper seccion1">
+          <div class="swiper-wrapper">
           <% for (i = 0; i < 4; i++) { %> 
-        
-        <article class="article-style <%= article[i] %>">
-          <div class="imgProduct">
-            <img
-              src="images/products/<%= searchedProducts[i].image_product %>"
-              alt="<%= searchedProducts[i].name %>"
-            />
+          <div class="swiper-slide bckSwiper">
+             <article class="article-style bckArticle">
+               <div class="bckCard seccion1">
+                 <!-- <img 
+                  src="images/colorblanco2.png"
+                  alt=""
+                   /> -->
+                 </div>
+               <div class="imgProduct seccion1">
+               <img 
+                  src="images/products/<%= searchedProducts[i].image_product %>" 
+                  alt="<%= searchedProducts[i].name %>"
+                    />
+               </div>
+
+               <div class="descriptionProduct seccion1">  
+               <div class="title seccion1">
+                 <h5><%= searchedProducts[i].name %></h5>
+               </div>
+               <div class="price seccion1">
+                 <h5>$ <%= searchedProducts[i].price_product %> </h5>
+               </div>
+               <div class="verProducto seccion1">
+                 <a href="#">Ver Producto</a>
+               </div> 
+                      
+             
+          
+            </article> 
           </div>
 
-          <div class="descriptionProduct">  
-            <div class="title">
-              <h5><%= searchedProducts[i].name %></h5>
-            </div>
-            <div class="price">
-              <h5>$ <%= searchedProducts[i].price_product %> </h5>
-            </div>
-            <div class="discount">
-              <i class="fa-solid fa-truck"></i>
-              <h6>Envío gratis</h6>
-            </div>
-          </div>
-        </article>
+     
       
         <% } %>
+          </div>
+        <div class="swiper-pagination"></div>
+         </div>
       </section>
-
-      <h2><a href="/phones">Celulares</a></h2>
+      <div class="body-menu">
+      <div >
+        <h2><a ref="/phones">Celulares</a></h2>
+      </div>
+      
       <section class="section-set-display seccion02">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
         
             <% for (i = 0; i < 4; i++) { %> 
-          <article class="article-style <%= article[i] %>">
-            <div class="imgProduct">
+              <div class="swiper-slide">
+          <article class="article-style">
+            <div class="bckCard">
               <img
-                src="images/products/<%= phones[i].image_product %>"
+                src="images/products/<%= phones[i].image_product %>" 
                 alt="<%= phones[i].name %>"
               />
             </div>
-  
+            
             <div class="descriptionProduct">  
               <div class="title">
                 <h5><%= phones[i].name %></h5>
@@ -115,26 +144,41 @@
               <div class="price">
                 <h5>$ <%= phones[i].price_product %> </h5>
               </div>
-              <div class="discount">
-                <i class="fa-solid fa-truck"></i>
-                <h6>Envío gratis</h6>
-              </div>
+              <div class="verProducto">
+                <i class="fa-solid fa-circle-info"></i>
+                <i class="fa-solid fa-cart-shopping seccion"></i>  
+              </div> 
+              
+            </div>
+            <div class="buttomVerProducto">
+              <a style="text-decoration:none">VER PRODUCTO</a>
             </div>
           </article>
-          <% } %>
-        
-      </section>
+        </div>
 
-      <h2><a href="/tablets">Tablets</a></h2>
+     
+      
+        <% } %>
+          </div>
+        <div class="swiper-pagination"></div>
+         </div>
+      </section>
+      <div>
+         <h2><a href="/tablets">Tablets</a></h2>
+      </div>
       <section class="section-set-display seccion03">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
         <% for (i = 0; i < 4; i++) { %> 
-          <article class="article-style <%= article[i] %>">
-            <div class="imgProduct">
+          <div class="swiper-slide">
+          <article class="article-style">
+            <div class="bckCard">
               <img
-                src="images/products/<%= tablets[i].image_product %>"
-                alt="<%= tablets[i].name %>"
-              />
+              src="images/products/<%= tablets[i].image_product %>" 
+              alt="<%= tablets[i].name %>"
+            />
             </div>
+          
   
             <div class="descriptionProduct">  
               <div class="title">
@@ -143,25 +187,40 @@
               <div class="price">
                 <h5>$ <%= tablets[i].price_product %> </h5>
               </div>
-              <div class="discount">
-                <i class="fa-solid fa-truck"></i>
-                <h6>Envío gratis</h6>
-              </div>
+              <div class="verProducto">
+                <i class="fa-solid fa-circle-info"></i>
+                <i class="fa-solid fa-cart-shopping"></i>  
+              </div> 
+                           
+            </div>
+            <div class="buttomVerProducto">
+              <a style="text-decoration:none">VER PRODUCTO</a>
             </div>
           </article>
-          <% } %>
+        </div>
+        <% } %>
+          </div>
+        <div class="swiper-pagination"></div>
+         </div>
       </section>
 
-      <h2><a href="/laptops">Laptops</a></h2>
+      <div>
+        <h2><a href="/laptops">Laptops</a></h2>
+      </div>
+     
       <section class="section-set-display seccion04">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
         <% for (i = 0; i < 4; i++) { %> 
-          <article class="article-style <%= article[i] %>">
-            <div class="imgProduct">
+          <div class="swiper-slide">
+          <article class="article-style">
+            <div class="bckCard">
               <img
-                src="images/products/<%= laptops[i].image_product %>"
-                alt="<%= laptops[i].name %>"
-              />
+              src="images/products/<%= laptops[i].image_product %>" 
+              alt="<%= laptops[i].name %>"
+            />
             </div>
+           
   
             <div class="descriptionProduct">  
               <div class="title">
@@ -170,14 +229,22 @@
               <div class="price">
                 <h5>$ <%= laptops[i].price_product %> </h5>
               </div>
-              <div class="discount">
-                <i class="fa-solid fa-truck"></i>
-                <h6>Envío gratis</h6>
-              </div>
+              <div class="verProducto">
+                <i class="fa-solid fa-circle-info"></i>
+                <i class="fa-solid fa-cart-shopping"></i>  
+              </div>  
+            </div>
+            <div class="buttomVerProducto">
+              <a style="text-decoration:none">VER PRODUCTO</a>
             </div>
           </article>
-          <% } %>
+        </div>
+         <% } %>
+          </div>
+        <div class="swiper-pagination"></div>
+         </div>
       </section>
+
       <section class="section-set-display section-btn-whatsapp">
         <div class="btn-whatsapp">
           <a
@@ -188,8 +255,54 @@
           /></a>
         </div>
       </section>
+    </div>
     </main>
     <!-- FOOTER -->
     <%- include('./partials/footer') %>
+
+    <!-- Fade Efect js -->
+
+    <script src="/js/fadeEfect.js"></script>
+    
+    <!-- Swiper JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          361: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          600: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // 700: {
+          //   slidesPerView: 4,
+          //   spaceBetween: 10,
+          // },
+          761: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          900: {
+            slidesPerView: 5,
+            spaceBetween: 15,
+          },
+        }
+      });
+    </script>
   </body>
+ 
 </html>
