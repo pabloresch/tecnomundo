@@ -112,12 +112,61 @@
                             <%= errors.email.msg %>
                         </samp>
                             <% } %>
-                    </div>
+                    </div> 
 
                     <label class="label-bold" for="password">Contraseña
-                        <input class= "input-formulario" type="password" name="password" id="passwordRg" placeholder="Sos un capo!" >
+                        <input class= "input-formulario" type="text" name="password" id="passwordRg" placeholder="Sos un capo!" >
+                        <ul class="passWarning">
+                            <li>
+                                <a class="linckPassword" href="https://www.sofistic.com/blog-ciberseguridad/contrasenas-mas-usadas-2021/" target="_blank"> 
+                                    <p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://www.sofistic.com/blog-ciberseguridad/contrasenas-mas-usadas-2021/" target="_blank"> 
+                                    <p class="lastNameWarning" id="lastNameWarning">Escribir tu apellido es muy predesible <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://www.sofistic.com/blog-ciberseguridad/contrasenas-mas-usadas-2021/" target="_blank"> 
+                                    <p class="emailWarning" id="emailWarning">Escribir tu email es muy predesible <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://www.sofistic.com/blog-ciberseguridad/contrasenas-mas-usadas-2021/" target="_blank"> 
+                                    <p class="patronWarning" id="patronWarning"> Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                                     <p class="passVeryWeack" id="passVeryWeack">La contraseña es muy débil <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                                     <p class="passWeack" id="passWeack">La contraseña es débil <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                                     <p class="passMedium" id="passMedium">La contraseña es media <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                                     <p class="passStrong" id="passStrong">La contraseña es fuerte <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                                     <p class="passVeryStrong" id="passVeryStrong">La contraseña es muy fuerte <sup>(?)</sup></p>
+                                </a>
+                            </li>
+                        </ul>
+                            
                     </label>
                     <div>
+                     
                         <div class="text-danger" id="passwordRgErr"></div>
                         <% if(locals.errors && errors.password) { %>
                         <samp class="text-danger">
@@ -166,6 +215,7 @@
 
     <!-- FOOTER -->
     <%- include('./partials/footer') %>
-<script src="/js/validaciones.js"></script>
+    <script src="/js/password.js"></script>
+    <!--script src="/js/validaciones.js"></script-->
  </body>
 </html>
