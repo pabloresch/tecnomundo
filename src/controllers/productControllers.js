@@ -1,13 +1,16 @@
 const fs = require ('fs');
 const path = require ('path');
 const db = require ('./../database/models')
+const shuffle = require ('../modules/shuffleArray')
 const { validationResult }= require('express-validator');
 
 
 const controllers = {
 
-    cart : (req, res) => {
-        res.render('productCart.ejs');
+    cart: async (req, res) => {
+        let searchedProducts = await db.Product.findAll({ where : {section:'lo mas buscado'}});
+
+        res.render('productCart.ejs', {searchedProducts: shuffle(searchedProducts)});
     },
 
     productDetail : (req, res) => {
