@@ -52,12 +52,25 @@ const controller = {
     //formulario de busqueda
     search: (req,res) =>{
         //capturo el string que busca el usuaria que viaja por la url
-        const search = req.query.search
-        db.Product.findAll({where:{name: {[Op.like]:'%'+search+'%'}}})
+        const search2 = req.query.search2
+        const search1 = req.query.search1
+
+        if (search1) {
+            db.Product.findAll({where:{name: {[Op.like]:'%'+search1+'%'}}})
             .then((products) => {
                 return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
+        } else if (search2) {
+            db.Product.findAll({where:{name: {[Op.like]:'%'+search2+'%'}}})
+            .then((products) => {
+                return res.render('listProducts', { products: products });
+            })
+        .catch(error => res.send(error));
+        }
+
+
+        
     },
     //contacto servicio tecnico
     contact: (req, res) => {
