@@ -58,6 +58,10 @@ const controller = {
                 return res.render('listProducts', { products: products });
             })
         .catch(error => res.send(error));
+    },
+    //contacto servicio tecnico
+    contact: (req, res) => {
+        res.render('serviceContact');
     }
 }
 
