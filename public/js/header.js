@@ -1,5 +1,7 @@
 window.addEventListener('load', function () {
-    const cartIcon = () => {
+  
+  
+  const cartIcon = () => {
         if (localStorage.carrito && localStorage.carrito != '{}') {
             document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-plus"></i>'
         } else {

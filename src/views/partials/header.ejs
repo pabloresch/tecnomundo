@@ -7,7 +7,7 @@
 <div class="cont-menu active" id="menu">
 
     <div class="logo logo-burgerMenu">                
-        <div><a href="/home" target="_blank" title="Principal"><img src="/images/logo5.png" class="logo" alt="Logo"></a> </div>
+        <div><img src="/images/logo5.png" class="logo" alt="Logo"> </div>
         <div><i class="background-burger fa-solid fa-xmark burger-close"></i></div>
     </div>
     
@@ -25,35 +25,33 @@
    
 
         <div class="logo">                
-            <a href="/home" target="_blank" title="Principal"><img src="/images/logo14.png" class="logo" alt="Logo"></a> 
+            <a href="/" title="Principal"><img src="/images/logo15.png" class="logo logo-15" alt="Logo"></a>
+            <a href="/" title="Principal"><img src="/images/logo16.png" class="logo logo-16 " alt="Logo"></a>  
         </div>
-        <div class="search-bar">
+        <div class="search-bar-1">
             <form action="/search" method="GET">
             
-                <input class="input-header" type="text" placeholder="Busca tu producto" name="search">
+                <input class="input-header" type="text" placeholder="Busca tu producto" name="search1">
                 
                 <button>
                     <i class="fa fa-search" style="font-size: 16px;"></i>
                 </button>     
             </form>
-        </div>  
+        </div> 
+        
         <div class="carrito-compra">
-            <a href="/product/productCart" target="blank" id="cart-icon" title=" Tus Compras">
+            <a href="/product/productCart" id="cart-icon" title=" Tus Compras">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>           
         </div>
-        <!-- Por ahora no tiene funcionalidad este icono de admin. Definir si va o no va -->
-            <!-- <div class="user-login">
-                <a href="#" title="admin"><i class="fa-regular fa-pen-to-square"></i></a>
-            </div>
-       -->
+
         <% if (locals.usuario){ %>
             <!--Cuando ha iniciado secion-->
             <div class="user-img">
                 <img  src="/images/users/<%=locals.usuario.image_product %>"  alt="usuario">
             </div>
             <div class="user-login">
-                <a href="/user/logout"  title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="/user/logout"  title="Logout" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
         <% } else{ %>
             <!--Cuando no ha iniciado secion-->
@@ -62,8 +60,22 @@
             </div>
         <% } %>
 
+        
+
     </div>
 </div>
+
+<div class="search-bar-2">
+    <form action="/search" method="GET">
+    
+        <input class="input-header" type="text" placeholder="Busca tu producto" name="search2">
+        
+        <button>
+            <i class="fa fa-search" style="font-size: 16px;"></i>
+        </button>     
+    </form>
+</div>
+
         
     
     <div class="header-menu">                

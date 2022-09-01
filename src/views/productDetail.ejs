@@ -39,7 +39,7 @@
 
                 <div class="card-title productDetail-price-discount">
                     <div>
-                        <h5 class="price-product">$ <%= (((100 - product.discount)/100)*product.price_product).toFixed(2) %></h5>
+                        <h5 class="price-product"><%= (((100 - product.discount)/100)*product.price_product).toFixed(2) %></h5>
                     </div>
                     <% if (product.discount != 0) { %>
                     <div class="discount-listaProducto">
