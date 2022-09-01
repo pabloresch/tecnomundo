@@ -117,9 +117,7 @@ body{
     font-size: 14px;
  }
  
- .user-login i{
-
-    
+ .user-login i{   
   
      margin-right: 10px;
      color:rgb(49 47 56);
@@ -899,7 +897,6 @@ div.verProducto.seccion1{
     
 
 .margin-productDetail{
-
     /* margin-bottom: 7vh; */
     margin-top: 15vh;
 }
@@ -1784,7 +1781,7 @@ div.titleContainerNP{
     padding: 0;
 }
 h2.products-title{
-    padding-top: 26px;
+    padding: 26px 5px 0px 5px;
     width: -webkit-fill-available;
     border-radius: 5% 5% 160% 160%;
     height: 13vh;
@@ -1820,6 +1817,9 @@ div.form-group.row label{
 }
 input#imagesNewProduct{
     height: fit-content;
+}
+textarea#description.form-control.input-textarea{
+    height: 10vh;
 }
 .input-textarea {
     font-size: 13px;
@@ -2559,6 +2559,7 @@ p.card-text{
 
         .newProductSection {
             width: 80%;
+            max-width: 65%;
         }
 
        .input-textarea{
@@ -2728,6 +2729,11 @@ p.card-text{
     .newProductSection {
         margin-top: 30vh;
       
+    }
+
+    /*NEW PRODUCT*/
+    .newProductSection {
+        margin-top: 22vh;
     }
 }}}
     

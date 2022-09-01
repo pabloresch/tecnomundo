@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto:wght@100&display=swap');
 
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: sans-serif;
+    padding: 0px;
     box-sizing: border-box;
 }
 /*BODY*/
@@ -22,15 +23,16 @@ body{
 
 header {
     padding-top: 8px;
-    background-color: #1c063b;
-    width: 100vw;
-    /*
+    background-color: #f0f0f0;    
+    width: 100vw;    
     position: fixed;
-    z-index:999;
-    */
+    z-index:11;   
     top:0;
     
 }
+div.container-header{
+    height: 12vh;
+ }
 .container-header{
 
     max-width: 1200px;
@@ -51,28 +53,32 @@ header {
     
     padding-top: 10px;
     padding-bottom: 15px;
-    flex-grow: 0.2;
+    /* flex-grow: 0.2; */
     text-align: center;
 }
 
 .logo img {
-    width: 20vw;
+    width: 95%;
     max-width: 150px;
    
    
 }
-.carrito-compra i{
-    border:#f1fdf7e8 solid 2px ;
-    border-radius: 25px;
-    margin-right: 10px;
-    color:rgb(241 253 247 / 91%);
-    cursor: pointer;
-    font-size: min(3vw, 25px);
-    padding: 7px;
-    transition: all 300ms ease;
-   
+i.fa-solid.fa-cart-shopping.seccion{
+    font-size: 14px;
+ }
+ .carrito-compra i{
     
-}
+    border: rgb(49 47 56) solid 2px;
+     border-radius: 27px;
+     margin-right: 10px;
+     color:rgb(49 47 56);
+     cursor: pointer;
+     font-size: min(3vw, 25px);
+     padding: 4px;
+     transition: all 300ms ease;
+    
+     
+ }
 /* hover carrito de compra*/
 
 .carrito-compra i:hover{
@@ -83,13 +89,18 @@ header {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 
 }
+i.fa-solid.fa-circle-user{
+    font-size: 24px;
+ }
+ i.fa-solid.fa-cart-plus{
+    font-size: 14px;
+ }
+ 
 
 .user-login i{
-   
-   
-    font-size: 5vw;
+     
     margin-right: 10px;
-    color:rgb(241 253 247 / 91%);
+    color:rgb(49 47 56);
     cursor: pointer;
     font-size: min(8vw, 40px);
     padding: 7px;
@@ -160,7 +171,7 @@ i#icono-menu.fa-solid.fa-bars{
 /*estilo para el listado del menu */
 
 .cont-menu ul{
-   padding: 0px;
+   padding: 100px, 0px, 20px, 0px;
    list-style: none;
 }
 
@@ -262,7 +273,7 @@ p{
 }
 
 a {
-    color: black;
+    color: rgb(18 89 230);
 }
 
 h6{
@@ -289,10 +300,12 @@ h2{
 
 
 .btn-filter {
+    margin-top: 15vh;
     display: flex;
-    margin: 30px auto ;
+    margin: auto ;
     background-color:#dee7e6;;
     border: 5px double; 
+    margin-top: 15vh;
 }
 
 .filter-icon {
@@ -310,7 +323,7 @@ h2{
 .filter-menu {
     background-color: white;
     width: 100vw;
-    height: 1120vh;
+    /* height: 1120vh; */
     position: absolute;
     top: 0;
     left: 0;
@@ -396,12 +409,21 @@ h2{
 .products-title {
     margin: 30px 0px;
 }
+/*list product*/
+div.result{
+    display: flow-root;
+}
+
+
+h5#item-name{
+    font-size: 12px;
+}
 .article-style-celulares {
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+   
     margin: 20px auto;
     transition: all 300ms ease;
-    width: 55%;
+    width: 70%;
 
 }
 
@@ -412,7 +434,7 @@ h2{
 .celulares{
     margin: 20px;
 }
-
+/* 
 .submit-verProducto{
     background-color: #1c063b;
     color: white;
@@ -420,13 +442,13 @@ h2{
     margin-top: 9px;
     border-radius: 8px;
     transition: all 300ms ease;
-}
+} */
 
 /*hover submit-ver producto*/
-.submit-verProducto:hover{
+/* .submit-verProducto:hover{
     transform: scale(1.1);
     cursor:pointer;
-}
+} */
 
 .container-celulares{
     gap: 15px;
@@ -448,7 +470,7 @@ h2{
     flex-direction: column;
     align-items: center;
     border-top: solid 1px #ebebeb;
-    margin:0px 15px;
+    
     display: flex;
 }
 
@@ -460,7 +482,7 @@ h2{
 .listProduct h5{
 
     margin: auto;
-    padding: 1.5vh;
+    padding-bottom: 12px;
 }
 
  .title-product {
@@ -472,7 +494,11 @@ h2{
 
 
 .price-product {
+    width: max-content;
     color: rgba(210, 71, 115, 0.792);
+}
+div.price-product h5{
+    font-size: 13px;
 }
    
 .descriptionProduct .discount-listaProducto {
@@ -494,14 +520,20 @@ h2{
     width: 30vw;
     position: absolute;
 }
-
-.imgProduct img {
-    width: 81%;
-    margin: auto;
-    height: auto;
-    
+div.imgProduct{
     display: flex;
-    }
+    height: 20vh;
+    margin-bottom: 10px;
+}
+div.imgProduct img{
+    max-height: 20vh;
+    height: fit-content;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    max-width: -webkit-fill-available
+}
+
 
 /* FIN HOME */
 
@@ -581,12 +613,12 @@ footer {
     /*HEADER*/
 
     .header-menu{
-            display: flex;
-            justify-content: center;
-            height: 8vw;
-            max-height: 40px;
-            background-color: rgb(241 253 247 / 91%);
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        height: 8vw;
+        max-height: 40px;
+        background-color: #312f38;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
         
         
         }
@@ -601,9 +633,7 @@ footer {
     .cont-menu{
         display: none;
     }
-    .logo {
-        padding-left: 10px;
-    }
+    
     .header-menu nav {
             display: flex;
            
@@ -623,27 +653,33 @@ footer {
         }
         
     .header-menu nav > ul > li >a {
-            margin: 0px 5vw;
-            text-decoration: none;
-            display: flex;
-            color: #1c063b;
-            align-items: center;
-            padding: 14px 0px;
-            text-transform: uppercase;
-            font-size: min(2vw, 12px);
-            transition: all 300ms ease;
-            font-weight: bold;
+        margin: 0px 2.5vw;
+        text-decoration: none;
+        display: flex;
+        color: #ffffff;
+        align-items: center;
+        padding: 14px 0px;
+        text-transform: uppercase;
+        font-size: min(2vw, 12px);
+        transition: all 300ms ease;
+        font-weight: bold;
            
         }
     .header-menu nav > ul > li >a:hover{
-            color:white;
-            transform: scale(1.2);
-            border-radius: 10px;
-            padding: 5px;
+            background-color: #05c0c7;
+                color:white;
+                transform: scale(1.1);
+                border-radius: 10px;
+                padding: 3px;
         }
 
         /*main listado productos*/
-
+    .col-sm-6{
+            width: 50%;
+        }
+    .article-style-celulares {
+        width: 100%;
+    }
     .celulares{
         display: flex;
         flex-wrap: wrap;
@@ -676,6 +712,10 @@ footer {
 
     .panel-opcion {
         margin-left: 21vw;
+    }
+
+    .col-md-4{
+        width: 33%;
     }
 }
 @media (min-width: 761px) {
@@ -804,4 +844,9 @@ footer {
             text-align: center;
             width: 30%;
         }
+}
+@media (min-width: 761px){
+    .col-md-4{
+        width: 25%;
+    }
 }
