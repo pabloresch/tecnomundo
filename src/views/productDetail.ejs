@@ -25,13 +25,13 @@
        <div class="container products-wrapper margin-productDetail">
         <div class="card mb-3" >
           <div class="row g-0 container-detail">
-            <div class="col-md-6" style="white-space: pre-wrap">
+            <div class="col-md-6" >
               <img src="images/products/<%= product.image_product %>" class="img-fluid" >
             </div>
             <div class="col-md-6">
               <div class="card-body">
                 
-                <div><h5 class="card-title name-product"><%= product.name %></h5></div>
+                <div class="productName"><h5 class="card-title name-product"><%= product.name %></h5></div>
                 <div class="product-description">
                 <h4 class="card-title detail-product" >Detalle del Producto</h4>
                 <p class="card-text"><%= product.description %></p>

@@ -148,7 +148,7 @@ button.addEventListener('click', (e) => {
         price = subtotal.textContent
 
         document.getElementById('discount-code-box').style.display = 'flex'
-        document.querySelector('.h4-discount').innerText = "Descuento (15%)"
+        document.querySelector('.h4-discount').innerText = "Descuento (15 %)"
         document.getElementById('discount').innerText = (price * 0.15).toFixed(2)
 
         totalImprimir()

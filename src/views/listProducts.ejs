@@ -186,7 +186,8 @@
                         <h2 class="products-title">Todos Los Productos</h2>
                     </div>
                 <% products.forEach (item => { %>
-                <div class="col-12 col-sm-6 col-lg-4 <%= item.category %> <%= item.brand %> <%= item.discount%>" > 
+                <div class="col-xs-6 col-sm-4 col-lg-3 <%= item.category %> <%= item.brand %> <%= item.discount%>" > 
+                    
                     <section class='article-style-celulares article01 cards' data-category="<%= item.brand + '-' + item.category%>" data-price="<%=item.price_product%>" data-discount="<%=item.discount%>">
                         <div class="brand-product" style="display: none;">
                             <h5 id="item-brand"><%= item.brand %></h5>
@@ -194,9 +195,9 @@
                         <div class="section-product" style="display: none;">
                             <h5 id="item-section"><%= item.section %></h5>
                         </div>
-                        <% if (item.discount != 0) { %>
+                        <!-- <% if (item.discount != 0) { %>
                         <div class="imgOferta"><img src="images/oferta/oferta_img.webp" alt="oferta"></div>
-                        <% } %>
+                        <% } %> -->
                         <div class="imgProduct"><img src="images/products/<%= item.image_product %>"></div>
                         <article class="descriptionProduct listProduct">
                             <div class="title-product">
@@ -205,12 +206,12 @@
                             <div class="price-product">
                                 <h5>$ <%= (((100 - item.discount)/100)*item.price_product).toFixed(2) %></h5>
                             </div> 
-                            <% if (item.discount != 0) { %>
+                            <!-- <% if (item.discount != 0) { %>
                                 <div class="discount-listaProducto">
                                     <h6 class="precio-tachado">$ <%= item.price_product %></h6>
                                     <h6><%= item.discount %> % OFF</h6>
                                 </div>
-                            <% } %>
+                            <% } %> -->
                             <div class="brand-product" style="display: none;">
                                 <h5 id="item-brand"><%= item.brand %></h5>
                             </div>

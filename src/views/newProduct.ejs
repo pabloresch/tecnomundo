@@ -17,7 +17,7 @@
     <main>
         <section class="newProductSection">
         <div class="container products-wrapper">
-		        <div class="row">
+		        <div class="row formNewProduct">
 			        <div class="col-12 titleContainerNP">
 				        <h2 class="products-title">Formulario de Creación de Productos</h2>
 			        </div>
@@ -30,7 +30,7 @@
                     <div class="col-sm-12">
                         <input type="text" name="name" id="nameNewProduct" class="form-control input-textarea" placeholder="Ej. Galaxy S22" value="<%= locals.oldData ? oldData.name : null %>">
                     </div>
-                    <div class="ml-0 mr-0 mx-auto">
+                    <div class="ml-0 mr-0 ">
                       <br>
                       <h4 class="text-danger" id="titleError"></h4>
                       <% if(locals.errors && errors.name) { %>
@@ -149,7 +149,7 @@
 
                       <div class="price-discount form-group">
                         <div class="col-6 col-md-6">
-                          <label  for="price" class="newProductLabel"> <h4 class="titleNewProduct"> Precio $ </h4>   </label>
+                          <label  for="price" class="newProductLabel"> <h4 class="titleNewProduct"> Precio  </h4>   </label>
                           <input type="number" name="price" id="priceNewProduct" class="newProductInput" step=".01" value="<%= locals.oldData ? oldData.price : null %>">
                           <div class="ml-0 mr-0 mx-auto">
                             <br>
