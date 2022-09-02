@@ -1868,12 +1868,11 @@ margin-bottom: 20px;
             display: none;
         }
         
-        .logo {
-            /* padding-left: 10px; */
-        }
+         /*.logo {
+            padding-left: 10px; 
+        }*/
         .header-menu nav {
             display: flex;
-               
         }
             
         .header-menu nav > ul {
