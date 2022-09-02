@@ -130,9 +130,7 @@ body{
     text-align: right;
  }
  
- .user-login i{
-
-    
+ .user-login i{   
   
      margin-right: 10px;
      color:rgb(49 47 56);
@@ -953,7 +951,6 @@ div.verProducto.seccion1{
     
 
 .margin-productDetail{
-
     /* margin-bottom: 7vh; */
     margin-top: 15vh;
 }
@@ -1921,6 +1918,9 @@ div.form-group.row label{
 }
 input#imagesNewProduct{
     height: fit-content;
+}
+textarea#description.form-control.input-textarea{
+    height: 10vh;
 }
 .input-textarea {
     font-size: 13px;
@@ -2891,6 +2891,11 @@ p.card-text{
     .newProductSection {
         margin-top: 30vh;
       
+    }
+
+    /*NEW PRODUCT*/
+    .newProductSection {
+        margin-top: 22vh;
     }
 }}}
     
