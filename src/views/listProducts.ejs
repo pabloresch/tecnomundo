@@ -24,9 +24,13 @@
     <!-- MAIN -->
 
         <main>
+            <div class="col-12">
+                <h2 class="products-title">Todos Los Productos</h2>
+            </div> 
         <div class = 'main-listaProductos'>
-            
+           
         <section class="section-set-display filtrados">
+      
             <div class="filtros-aplicados">
                 <div class="container ">
                    
@@ -182,11 +186,11 @@
                 
                 <!-- Tarjeta de producto -->
                 <div class="result container-fluid row">
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <h2 class="products-title">Todos Los Productos</h2>
-                    </div>
+                    </div> -->
                 <% products.forEach (item => { %>
-                <div class=" col-xs-12 col-sm-6 col-md-4 col-lg-3 <%= item.category %> <%= item.brand %> <%= item.discount%>" > 
+                <div class=" col-xs-12 col-sm-6 col-md-4 col-lg-3 grid <%= item.category %> <%= item.brand %> <%= item.discount%>" > 
                     
                     <section class='article-style-celulares article01 cards' data-category="<%= item.brand + '-' + item.category%>" data-price="<%=item.price_product%>" data-discount="<%=item.discount%>">
                         <div class="brand-product" style="display: none;">
@@ -195,10 +199,17 @@
                         <div class="section-product" style="display: none;">
                             <h5 id="item-section"><%= item.section %></h5>
                         </div>
-                        <!-- <% if (item.discount != 0) { %>
-                        <div class="imgOferta"><img src="images/oferta/oferta_img.webp" alt="oferta"></div>
-                        <% } %> -->
-                        <div class="imgProduct"><img src="images/products/<%= item.image_product %>"></div>
+                        <% if (item.discount != 0) { %>
+                            <div class="imgOferta"><img src="images/oferta/oferta1.png" alt="oferta"></div>
+                            <% } %>
+                      
+                        <div class="imgProduct">
+                            <img onclick="location.href='product/productDetail/<%= item.id%>'" 
+                            src="images/products/<%= item.image_product %>">
+                            
+                        </div>
+                        
+                        
                         <article class="descriptionProduct listProduct">
                             <div class="title-product">
                                 <h5 id="item-name"><%= item.name %></h5>
