@@ -1410,16 +1410,37 @@ div.recuerdame-box{
       font-weight: bold;
   }
 
+
   ul.passwordList{
     list-style-type: none;
     font-size: 12px;
   }
 
+/*Cartel de alert password*/
 
-ul.passWarning{
+
+.passWarning{
     list-style-type: none;
     font-size: 12px;
 }
+.emailWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
+.nameWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
+.lastNameWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
 .patronWarning{
     color: rgb(255,0,0);   
     font-size: 12px;
@@ -1445,7 +1466,7 @@ ul.passWarning{
     color: rgb(0,255,0);   
     font-size: 12px;
 }
-a.linckPassword{
+.linckPassword {
     text-decoration: none;
 }
   
@@ -2102,7 +2123,6 @@ h4.titleError.text-danger{
     /* tabs */
     @media (min-width: 361px) {
 
-
         /*HEADER*/
 
         .logo img {
@@ -2310,7 +2330,7 @@ h4.titleError.text-danger{
 }
 
 @media (min-width: 600px) {
-   
+
     /* .info ul{
         
     } */
@@ -2437,6 +2457,7 @@ div.form-group.row h4{
 }
 
 @media (min-width: 761px) {
+
     .info ul{
         padding: 5px 0px;
     }
@@ -2796,6 +2817,9 @@ p.card-text{
     }
     /*desktop*/
 @media (min-width: 1000px) {
+    .main {
+        margin-top: 25vh;
+    }
     .imgOferta-phones {
         position: absolute;
         bottom: 38vh;

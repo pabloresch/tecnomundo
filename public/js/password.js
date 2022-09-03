@@ -38,6 +38,11 @@ window.addEventListener('load', function(){
     B: Add Event Listener
 
     C: Imputs y alertas para trabajar
+        1: Imputs
+        2: Alertas
+                    1 Estructura de alertas
+                    2 Captura de alertas
+                    3 Creacion de alertas
 
     D: Validaciones datos personales  
 
@@ -62,24 +67,25 @@ window.addEventListener('load', function(){
 
     
     F: Validaciones fortaleza de contraseña
-        1:Individuales
+        0: Tabla fortaleza de claves
+        1: Individuales
                     1 Validación números
                     2 Validación letras minúsculas
                     3 Validación letras mayúsculas
                     4 Validación caracteres especiales
-        2:Dobles
+        2: Dobles
                     1 Validación números y minúsculas
                     2 Validación números y mayúsculas
                     3 Validación números y caracteres
                     4 Validación minúsculas y mayúsculas
                     5 Validación minúsculas y caracteres
                     6 Validación mayúsculas y caracteres
-        3:Triples
+        3: Triples
                     1 Validación números, minúsculas y mayúsculas
                     2 Validación números, minúsculas, caracteres 
                     3 Validación números mayúsculas y caracteres 
                     4 Validación minúsculas, mayúsculas y caracteres
-        4:Completa
+        4: Completa
                     1 Validación números, minúsculas, mayúsculas y caracteres
 */
     
@@ -183,28 +189,46 @@ window.addEventListener('load', function(){
         
 
 /************************ Imputs y alertas para trabajar ************************/           
-        //Captura de imputs nombre, apellido, correp y contraseña
+        
+        //C-1 Imputs
+        
         let name =formRegister.nameRg.value
         let lastName=formRegister.lastNameRg.value
-        let email =formRegister.emailRg.value
+        let email =formRegister.emailRg.value   
         let pass =formRegister.passwordRg.value
         console.log(pass)
 
+        //C-2.1 Estructura de alertas
+        /*****VER COMETARIOS FINALES******/
+       
+        //C-2.2 Captura de alertas  
+        let passwordRgErr = document.querySelector('#passwordRgErr') 
+        let cartelWarning = document.querySelector ('#cartelWarning')
 
-        //Capturo alertas
-        let patron = document.querySelector('.passWarning')
+        //C-2.3 Creacion de alertas
+/*rojo*/    let  nameWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p></a>'
+/*rojo*/    let lastNameWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="lastNameWarning" id="lastNameWarning">Escribir tu apellido es muy predesible <sup>(?)</sup></p></a>'
+/*rojo*/    let emailWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="emailWarning" id="emailWarning">Escribir tu email es muy predesible <sup>(?)</sup></p></a>'
+/*rojo*/    let patronAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="patronWarning"> Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup></p></a>'
+/*rojo*/    let wordAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="patronWarning"> Escribir palabras típicas como "password" o "mono" etc. es muy predecible <sup>(?)</sup></p></a>'
+/*violeta*/ let passVeryWeackAlert = '<a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"><p class="passVeryWeack" id="passVeryWeack">La contraseña es muy débil <sup>(?)</sup></p></a>'
+/*rojo*/    let passWeackAlert = '<a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"><p class="passWeack" id="passWeack">La contraseña es débil <sup>(?)</sup></p></a>'
+/*mostaza*/ let passMediumAlert = '<a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"><p class="passMedium" id="passMedium">La contraseña es media <sup>(?)</sup></p></a>'
+/*amarillo*/let passStrongAlert = '<a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"><p class="passStrong" id="passStrong">La contraseña es fuerte <sup>(?)</sup></p></a>'
+/*verde*/   let passVeryStrongAlert = '<a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"><p class="passVeryStrong" id="passVeryStrong">La contraseña es muy fuerte <sup>(?)</sup></p></a>'
+          
         
 
         
 /************************ Validaciones datos personales ************************/
 
-        let nameValidation = pass.includes(name)
+        /*let nameValidation = pass.includes(name)
         let lastNameValidation = pass.includes(lastName)
         let emailValidation = pass.include(email)
 
 
 
-        /*if(
+        if(
             nameValidation  ||
             lastNameValidation ||
             emailValidation
@@ -493,7 +517,10 @@ window.addEventListener('load', function(){
             pass.includes('zzz')
             )
         {
+            cartelWarning.innerHTML = patronAlert
+            passwordRgErr.innerText = ''
             console.log('un patrón alfanumérico es muy predecible') 
+            
         }else 
 
         if(
@@ -536,7 +563,9 @@ window.addEventListener('load', function(){
             pass.includes('1q2w3e')
         )
         {
-            console.log('Escribir "password" o "mono" etc. es muy predecible') 
+            cartelWarning.innerHTML = wordAlert
+            passwordRgErr.innerText = ''
+            console.log('Escribir palabras típicas como "password" o "mono" etc. es muy predecible') 
         }else     
 /************************ Validaciones fortaleza de contraseña ************************/
         //F-1.1 Validación números
@@ -544,25 +573,33 @@ window.addEventListener('load', function(){
             !regLow_0_10.test(pass) && 
             !regUpp_0_10.test(pass) && 
             !regSpecial_0_10.test(pass) ) {
-            console.log('Contraseña tiene números de 0 a 10') 
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números de 0 a 10') 
         }else 
         if ( regNum_11_15.test(pass) && 
             !regLow_11_15.test(pass) && 
             !regUpp_11_15.test(pass) && 
             !regSpecial_11_15.test(pass) ) {
-            console.log('Contraseña tiene números de 11 y 15')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números de 11 y 15')
         }else
         if ( regNum_16_18.test(pass) && 
             !regLow_16_18.test(pass) && 
             !regUpp_16_18.test(pass) && 
             !regSpecial_16_18.test(pass) ) {
-            console.log('Contraseña tiene números de 16 y 18')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números de 16 y 18')
         }else
         if ( regNum_19.test(pass) && 
             !regLow_19.test(pass) && 
             !regUpp_19.test(pass) && 
             !regSpecial_19.test(pass) ) {
-            console.log('Contraseña tiene números de 19 al infinito y mas allá!')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números de 19 al infinito y mas allá!')
         }else
 
         //F-1.2 Validación letras minúsculas
@@ -570,31 +607,41 @@ window.addEventListener('load', function(){
             regLow_0_7.test(pass) && 
             !regUpp_0_7.test(pass) && 
             !regSpecial_0_7.test(pass) ) {
-            console.log('Contraseña tiene minúsculas de 0 a 7')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas de 0 a 7')
         }else
         if ( !regNum_8_10.test(pass) && 
             regLow_8_10.test(pass) && 
             !regUpp_8_10.test(pass) && 
             !regSpecial_8_10.test(pass) ) {
-            console.log('Contraseña tiene minúsculas de 8 a 10')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas de 8 a 10')
         }else
         if ( !regNum_11_13.test(pass) && 
             regLow_11_13.test(pass) && 
             !regUpp_11_13.test(pass) && 
             !regSpecial_11_13.test(pass) ) {
-            console.log('Contraseña tiene minúsculas de 11 a 13')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas de 11 a 13')
         }else
         if ( !regNum_14_17.test(pass) && 
             regLow_14_17.test(pass) && 
             !regUpp_14_17.test(pass) && 
             !regSpecial_14_17.test(pass) ) {
-            console.log('Contraseña tiene minúsculas de 14 a 17')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas de 14 a 17')
         }else
         if ( !regNum_18.test(pass) && 
             regLow_18.test(pass) && 
             !regUpp_18.test(pass) && 
             !regSpecial_18.test(pass) ) {
-            console.log('Contraseña tiene minúsculas de 18 al infinito y mas allá!')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas de 18 al infinito y mas allá!')
         }else
 
         //F-1.3 Validación letras mayúsculas
@@ -602,31 +649,41 @@ window.addEventListener('load', function(){
             !regLow_0_7.test(pass) && 
             regUpp_0_7.test(pass) && 
             !regSpecial_0_7.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas de 0 a 7')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas de 0 a 7')
         }else
         if ( !regNum_8_10.test(pass) && 
             !regLow_8_10.test(pass) && 
             regUpp_8_10.test(pass) && 
             !regSpecial_8_10.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas de 8 a 10')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas de 8 a 10')
         }else
         if ( !regNum_11_13.test(pass) && 
             !regLow_11_13.test(pass) && 
             regUpp_11_13.test(pass) && 
             !regSpecial_11_13.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas de 11 a 13')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas de 11 a 13')
         }else
         if ( !regNum_14_17.test(pass) && 
             !regLow_14_17.test(pass) && 
             regUpp_14_17.test(pass) && 
             !regSpecial_14_17.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas de 14 a 17')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas de 14 a 17')
         }else
         if ( !regNum_18.test(pass) && 
             !regLow_18.test(pass) && 
             regUpp_18.test(pass) && 
             !regSpecial_18.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas de 18 al infinito y mas allá!')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas de 18 al infinito y mas allá!')
         }else
 
          //F-1.4 Validación caracteres especiales
@@ -634,31 +691,41 @@ window.addEventListener('load', function(){
             !regLow_0_7.test(pass) && 
             !regUpp_0_7.test(pass) && 
             regSpecial_0_7.test(pass) ) {
-            console.log('Contraseña tiene caracteres de 0 a 7')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene caracteres de 0 a 7')
         }else
         if ( !regNum_8_10.test(pass) && 
             !regLow_8_10.test(pass) && 
             !regUpp_8_10.test(pass) && 
             regSpecial_8_10.test(pass) ) {
-            console.log('Contraseña tiene caracteres de 8 a 10')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene caracteres de 8 a 10')
         }else
         if ( !regNum_11_13.test(pass) && 
             !regLow_11_13.test(pass) && 
             !regUpp_11_13.test(pass) && 
             regSpecial_11_13.test(pass) ) {
-            console.log('Contraseña tiene caracteres de 11 a 13')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene caracteres de 11 a 13')
         }else
         if ( !regNum_14_17.test(pass) && 
             !regLow_14_17.test(pass) && 
             !regUpp_14_17.test(pass) && 
             regSpecial_14_17.test(pass) ) {
-            console.log('Contraseña tiene caracteres de 14 a 17')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene caracteres de 14 a 17')
         }else
         if ( !regNum_18.test(pass) && 
             !regLow_18.test(pass) && 
             !regUpp_18.test(pass) && 
             regSpecial_18.test(pass) ) {
-            console.log('Contraseña tiene caracteres de 18 al infinito y mas allá!')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene caracteres de 18 al infinito y mas allá!')
         }else
 
         //F-2.1 Validación números y minúsculas
@@ -666,31 +733,41 @@ window.addEventListener('load', function(){
             regLow_0_6.test(pass) && 
             !regUpp_0_6.test(pass) && 
             !regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene números y minúsculas de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y minúsculas de 0 a 6')
         }else
         if ( regNum_7_9.test(pass) && 
             regLow_7_9.test(pass) && 
             !regUpp_7_9.test(pass) && 
             !regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene números y minúsculas de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y minúsculas de 7 a 9')
         }else
         if ( regNum_10_11.test(pass) && 
             regLow_10_11.test(pass) && 
             !regUpp_10_11.test(pass) && 
             !regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene números y minúsculas de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y minúsculas de 10 a 11')
         }else
         if ( regNum_12_14.test(pass) && 
             regLow_12_14.test(pass) && 
             !regUpp_12_14.test(pass) && 
             !regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene números y minúsculas de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y minúsculas de 12 a 14')
         }else
         if ( regNum_15.test(pass) && 
             regLow_15.test(pass) && 
             !regUpp_15.test(pass) && 
             !regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene números y minúsculas de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y minúsculas de 15 al infinito y mas allá')
         }else
 
         //F-2.2 Validación números y mayúsculas
@@ -698,31 +775,41 @@ window.addEventListener('load', function(){
             !regLow_0_6.test(pass) && 
             regUpp_0_6.test(pass) && 
             !regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene números y mayúsculas de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y mayúsculas de 0 a 6')
         }else
         if ( regNum_7_9.test(pass) && 
             !regLow_7_9.test(pass) && 
             regUpp_7_9.test(pass) && 
             !regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene números y mayúsculas de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y mayúsculas de 7 a 9')
         }else
         if ( regNum_10_11.test(pass) && 
             !regLow_10_11.test(pass) && 
             regUpp_10_11.test(pass) && 
             !regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene números y mayúsculas de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y mayúsculas de 10 a 11')
         }else
         if ( regNum_12_14.test(pass) && 
             !regLow_12_14.test(pass) && 
             regUpp_12_14.test(pass) && 
             !regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene números y mayúsculas de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y mayúsculas de 12 a 14')
         }else
         if ( regNum_15.test(pass) && 
             !regLow_15.test(pass) && 
             regUpp_15.test(pass) && 
             !regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene números y mayúsculas de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y mayúsculas de 15 al infinito y mas allá')
         }else
         
         //F-2.3 Validación números y caracteres
@@ -730,31 +817,41 @@ window.addEventListener('load', function(){
             !regLow_0_6.test(pass) && 
             !regUpp_0_6.test(pass) && 
             regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene números y caracteres de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y caracteres de 0 a 6')
         }else
         if ( regNum_7_9.test(pass) && 
             !regLow_7_9.test(pass) && 
             !regUpp_7_9.test(pass) && 
             regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene números y caracteres de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y caracteres de 7 a 9')
         }else
         if ( regNum_10_11.test(pass) && 
             !regLow_10_11.test(pass) && 
             !regUpp_10_11.test(pass) && 
             regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene números y caracteres de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y caracteres de 10 a 11')
         }else
         if ( regNum_12_14.test(pass) && 
             !regLow_12_14.test(pass) && 
             !regUpp_12_14.test(pass) && 
             regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene números y caracteres de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y caracteres de 12 a 14')
         }else
         if ( regNum_15.test(pass) && 
             !regLow_15.test(pass) && 
             !regUpp_15.test(pass) && 
             regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene números y caracteres de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números y caracteres de 15 al infinito y mas allá')
         }else
         
         //F-2.4 Validación minúsculas y mayúsculas
@@ -762,31 +859,41 @@ window.addEventListener('load', function(){
             regLow_0_6.test(pass) && 
             regUpp_0_6.test(pass) && 
             !regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y mayúsculas de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y mayúsculas de 0 a 6')
         }else
         if ( !regNum_7_9.test(pass) && 
             regLow_7_9.test(pass) && 
             regUpp_7_9.test(pass) && 
             !regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y mayúsculas de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y mayúsculas de 7 a 9')
         }else
         if ( !regNum_10_11.test(pass) && 
             regLow_10_11.test(pass) && 
             regUpp_10_11.test(pass) && 
             !regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y mayúsculas de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y mayúsculas de 10 a 11')
         }else
         if ( !regNum_12_14.test(pass) && 
             regLow_12_14.test(pass) && 
             regUpp_12_14.test(pass) && 
             !regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y mayúsculas de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y mayúsculas de 12 a 14')
         }else
         if ( !regNum_15.test(pass) && 
             regLow_15.test(pass) && 
             regUpp_15.test(pass) && 
             !regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y mayúsculas de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y mayúsculas de 15 al infinito y mas allá')
         }else
 
         //F-2.5 Validación minúsculas y caracteres
@@ -794,31 +901,41 @@ window.addEventListener('load', function(){
             regLow_0_6.test(pass) && 
             !regUpp_0_6.test(pass) && 
             regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y caracteres de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y caracteres de 0 a 6')
         }else
         if ( !regNum_7_9.test(pass) && 
             regLow_7_9.test(pass) && 
             !regUpp_7_9.test(pass) && 
             regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y caracteres de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y caracteres de 7 a 9')
         }else
         if ( !regNum_10_11.test(pass) && 
             regLow_10_11.test(pass) && 
             !regUpp_10_11.test(pass) && 
             regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y caracteres de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y caracteres de 10 a 11')
         }else
         if ( !regNum_12_14.test(pass) && 
             regLow_12_14.test(pass) && 
             !regUpp_12_14.test(pass) && 
             regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y caracteres de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y caracteres de 12 a 14')
         }else
         if ( !regNum_15.test(pass) && 
             regLow_15.test(pass) && 
             !regUpp_15.test(pass) && 
             regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene minúsculas y caracteres de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas y caracteres de 15 al infinito y mas allá')
         }else
 
         //F-2.6 Validación mayúsculas y caracteres
@@ -826,31 +943,41 @@ window.addEventListener('load', function(){
             !regLow_0_6.test(pass) && 
             regUpp_0_6.test(pass) && 
             regSpecial_0_6.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas y caracteres de 0 a 6')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas y caracteres de 0 a 6')
         }else
         if ( !regNum_7_9.test(pass) && 
             !regLow_7_9.test(pass) && 
             regUpp_7_9.test(pass) && 
             regSpecial_7_9.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas y caracteres de 7 a 9')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas y caracteres de 7 a 9')
         }else
         if ( !regNum_10_11.test(pass) && 
             !regLow_10_11.test(pass) && 
             regUpp_10_11.test(pass) && 
             regSpecial_10_11.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas y caracteres de 10 a 11')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas y caracteres de 10 a 11')
         }else
         if ( !regNum_12_14.test(pass) && 
             !regLow_12_14.test(pass) && 
             regUpp_12_14.test(pass) && 
             regSpecial_12_14.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas y caracteres de 12 a 14')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas y caracteres de 12 a 14')
         }else
         if ( !regNum_15.test(pass) && 
             !regLow_15.test(pass) && 
             regUpp_15.test(pass) && 
             regSpecial_15.test(pass) ) {
-            console.log('Contraseña tiene mayúsculas y caracteres de 15 al infinito y mas allá')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene mayúsculas y caracteres de 15 al infinito y mas allá')
         }else
 
         //F-3.1 Validación números, minúsculas y mayúsculas
@@ -858,31 +985,41 @@ window.addEventListener('load', function(){
             regLow_0_5.test(pass) && 
             regUpp_0_5.test(pass) && 
             !regSpecial_0_5.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas y mayúsculas de 0 a 5')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas y mayúsculas de 0 a 5')
         }else
         if (regNum_6_8.test(pass) && 
             regLow_6_8.test(pass) && 
             regUpp_6_8.test(pass) && 
             !regSpecial_6_8.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas y mayúsculas de 6 a 8')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas y mayúsculas de 6 a 8')
         }else
         if ( regNum_9_10.test(pass) && 
             regLow_9_10.test(pass) && 
             regUpp_9_10.test(pass) && 
             !regSpecial_9_10.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas y mayúsculas de 9 a 10')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas y mayúsculas de 9 a 10')
         }else
         if ( regNum_11_12.test(pass) && 
             regLow_11_12.test(pass) && 
             regUpp_11_12.test(pass) && 
             !regSpecial_11_12.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas y mayúsculas de 11 a 12')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas y mayúsculas de 11 a 12')
         }else
         if ( regNum_13.test(pass) && 
             regLow_13.test(pass) && 
             regUpp_13.test(pass) && 
             !regSpecial_13.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas y mayúsculas de 13 al infinito y mas alla! ')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas y mayúsculas de 13 al infinito y mas alla! ')
         }else
        
         //F-3.2 Validación números, minúsculas, caracteres
@@ -890,31 +1027,41 @@ window.addEventListener('load', function(){
             regLow_0_5.test(pass) && 
             !regUpp_0_5.test(pass) && 
             regSpecial_0_5.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas, caracteres de 0 a 5')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas, caracteres de 0 a 5')
         }else
         if (regNum_6_8.test(pass) && 
             regLow_6_8.test(pass) && 
             !regUpp_6_8.test(pass) && 
             regSpecial_6_8.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas, caracteres de 6 a 8')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas, caracteres de 6 a 8')
         }else
         if ( regNum_9_10.test(pass) && 
             regLow_9_10.test(pass) && 
             !regUpp_9_10.test(pass) && 
             regSpecial_9_10.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas, caracteres de 9 a 10')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas, caracteres de 9 a 10')
         }else
         if ( regNum_11_12.test(pass) && 
             regLow_11_12.test(pass) && 
             !regUpp_11_12.test(pass) && 
             regSpecial_11_12.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas, caracteres de 11 a 12')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas, caracteres de 11 a 12')
         }else
         if ( regNum_13.test(pass) && 
             regLow_13.test(pass) && 
             !regUpp_13.test(pass) && 
             regSpecial_13.test(pass) ) {
-            console.log('Contraseña tiene números, minúsculas, caracteres de 13 al infinito y mas alla! ')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números, minúsculas, caracteres de 13 al infinito y mas alla! ')
         }else
 
         //F-3.3 Validación números mayúsculas y caracteres
@@ -922,31 +1069,41 @@ window.addEventListener('load', function(){
             !regLow_0_5.test(pass) && 
             regUpp_0_5.test(pass) && 
             regSpecial_0_5.test(pass) ) {
-            console.log('Contraseña tiene números mayusculas y caracteres de 0 a 5')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números mayusculas y caracteres de 0 a 5')
         }else
         if (regNum_6_8.test(pass) && 
             !regLow_6_8.test(pass) && 
             regUpp_6_8.test(pass) && 
             regSpecial_6_8.test(pass) ) {
-            console.log('Contraseña tiene números mayusculas y caracteres de 6 a 8')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números mayusculas y caracteres de 6 a 8')
         }else
         if ( regNum_9_10.test(pass) && 
             !regLow_9_10.test(pass) && 
             regUpp_9_10.test(pass) && 
             regSpecial_9_10.test(pass) ) {
-            console.log('Contraseña tiene números mayusculas y caracteres de 9 a 10')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números mayusculas y caracteres de 9 a 10')
         }else
         if ( regNum_11_12.test(pass) && 
             !regLow_11_12.test(pass) && 
             regUpp_11_12.test(pass) && 
             regSpecial_11_12.test(pass) ) {
-            console.log('Contraseña tiene números mayusculas y caracteres de 11 a 12')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números mayusculas y caracteres de 11 a 12')
         }else
         if ( regNum_13.test(pass) && 
             !regLow_13.test(pass) && 
             regUpp_13.test(pass) && 
             regSpecial_13.test(pass) ) {
-            console.log('Contraseña tiene números mayusculas y caracteres de 13 al infinito y mas alla! ')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene números mayusculas y caracteres de 13 al infinito y mas alla! ')
         }else
 
         //F-3.4 Validación minúsculas, mayúsculas y caracteres
@@ -954,31 +1111,41 @@ window.addEventListener('load', function(){
             regLow_0_5.test(pass) && 
             regUpp_0_5.test(pass) && 
             regSpecial_0_5.test(pass) ) {
-            console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 0 a 5')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 0 a 5')
         }else
         if (!regNum_6_8.test(pass) && 
             regLow_6_8.test(pass) && 
             regUpp_6_8.test(pass) && 
             regSpecial_6_8.test(pass) ) {
-            console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 6 a 8')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 6 a 8')
         }else
         if ( !regNum_9_10.test(pass) && 
             regLow_9_10.test(pass) && 
             regUpp_9_10.test(pass) && 
             regSpecial_9_10.test(pass) ) {
-            console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 9 a 10')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 9 a 10')
         }else
         if ( !regNum_11_12.test(pass) && 
             regLow_11_12.test(pass) && 
             regUpp_11_12.test(pass) && 
             regSpecial_11_12.test(pass) ) {
-            console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 11 a 12')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 11 a 12')
         }else
         if ( !regNum_13.test(pass) && 
             regLow_13.test(pass) && 
             regUpp_13.test(pass) && 
             regSpecial_13.test(pass) ) {
-            console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 13 al infinito y mas alla! ')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene minúsculas, mayusculas y caracteres de 13 al infinito y mas alla! ')
         }else
 
         //F-4.1 Validación números, minúsculas, mayúsculas y caracteres
@@ -986,40 +1153,151 @@ window.addEventListener('load', function(){
             regLow_0_5.test(pass) && 
             regUpp_0_5.test(pass) && 
             regSpecial_0_5.test(pass) ) {
-            console.log('Contraseña tiene todo de 0 a 5')
+                cartelWarning.innerHTML = passVeryWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene todo de 0 a 5')
         }else
         if (regNum_6_8.test(pass) && 
             regLow_6_8.test(pass) && 
             regUpp_6_8.test(pass) && 
             regSpecial_6_8.test(pass) ) {
-            console.log('Contraseña tiene todo de 6 a 8')
+                cartelWarning.innerHTML = passWeackAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene todo de 6 a 8')
         }else
         if ( regNum_9_10.test(pass) && 
             regLow_9_10.test(pass) && 
             regUpp_9_10.test(pass) && 
             regSpecial_9_10.test(pass) ) {
-            console.log('Contraseña tiene todo de 9 a 10')
+                cartelWarning.innerHTML = passMediumAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene todo de 9 a 10')
         }else
         if ( regNum_11_12.test(pass) && 
             regLow_11_12.test(pass) && 
             regUpp_11_12.test(pass) && 
             regSpecial_11_12.test(pass) ) {
-            console.log('Contraseña tiene todo de 11 a 12')
+                cartelWarning.innerHTML = passStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene todo de 11 a 12')
         }else
         if ( regNum_13.test(pass) && 
             regLow_13.test(pass) && 
             regUpp_13.test(pass) && 
             regSpecial_13.test(pass) ) {
-            console.log('Contraseña tiene todo de 13 al infinito y mas alla! ')
+                cartelWarning.innerHTML = passVeryStrongAlert
+                passwordRgErr.innerText = ''
+                console.log('Contraseña tiene todo de 13 al infinito y mas alla! ')
         }
         
         else{
             console.log('hay otra cosa')
+            cartelWarning.innerHTML = '' 
         } 
         
      });
 
 })
 
-// let patronPredisible = [ pass.includes('012'), pass.includes('123'), pass.includes('234'), pass.includes('345'), pass.includes('456'), pass.includes('567'), pass.includes('678'), pass.includes('789'), pass.includes('890'), pass.includes('000'), pass.includes('111'), pass.includes('222'), pass.includes('333'), pass.includes('444'), pass.includes('555'), pass.includes('666'), pass.includes('777'), pass.includes('888'), pass.includes('999'), pass.includes('qwe'), pass.includes('wer'), pass.includes('ert'), pass.includes('rty'), pass.includes('tyu'), pass.includes('yui'), pass.includes('uio'), pass.includes('iop'), pass.includes('asd'), pass.includes('sdf'), pass.includes('dfg'), pass.includes('ghj'), pass.includes('hjk'), pass.includes('jkl'), pass.includes('klñ'), pass.includes('zxc'), pass.includes('xcv'), pass.includes('cvb'), pass.includes('vbn'), pass.includes('bnm'), pass.includes('abc'), pass.includes('bcd'), pass.includes('cde'), pass.includes('def'), pass.includes('efg'), pass.includes('fgh'), pass.includes('ghi'), pass.includes('hij'), pass.includes('ijk'), pass.includes('klm'), pass.includes('lmn'), pass.includes('mnñ'), pass.includes('nño'), pass.includes('ñop'), pass.includes('opq'), pass.includes('pqr'), pass.includes('qrs'), pass.includes('rst'), pass.includes('stu'), pass.includes('tuv'), pass.includes('uvw'), pass.includes('vwx'), pass.includes('wxy'), pass.includes('xyz'), pass.includes('mno'), pass.includes('nop'), pass.includes('aaa'), pass.includes('bbb'), pass.includes('ccc'), pass.includes('ddd'), pass.includes('eee'), pass.includes('fff'), pass.includes('ggg'), pass.includes('hhh'), pass.includes('iii'), pass.includes('jjj'), pass.includes('kkk'), pass.includes('lll'), pass.includes('mmm'), pass.includes('nnn'), pass.includes('ooo'), pass.includes('ppp'), pass.includes('qqq'), pass.includes('rrr'), pass.includes('sss'), pass.includes('ttt'), pass.includes('uuu'), pass.includes('vvv'), pass.includes('www'), pass.includes('xxx'), pass.includes('yyy'), pass.includes('zzz'), pass.includes('password'), pass.includes('1q2w3e4r5t'), pass.includes('iloveyou'), pass.includes('1q2w3e')]
+
+
+/*
+       ***** COMETARIOS FINALES******
+       
+Esta es la estructura HTML declarada en la seccion " //C-2.3 Creacion de variables ""
+
+
+>>>>>>  nameWarningAlert
+
+            <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
+                <p class="nameWarning" id="nameWarning">
+                    Escribir tu nombre es muy predesible <sup>(?)</sup>
+                </p>
+            </a>
+        
+
+>>>>>>  lastNameWarningAlert
+       
+            <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
+                <p class="lastNameWarning" id="lastNameWarning">
+                    Escribir tu apellido es muy predesible <sup>(?)</sup>
+                </p>
+            </a>
+
+
+>>>>>>  emailWarningAlert
+       
+            <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
+                <p class="emailWarning" id="emailWarning">
+                    Escribir tu email es muy predesible <sup>(?)</sup>
+                </p>
+            </a>
+
+
+>>>>>> patronAlert
+
+            <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
+                <p class="patronWarning">
+                     Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup>
+                </p>
+            </a>
+
+>>>>>> wordAlert
+
+            <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
+                <p class="patronWarning">
+                    Escribir palabras típicas como "password" o "mono" etc. es muy predecible <sup>(?)</sup>
+                </p>
+            </a>
+
+     
+
+>>>>>> passVeryWeackAlert
+       
+            <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                <p class="passVeryWeack" id="passVeryWeack">
+                    La contraseña es muy débil <sup>(?)</sup>
+                </p>
+            </a>
+
+
+>>>>>> passWeackAlert
+
+            <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                <p class="passWeack" id="passWeack">
+                    La contraseña es débil <sup>(?)</sup>
+                </p>
+            </a>
+        
+
+>>>>>> passMediumAlert
+       
+            <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                <p class="passMedium" id="passMedium">
+                    La contraseña es media <sup>(?)</sup>
+                </p>
+            </a>
+
+
+>>>>>> passStrongAlert
+
+            <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                <p class="passStrong" id="passStrong">
+                    La contraseña es fuerte <sup>(?)</sup>
+                </p>
+            </a>
+
+
+
+
+>>>>>> passVeryStrongAlert
+       
+            <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
+                <p class="passVeryStrong" id="passVeryStrong">
+                    La contraseña es muy fuerte <sup>(?)</sup>
+                </p>
+            </a>
+
+
+*/
        

@@ -47,7 +47,7 @@
                         
                         <input class= "input-formulario" type="email" name="email" id="emailRg" placeholder='Email' value="<%= locals.oldData ? oldData.email: null %>">
                         
-                    
+                        
                             <div class="text-danger" id="emailRgErr"></div>
                             <% if(locals.errors && errors.email) { %>
                             <samp class="text-danger">
@@ -57,56 +57,10 @@
                         
                                 
                         
-                        <input class= "input-formulario" type="text" name="password" id="passwordRg" placeholder="Contraseña" >
-                        <ul class="passWarning">
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <!--li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="lastNameWarning" id="lastNameWarning">Escribir tu apellido es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <!--li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="emailWarning" id="emailWarning">Escribir tu email es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="patronWarning" id="patronWarning"> Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <!--li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                    <p class="passVeryWeack" id="passVeryWeack">La contraseña es muy débil <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <!--li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                    <p class="passWeack" id="passWeack">La contraseña es débil <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <!--li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                    <p class="passMedium" id="passMedium">La contraseña es media <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <!--li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                    <p class="passStrong" id="passStrong">La contraseña es fuerte <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                            <!--li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                    <p class="passVeryStrong" id="passVeryStrong">La contraseña es muy fuerte <sup>(?)</sup></p>
-                                </a>
-                            </li-->
-                        </ul>
-                        
+                        <input class= "input-formulario" type="text" name="password" id="passwordRg" placeholder="Contraseña" >                       
+                            <div class="cartelWarning" id="cartelWarning"></div>
                             <div class="text-danger" id="passwordRgErr"></div>
+                           
                             <% if(locals.errors && errors.password) { %>
                             <samp class="text-danger">
                                 <%= errors.password.msg %>
@@ -115,10 +69,10 @@
                         
     
                     
-                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder="Confirmar contraseña" >
+                        <input class= "input-formulario" type="password" name="passconfcon" id="passConfRg" placeholder="Confirmar contraseña" >
                     
                         
-                        <div class="text-danger" id="passconfconRgErr"></div>
+                        <div class="text-danger" id="passConfRgErr"></div>
                         <% if(locals.errors && errors.passconfcon) { %>
                             <samp class="text-danger">
                                 <%= errors.passconfcon.msg %>
@@ -142,7 +96,6 @@
                         <input  class='submit-login' type="submit" value="Registrar" id="buttonRegister">
                 </form>
             </div>
-
             <!-- logIn -->
             <div class="login">
             <form  action="/user" method="post" id="login"> 
@@ -179,161 +132,17 @@
         </div>
         
 
-            <!--Creacion de usuario nuevo-->
-            <!-- <article class="formulario-registro" id="articleRegister">    
-               
-                
-                <form action="/user/login" method="POST" id="registro" enctype="multipart/form-data">
-                    <div class="registro">
-                        <h2>Creá tu cuenta</h2>
-                        <h4>Datos Personales</h4>
-                    </div>
-
-                    <label class="label-bold"  for="name">Nombre
-                        <input 
-                        type="text" 
-                        name="fullName" 
-                        id="nameRg" 
-                        class= "input-formulario <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                        placeholder="Jere"
-                        value="<%= locals.oldData ? oldData.fullName : null %>" >
-                    </label>
-                    <div>
-                        <div class="text-danger" id="nameRgErr"></div>
-                        <% if(locals.errors && errors.fullName) { %>
-                        <samp class="text-danger">
-                        <%= errors.fullName.msg %>
-                        </samp>
-                        <% } %>
-                        
-                    </div>
-
-                    <label class="label-bold" for="name">Apellido
-                        <input class= "input-formulario" type="text" name="lastName" id="lastNameRg" placeholder="Castillo" value="<%= locals.oldData ? oldData.lastName : null %>">
-                    </label>
-                    <div>
-                        <div class="text-danger lastNameRgErr" id="lastNameRgErr"></div>
-                        <% if(locals.errors && errors.lastName) { %>
-                        <samp class="text-danger">
-                            <%= errors.lastName.msg %>
-                        </samp>
-                            <% } %>
-                    </div>
-
-                    <label class="label-bold" for="email">Email
-                        <input class= "input-formulario" type="email" name="email" id="emailRg" placeholder='jeremias.castillo@digitalhouse.com' value="<%= locals.oldData ? oldData.email: null %>">
-                    </label>
-                    <div>
-                        <div class="text-danger" id="emailRgErr"></div>
-                        <% if(locals.errors && errors.email) { %>
-                        <samp class="text-danger">
-                            <%= errors.email.msg %>
-                        </samp>
-                            <% } %>
-                    </div> 
-
-                    <label class="label-bold" for="password">Contraseña
-                        <input class= "input-formulario" type="text" name="password" id="passwordRg" placeholder="Sos un capo!" >
-                        <ul class="passWarning">
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="lastNameWarning" id="lastNameWarning">Escribir tu apellido es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="emailWarning" id="emailWarning">Escribir tu email es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"> 
-                                    <p class="patronWarning" id="patronWarning"> Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                     <p class="passVeryWeack" id="passVeryWeack">La contraseña es muy débil <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                     <p class="passWeack" id="passWeack">La contraseña es débil <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                     <p class="passMedium" id="passMedium">La contraseña es media <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                     <p class="passStrong" id="passStrong">La contraseña es fuerte <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="linckPassword" href="https://simbiosisdigital.com.ar/wp-content/uploads/2021/07/tabla-.png" target="_blank"> 
-                                     <p class="passVeryStrong" id="passVeryStrong">La contraseña es muy fuerte <sup>(?)</sup></p>
-                                </a>
-                            </li>
-                        </ul>
-                            
-                    </label>
-                    <div>
-                     
-                        <div class="text-danger" id="passwordRgErr"></div>
-                        <% if(locals.errors && errors.password) { %>
-                        <samp class="text-danger">
-                            <%= errors.password.msg %>
-                        </samp>
-                            <% } %>
-                    </div>
-
-                    <label class="label-bold"  for="passconfcon"> Confirmar Contraseña
-                        <input class= "input-formulario" type="password" name="passconfcon" id="passconfconRg" placeholder="Lo repito, sos un capo!" >
-                    </label>
-                    <div>
-                    <div class="text-danger" id="passconfconRgErr"></div>
-                    <% if(locals.errors && errors.passconfcon) { %>
-                        <samp class="text-danger">
-                            <%= errors.passconfcon.msg %>
-                        </samp>
-                            <% } %>
-                    </div>        
-                    
-                    <label class="label-bold"  for="avatar"> Imagen de Perfil
-                        <input class= "input-formulario" type="file" name="avatar" id="avatar" >
-                    </label>
-                    <div>
-                        <div class="text-danger" id="avatarErr"></div>
-                        <% if(locals.errors && errors.avatar) { %>
-                            <samp class="text-danger">
-                                <%= errors.avatar.msg %>
-                            </samp>
-                                <% } %>
-                    </div>
-                 
-
-                    <input  class='submit-login' type="submit" value="Registrar" id="buttonRegister">
-                </form>
-                
-            </article>
-        
-        </section>
-        <section class="section-set-display">
+        <!--section class="section-set-display">
             <div class="btn-whatsapp">
                 <a href="https://api.whatsapp.com/send/?phone=+54 11 36346889&text=Tecnomundo!" target="_blank" title="¡Dejanos tu mensaje!"><img src="images/whatsapp-logo.png" alt="whatsapp logo"></a> 
             </div>
-        </section> --> 
-     </main>
+        </section-->  
 
+         <!--Alert password-->  
+     </main>
     <!-- FOOTER -->
     <%- include('./partials/footer') %>
     <script src="/js/password.js"></script>
-    <!--script src="/js/validaciones.js"></script-->
+    <script src="/js/validaciones.js"></script>
  </body>
 </html>
