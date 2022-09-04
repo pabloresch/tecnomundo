@@ -206,7 +206,7 @@ window.addEventListener('load', function(){
         let cartelWarning = document.querySelector ('#cartelWarning')
 
         //C-2.3 Creacion de alertas
-/*rojo*/    let  nameWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p></a>'
+/*rojo*/    let nameWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="nameWarning" id="nameWarning">Escribir tu nombre es muy predesible <sup>(?)</sup></p></a>'
 /*rojo*/    let lastNameWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="lastNameWarning" id="lastNameWarning">Escribir tu apellido es muy predesible <sup>(?)</sup></p></a>'
 /*rojo*/    let emailWarningAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="emailWarning" id="emailWarning">Escribir tu email es muy predesible <sup>(?)</sup></p></a>'
 /*rojo*/    let patronAlert = '<a class="linckPassword" href="https://www.xataka.com/seguridad/estas-50-contrasenas-comunes-internet-qwerty-a-dragon-pasando-password-123456-estudio" target="_blank"><p class="patronWarning"> Escribir una secuencia alfanumérica es muy predesible <sup>(?)</sup></p></a>'
@@ -226,16 +226,18 @@ window.addEventListener('load', function(){
         let lastNameValidation = pass.includes(lastName)
         let emailValidation = pass.include(email)
 
+        if(nameValidation){
+            console.log('Tu nombre no debe estar en la contraseña')
+        }else if (lastNameValidation){
+            console.log('Tu apellido no debe estar en la contraseña')
+        }else if(emailValidation){
+            console.log('Tu apellido no debe estar en la contraseña')
+        }
+        else{
+            console.log('ok')
+        }
 
-
-        if(
-            nameValidation  ||
-            lastNameValidation ||
-            emailValidation
-        )
-        {
-            console.log('los datos personales no deben estar en la contraseña')
-        }else*/
+        */
 
 /************************ Validaciones patrones predesibles ************************/
         if (

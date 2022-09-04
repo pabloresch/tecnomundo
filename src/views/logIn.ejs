@@ -56,9 +56,13 @@
                                 <% } %>
                         
                                 
-                        
-                        <input class= "input-formulario" type="text" name="password" id="passwordRg" placeholder="Contraseña" >                       
+                        <!--div class="eyeBox"-->
+                            <input class= "passwordRg input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
+                            <!--i class="eyeIcon fa-solid fa-eye-low-vision" id="eyeRg"></i-->
+                        <!--/div-->
+                                             
                             <div class="cartelWarning" id="cartelWarning"></div>
+                            
                             <div class="text-danger" id="passwordRgErr"></div>
                            
                             <% if(locals.errors && errors.password) { %>
@@ -144,5 +148,6 @@
     <%- include('./partials/footer') %>
     <script src="/js/password.js"></script>
     <script src="/js/validaciones.js"></script>
+    <script src="/js/eyeHide.js"></script>
  </body>
 </html>

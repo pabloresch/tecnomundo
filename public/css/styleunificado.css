@@ -1418,6 +1418,28 @@ div.recuerdame-box{
 
 /*Cartel de alert password*/
 
+.eyeBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: -5px;
+    padding: 0px;
+}
+
+.eyeIcon{
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 21%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.eyeIcon:hover{
+    opacity: 0.8;
+}
 
 .passWarning{
     list-style-type: none;
