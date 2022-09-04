@@ -154,9 +154,7 @@ body{
     text-align: right;
  }
  
- .user-login i{
-
-    
+ .user-login i{   
   
      margin-right: 10px;
      color:rgb(49 47 56);
@@ -981,7 +979,6 @@ div.verProducto.seccion1{
     
 
 .margin-productDetail{
-
     /* margin-bottom: 7vh; */
     margin-top: 15vh;
 }
@@ -1441,10 +1438,87 @@ div.recuerdame-box{
       font-weight: bold;
   }
 
+
   ul.passwordList{
     list-style-type: none;
     font-size: 12px;
   }
+
+/*Cartel de alert password*/
+
+.eyeBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: -5px;
+    padding: 0px;
+}
+
+.eyeIcon{
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 21%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.eyeIcon:hover{
+    opacity: 0.8;
+}
+
+.passWarning{
+    list-style-type: none;
+    font-size: 12px;
+}
+.emailWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
+.nameWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
+.lastNameWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+
+.patronWarning{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+    display: block
+}
+.passVeryWeack{
+    color: rgb(255, 0, 200);   
+    font-size: 12px;
+}
+.passWeack{
+    color: rgb(255,0,0);   
+    font-size: 12px;
+}
+.passMedium{
+    color: rgb(255, 217, 0);
+    font-size: 12px;
+}
+.passStrong{
+    color: rgb(250, 245, 0);  
+    font-size: 12px;
+}
+.passVeryStrong{
+    color: rgb(0,255,0);   
+    font-size: 12px;
+}
+.linckPassword {
+    text-decoration: none;
+}
   
   /* MAIN - CARRITO */
 
@@ -1916,6 +1990,9 @@ div.form-group.row label{
 input#imagesNewProduct{
     height: fit-content;
 }
+textarea#description.form-control.input-textarea{
+    height: 10vh;
+}
 .input-textarea {
     font-size: 13px;
     width: 100%;
@@ -2095,7 +2172,6 @@ h4.titleError.text-danger{
 /* MEDIA QUERIES */
     /* tabs */
     @media (min-width: 361px) {
-
 
         /*HEADER*/
 
@@ -2304,7 +2380,7 @@ h4.titleError.text-danger{
 }
 
 @media (min-width: 600px) {
-   
+
     /* .info ul{
         
     } */
@@ -2431,6 +2507,7 @@ div.form-group.row h4{
 }
 
 @media (min-width: 761px) {
+
     .info ul{
         padding: 5px 0px;
     }
@@ -2799,6 +2876,9 @@ p.card-text{
         margin-top: 12vw;
     }
 
+    .main {
+        margin-top: 25vh;
+    }
     .imgOferta-phones {
         position: absolute;
         bottom: 38vh;
@@ -2894,6 +2974,11 @@ p.card-text{
     .newProductSection {
         margin-top: 30vh;
       
+    }
+
+    /*NEW PRODUCT*/
+    .newProductSection {
+        margin-top: 22vh;
     }
 }}}
     
