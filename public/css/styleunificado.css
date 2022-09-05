@@ -982,8 +982,14 @@ div.verProducto.seccion1{
     
 
 .margin-productDetail{
-    /* margin-bottom: 7vh; */
-    margin-top: 15vh;
+    background-color: white;
+    margin-top: 21vh;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px
 }
 /* .card-body{
     height: 74vh;
@@ -1042,7 +1048,9 @@ div.d-grid.gap-2.button-productDetail{
 }
 .img-fluid {
     max-width: 50%;
-    height: auto;
+    margin-top: 12px;
+    height: 40vw;
+    max-height: 100%;
 }
 .precio{
     display: flex;
@@ -1596,6 +1604,7 @@ div.recuerdame-box{
 /* Main <---> Seccion de articulos a comprar <---> Producto*/
 
 .cart-items {
+    align-items: center;
     margin: auto;
     width: 95%;
     padding-bottom: 10px;
@@ -1622,6 +1631,11 @@ div.recuerdame-box{
     align-items: center;
 }
 
+.description-item .name {
+    width: 90%;
+    margin: 10px 0px;
+}
+
 .description {
     font-weight: 100;
     /* text-align: center;
@@ -1629,6 +1643,7 @@ div.recuerdame-box{
     max-width: 350px;     */
 }
 h4.description.h4-carrito{
+    width: 90%;
     font-size: 12px;
     margin: 0;
     padding: 5px;
@@ -2378,7 +2393,7 @@ h4.titleError.text-danger{
         /*PRODUCT DETAIL*/
         .margin-productDetail {
             /* margin-bottom: 7vh; */
-            margin-top: 20vh
+            margin-top: 28vh
 }
 
 @media (min-width: 600px) {
@@ -2478,6 +2493,8 @@ h4.titleError.text-danger{
 }
 .img-fluid {
     margin: auto;
+    
+    height: 275px;
     max-width: 100%;
    
 
@@ -2668,6 +2685,15 @@ div.form-group.row h4{
         padding-top: 21vh;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .margin-productDetail {
+        /* margin-bottom: 7vh; */
+        margin-top: 22vh;
+    }
+
+    .description-item .name {
+        width: auto;
     }
 
     .shopping-cart {
@@ -2970,6 +2996,12 @@ p.card-text{
     }
     p.card-text{
         font-size: 13px;
+    }
+
+    .margin-productDetail {
+        margin-top: 14vw;
+        display: flex;
+        justify-content: center;
     }
 
     /* FIN PRODUCT DETAIL */
