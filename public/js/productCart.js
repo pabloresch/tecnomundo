@@ -16,6 +16,7 @@ const imprimirCarrito = () => {
     Object.values(carrito).forEach(item => {
         templateCarrito.querySelector('div.amount').textContent = parseInt(item.price_product) * parseInt(item.cantidad);
         templateCarrito.querySelector('h4.description').textContent = item.description;
+        templateCarrito.querySelector('h4.name').textContent = item.name;
         templateCarrito.querySelector('span.number').textContent = item.cantidad
         templateCarrito.querySelector('img').src = item.image_product
 
