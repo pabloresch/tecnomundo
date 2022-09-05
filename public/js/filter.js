@@ -224,6 +224,10 @@ for(i = 0; i < checkboxPrice.length; i++) {
     buttonToCleanPrice.addEventListener('click', () => {
         for(var i=0;i<checkboxPrice.length;i++)
         checkboxPrice[i].checked = false;
+        arrayFilterPrice = []
+        console.log(cards)
+        console.log(arrayFilter)
+        filterPrice(cards)
        if (arrayFilter) {
         filterBrand()
        }
