@@ -131,7 +131,9 @@ container.addEventListener('click', (e) => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     if (localStorage.carrito && localStorage.carrito != '{}') {
-        document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-plus"></i>'
+        const carritoHeader = JSON.parse(localStorage.getItem('carrito')) 
+        let contadorSpan = Object.keys(carritoHeader).length
+        document.querySelector('#cart-icon').innerHTML +=`<span class ="badge badge-danger badge-counter">${contadorSpan}</span>` 
     } else {
       document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-shopping"></i>'
     }
