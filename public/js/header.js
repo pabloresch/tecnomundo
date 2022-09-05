@@ -1,9 +1,13 @@
 window.addEventListener('load', function () {
+
+
+const carritoHeader = JSON.parse(localStorage.getItem('carrito')) 
   
-  let contador = 1
+let contadorSpan = Object.keys(carritoHeader).length
+
   const cartIcon = () => {
         if (localStorage.carrito && localStorage.carrito != '{}') {
-            document.querySelector('#cart-icon').innerHTML +=`<span class ="badge badge-danger badge-counter">${contador}</span>` 
+            document.querySelector('#cart-icon').innerHTML +=`<span class ="badge badge-danger badge-counter">${contadorSpan}</span>` 
         }
       }
     
