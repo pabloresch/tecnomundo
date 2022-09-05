@@ -239,7 +239,7 @@ i#icono-menu.fa-solid.fa-bars{
 /*estilos para Javascript*/
 
 .active{
-   transform: translate(-600px);
+   transform: translate(-750px);
 
 }
 .opacity{
@@ -378,12 +378,12 @@ h2{
    display: flex;
     margin: auto;
     background-color: #312f38;
-    border: 5px double;
+    
     margin-top: 14vh;
     margin-bottom: 12px;
-    text-align: left;
-    margin-left: 13px;
+ 
     border: 5px double
+   
 }
 .filter-container{
     background-color: #f0f0f0;
@@ -406,8 +406,8 @@ h2{
     margin: 0 11px
 }
 
-.filter-menu {
-    background-color: white;
+div.filter-menu {
+    background-color: rgb(9 9 9 / 52%);
     width: 100vw;
     height: -webkit-fill-available;
     position: absolute;
@@ -416,9 +416,11 @@ h2{
     z-index: 12;
     transition: all .5s ease;
     text-align: center;
+    display: flex;
     
     
 }
+
 
 
 .header-filter {
@@ -448,8 +450,14 @@ h2{
     padding: 4px 7px
 }
 .container{
+    flex-grow: 0.5;
     padding: 0;
     background-color: white;
+}
+.bckOpacity{
+    background-color: rgb(49 47 56 / 30%);
+    flex-grow: 0.5
+
 }
 .panel{
     width: 95%;
@@ -529,15 +537,39 @@ div.clean-price{
 }
 
 div.col-12{
-    width: 64%;
-    margin:auto
+    width: 100%;
+    margin:auto;
+    align-content: center;
+    gap: 3px;
+    display: flex;
+    margin-top: -37px;
+    padding-left: 20px
+}
+.fa-solid.fa-clipboard-list{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 85%;
+    box-shadow: 0 0 2px #888;
+    
+    font-size: 1.3em;
+    color: #1bc5cc;
+    margin: 171px 0px 34px 0px;
+    border: 1px solid;
+    margin-top: 30vh
 }
 .col-12 h2{
-    border-top: solid 3px #00c0c7;
-
-    margin-top: 28vh;
+    color: #312f38;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin: 2.5px 10px;
+    padding: 10px -0.5px;
+    font-weight: bold;
+    
+    margin-top: 30vh;
     text-align: center;
-    font-size: 24px;
+    
 }
 .products-title {
     margin: 35px 0px;
@@ -675,8 +707,8 @@ div.price-product h5{
 }
 .imgOferta {
     position: absolute;
-    bottom: 22vh;
-    left: 32vw;
+    bottom: 26vh;
+    left: 30vw;
     
 }
 
@@ -701,7 +733,8 @@ div.imgProduct img{
 /* FOOTER */
 
 footer {
-    background-color: #1c063b;
+    background-color: #333;
+  
     
    } 
   
@@ -714,6 +747,7 @@ footer {
     align-items: center;
     color:white;
     padding: 20px;
+    margin-top:10px
 
     
   }
@@ -847,7 +881,9 @@ footer {
 
         /*main listado productos*/
         
-        
+     div.col-12{
+        margin-top: -2px;
+     }   
     .col-sm-6{
             width: 50%;
         }
@@ -894,7 +930,7 @@ footer {
     left: 14vw;
   }
     .filter-menu {
-        width: 60vw;
+        width: 100%;
     }
 
     .panel-opcion {
@@ -907,6 +943,9 @@ footer {
     h5#item-name{
         
         min-inline-size: revert;
+    }
+    div.col-12{
+        margin-top: 10px;
     }
     .col-12 h2{
         margin-top: 30vh;
@@ -967,26 +1006,34 @@ footer {
     .container{
         margin:0;
         padding: 0;
+        width: 26vw;
+        flex-grow: 0;
     }
 
-    .filter-menu {
+    div.filter-menu {
     background-color: white;
-    width: 100%;
+    width: 27vw;
     position: static;
     top: 0;
     left: 0;
     z-index: none;
     transition: none;
     text-align: center;
-    width: 84%;
-    margin-top: 40px;
-    margin-left: -14px
+    
+    margin-top: 5vh;
+    margin-left: 16px;
+   
     
 }
+.bckOpacity{
+    display: none;
+}
 div.col-12{
-    width: 64%;
+    width: 66%;
     margin-left: 259px;
-    padding-top: 10px
+    margin-top: -16px;
+    padding-left: 51px;
+    
 }
 div.col-12 h2{
     margin-right: 2px;
@@ -1007,9 +1054,7 @@ div.col-12 h2{
     display: none;
 }
 
-.container {
-    width: 23vw;
-}
+
 
 .arrow-left{
    display: none;
@@ -1112,18 +1157,15 @@ div.col-12 h2{
         }
        
        
-        .imgOferta{
-            left: 7vw;
-        }
+       
 }
 @media (min-width: 900px){
     div.col-12{
         margin-left: 317px;
+        margin-top: -7px;
+        padding-left: 11px;
     }
-    .col-12 h2{
-        
-        margin-top: 32vh;
-    }
+   
     .imgOferta{
         left:10vw;
         bottom: 23vh;
@@ -1131,12 +1173,21 @@ div.col-12 h2{
     h5#item-name{
         font-size: 14px;
     }
+    div.filter-menu{
+        width: 24vw;
+        margin-left: -11px;
+    }
+    .filtrados{
+        margin-right: 0px;
+    }
+    
 }
 @media (min-width: 1000px){
-    .col-12 h2{
-        margin-top: 34vh;
-    }
+   
     div.col-12{
         margin-left: 400px;
+    }
+    .container{
+        width: 20vw;
     }
 }

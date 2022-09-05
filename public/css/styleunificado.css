@@ -183,6 +183,7 @@ margin: 0px 0px 0px 5px;
 .user-img img {
     
     height: 100%;
+    width: 27px;
     border-radius: 100%;
 }
 
@@ -1227,20 +1228,21 @@ main.mainLogin{
     text-align: -webkit-center;
   
 }
-div.main{
+div.main.login-registro{
     background-color: #312f38;
 }
-.main{
-    
+.main.login-registro{
+   
     margin-top: 22vh;
     width: 86vw;
 	max-width: 350px;
-	height: 445px;
+	height: 444px;
 	background: rgb(84, 77, 77);
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
+    margin-bottom: 16px;
 }
 #chk{
 	display: none;
@@ -2531,6 +2533,7 @@ div.form-group.row h4{
     }
 
     .user-img {
+        width: 35px;
         height: 34px;
     }
 
