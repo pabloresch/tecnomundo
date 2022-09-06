@@ -56,10 +56,10 @@
                                 <% } %>
                         
                                 
-                        <!--div class="eyeBox"-->
+                        <div class="eyeBox">
                             <input class= "passwordRg input-formulario" type="password" name="password" id="passwordRg" placeholder="Contraseña" >
-                            <!--i class="eyeIcon fa-solid fa-eye-low-vision" id="eyeRg"></i-->
-                        <!--/div-->
+                            <i class="eyeIcon fa-solid fa-eye-low-vision" id="eyeRg"></i>
+                        </div>
                                              
                             <div class="cartelWarning" id="cartelWarning"></div>
                             
@@ -73,7 +73,10 @@
                         
     
                     
-                        <input class= "input-formulario" type="password" name="passconfcon" id="passConfRg" placeholder="Confirmar contraseña" >
+                        <div class="eyeBox">
+                            <input class= "input-formulario" type="password" name="passconfcon" id="passConfRg" placeholder="Confirmar contraseña" >
+                            <i class="eyeIcon fa-solid fa-eye-low-vision" id="eyeConfRg"></i>
+                        </div>
                     
                         
                         <div class="text-danger" id="passConfRgErr"></div>
@@ -112,7 +115,11 @@
                             <%= errors.correo.msg %>
                         </span>
                         <%}%>
-                <input class= "input-formulario"  type="password" name="contrasena" id="passwordLogIn" placeholder="Contraseña" >
+
+                <div class="eyeBox">
+                    <input class= "input-formulario"  type="password" name="contrasena" id="passwordLogIn" placeholder="Contraseña" >
+                    <i class="eyeIcon fa-solid fa-eye-low-vision" id="eyeLogIn"></i>
+                </div>
                         
                         <div class="text-danger" id="passwordLogInErr"></div>
                         <% if(typeof(errors) != 'undefined' && errors.contrasena){%>
