@@ -66,7 +66,7 @@ window.addEventListener('load', function(){
     //errors
     if(Object.keys(error).length > 0) {
       e.preventDefault();
-      return alert ('Ups! No has completado bien el formulario de login')
+       alert ('Ups! No has completado bien el formulario de login')
       // emailLogInErr.innerHTML = '';
       // emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
       error = {};
