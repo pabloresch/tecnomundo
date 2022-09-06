@@ -5,10 +5,10 @@ window.addEventListener('load', function(){
     eyeRg.addEventListener('click', function(){
         if(passwordRg.type == "password"){
             
-            passwordRg.type == "text"
+            passwordRg.type = "text"
             eyeRg.style.opacity = 0.8
         }else{
-            passwordRg.type == "password"
+            passwordRg.type = "password"
             eyeRg.style.opacity = 0.5
         }
     })
