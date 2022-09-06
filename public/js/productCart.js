@@ -16,6 +16,7 @@ const imprimirCarrito = () => {
     Object.values(carrito).forEach(item => {
         templateCarrito.querySelector('div.amount').textContent = parseInt(item.price_product) * parseInt(item.cantidad);
         templateCarrito.querySelector('h4.description').textContent = item.description;
+        templateCarrito.querySelector('h4.name').textContent = item.name;
         templateCarrito.querySelector('span.number').textContent = item.cantidad
         templateCarrito.querySelector('img').src = item.image_product
 
@@ -131,7 +132,9 @@ container.addEventListener('click', (e) => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     if (localStorage.carrito && localStorage.carrito != '{}') {
-        document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-plus"></i>'
+        const carritoHeader = JSON.parse(localStorage.getItem('carrito')) 
+        let contadorSpan = Object.keys(carritoHeader).length
+        document.querySelector('#cart-icon').innerHTML +=`<span class ="badge badge-danger badge-counter">${contadorSpan}</span>` 
     } else {
       document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-shopping"></i>'
     }

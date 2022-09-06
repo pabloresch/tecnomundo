@@ -84,15 +84,19 @@ window.addEventListener('load', function () {
             "hideMethod": "fadeOut"
           }
 
-  
+   
+        
+    
+
   const cartIcon = () => {
-    if (localStorage.carrito && localStorage.carrito != '{}') {
-        document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-plus"></i>'
-    } else {
-      document.querySelector('#cart-icon').innerHTML='<i class="fa-solid fa-cart-shopping"></i>'
-    }
+    const carritoHeader = JSON.parse(localStorage.getItem('carrito')) 
+    let contadorSpan = Object.keys(carritoHeader).length
+   if (localStorage.carrito && localStorage.carrito != '{}') {
+            document.querySelector('#cart-icon').innerHTML +=`<span class ="badge badge-danger badge-counter">${contadorSpan}</span>` 
+        }
   }
 
   cartIcon()
+
   
 })

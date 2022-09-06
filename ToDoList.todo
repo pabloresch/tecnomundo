@@ -1,25 +1,20 @@
 Prioridad @high:
-    ☐ Las tarjetas en la vista Index.ejs tienen que llevar al detalle de producto.
-    ☐ Unificar nombres (debe ser en ingles y deben ser claros).
-    ✔ El delete password del userController no esta funcionando. @done(22-08-09 08:03)
-    ✔ Al crear un producto, la session se cierra y el admin tiene que volver a loggearse. @done(22-08-08 21:09)
-    ☐ Cuando la busqueda (search) no devuelve ningun producto, se debe enviar un mensaje en la vista productList.ejs 
-    ☐ Corregir tarjetas con respecto a su tamaño y al de la imagen.
-    ☐ Mejorar CSS en general.
-        Vista:
-            ☐ index.ejs
-            ☐ productList.ejs
-            ☐ productCart.ejs
-            ☐ logIn.ejs
+    ☐ Banner de Index
+    ☐ Servicio Técnico @started(22-09-06 10:34 Jor)
+    ☐ Validación de Login: cuando hay error, se debe hacer dos click para loguearse.
+    ☐ Mejorar Base de Datos (chequear fotos especialmente).
+    ☐ Cambiar según corresponda el título en el productList.
+    ☐ Unificar hover sobre botones en NavBar (productList vs resto)
+    ☐ Imagen de usuario (productList y resto). Revisar especialmente el quiebre en la media de 761px-
+
 
 Prioridad @low:
-    ☐ Formato del href ('lo mas buscado', 'celulares', etc). Sacar subrayado en vista index.ejs
-    ☐ Cambiar el ALT del producto
-    ☐ El h1 de la vista productList.ejs debe cambiar segun corresponda a 'todos los productos', 'celulares', etc.
-    ☐ Repasar en el productController si conviene buscar por section o category.
-    ☐ Mejorar la base de datos.
-    ☐ Sacar atributo _blank en el logo y donde sea innecesario.
-    ☐ Centrar barra de busqueda al viewport.
+    ☐ Icono de productList
+    ☐ Media de 900px en productCart, revisar padding-top
+    ☐ Formulario de creación de producto, revisar padding-top
+    ☐ Revisar botones de admin en productDetail.
+    ☐ Footer del productCart, revisar el logo. El tamaño es chico.
+    ☐ Cuando me registro, que se recargue la página con el login / Cuando hay error en login, que se recargue la pagina en login (no registro)
 
 
 --------------------------COMANDOS--------------------------

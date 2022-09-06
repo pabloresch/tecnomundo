@@ -159,9 +159,11 @@ for(i = 0; i < checkboxPrice.length; i++) {
 
 // Funcion para filtrar precios
     const filterPrice = (arrayCards) => {
+       
         for(i = 0; i < arrayCards.length; i++) {
             if (arrayFilterPrice.length != 0) {                              
                 // revisar condiciones y precios
+                
                 switch (newArrayFilterPrice) {
                     case "1":
                     arrayCards[i].dataset.price < 100000 ? arrayCards[i].style.display = "block" : arrayCards[i].style.display = "none";
@@ -210,11 +212,19 @@ for(i = 0; i < checkboxPrice.length; i++) {
     var buttonToClean = document.querySelector(".clean.brand") 
 
     buttonToClean.addEventListener('click', () => {
-        for(var i=0;i<checkbox.length;i++)
-        checkbox[i].checked = false;
-        arrayFilter = []
-        filterBrand()
-        filterPrice(cards)
+        for(var i=0;i<checkbox.length;i++) {
+            checkbox[i].checked = false;
+            console.log(arrayFilter)
+            arrayFilter = []
+            filterBrand()
+            
+            if (newArrayFilterPrice) {
+                
+                console.log(newArrayFilterPrice)
+                filterPrice(cards)
+            }
+        }
+        
     })
 
     // button to clean ckecked price
@@ -222,11 +232,22 @@ for(i = 0; i < checkboxPrice.length; i++) {
     var buttonToCleanPrice = document.querySelector(".clean.price") 
 
     buttonToCleanPrice.addEventListener('click', () => {
-        for(var i=0;i<checkboxPrice.length;i++)
+      
+        if (!arrayFilter) {
+        arrayFilter = []
+       }  
+
+        for(var i=0;i<checkboxPrice.length;i++) {
         checkboxPrice[i].checked = false;
+        arrayFilterPrice = []
+        filterPrice(cards)
+        console.log(arrayFilter)
        if (arrayFilter) {
+           console.log('entre')
         filterBrand()
        }
+        }
+        
     })
 
 
