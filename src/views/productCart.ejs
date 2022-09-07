@@ -16,7 +16,7 @@
             <h1>Mi Carrito</h1>
           </div>
           <Section class="cart-container">
-                        
+              
           </Section>
           
           <!-- template carrito -->
@@ -74,11 +74,49 @@
                 <div class="flex-grow-70"><h4 class="total">Total</h4></div>
                 <div><h4 class="price-total" id="total">0</h4></div>
               </div>
-              <div class="checkout-buttom"><button>Finalizar Compra</button></div>
+              <div class="checkout-buttom">
+                <form class="card-body" id="checkoutCart">
+                  <div class="row">
+                    <div class=" col-md-6 mb-4">
+                      <div class="select-sender">
+                        Elija un tipo de envio.
+                    </div>
+                        <label for="country">Tipo Envio</label>
+                        <select class="custom-select d-block w-100" id="shippingMethod" name=" shippingMethod"
+                            required="">
+                            <option value="">Elegir...</option>
+                            <option value="Cadete">Cadete</option>
+                            <option value="Correo">Correo Argentino</option>
+                            <option value="Andreani">Andreani</option>
+                            <option value="DHL">DHL</option>
+                        </select>
+                    </div>
+                    <div class=" col-md-6 mb-4">
+                      <div class="select-payment">
+                        Elija un Medio de Pago.
+                    </div>
+                        <label for="country">Pago</label>
+                        <select class="custom-select d-block w-100" id="paymentMethod" name="paymentMethod"
+                            required="">
+                            <option value="">Elegir...</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Débito">Tarjeta Débito</option>
+                            <option value="Crédito">Tarjeta Crédito</option>
+                        </select>
+                       
+    
+                    </div>
+                </div>
+          
+                <button type="submit" id="checkoutCart">Finalizar Compra</button>
+
+                </form>
+              </div>
               <div class="checkout-continue"><button>Continuar Comprando</button></div>              
             </article>
             
           </section>
+          
             <div class="suggestion suggestion-title-box">
               <h2 class="suggestion-title">A personas como tu le interesaron los siguientes productos</h2>
             </div>       

@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 const adminMiddleware = require('../middlewares/adminMiddleware')
+const checkoutMiddleware = require('../middlewares/checkoutMiddleware')
 
 const productControllers = require ('../controllers/productControllers')
 
@@ -82,7 +83,7 @@ const validationsEditProduct = [
 //List products
 router.get("/", productControllers.listProducts);
 //Prpduct Cart
-router.get("/productCart", productControllers.cart );
+router.get("/productCart", checkoutMiddleware, productControllers.cart );
 //Product Detail
 router.get("/productDetail/:id", productControllers.productDetail);
 

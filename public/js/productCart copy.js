@@ -159,9 +159,8 @@ button.addEventListener('click', (e) => {
    
 })
 
-const paymentMethod = document.getElementById("paymentMethod")
-const shippingMethod = document.getElementById("shippingMethod")
 let formCheckout = document.querySelector("#checkoutCart");
+
 
 formCheckout.onsubmit = (e) => {
   e.preventDefault();
@@ -173,7 +172,7 @@ formCheckout.onsubmit = (e) => {
   Object.values(carritoFinalizar).forEach(item => {
     let objetoCarrito = {
         name: item.name,
-        cantidad:parseInt(item.cantidad),
+        quantity:parseInt(item.cantidad),
         price: item.price_product,
         productId: parseInt(item.id)
     }
@@ -182,32 +181,28 @@ formCheckout.onsubmit = (e) => {
 
   const formData = {
     orderItems: carritoFetch,
-    paymentMethod: paymentMethod.value,
-    shippingMethod: shippingMethod.value,
-    total: totalFinalizar,
+    paymentMethod: "creditCard",
+    shippingMethod: "correo",
+    total: 10000,
   };
 
 
-  
   fetch("/api/checkout", {
     method: "POST",
     headers: {
-        "Content-Type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(formData),
   })
     .then((r) => r.json())
     .then((res) => {
-        
       if (res.ok) {
         //borro el carrito
-        localStorage.removeItem('carrito')
-        location.href = "/";
-      } else {
-        toastr.error("No se pudo realizar la compra, intente mas tarde");
-      }
+        location.href = '/';
+      } 
+    
     })
     .catch((error) => console.log(error));
- 
+  console.log(JSON.stringify(formData));
 };
 

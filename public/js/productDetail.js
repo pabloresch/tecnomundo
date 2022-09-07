@@ -51,6 +51,7 @@ window.addEventListener('load', function () {
     const setProduct = item => {
         const producto = {
             id: id,
+            product_id: id,
             name: item.querySelector('h5.name-product').textContent,
             description: item.querySelector('p.card-text').textContent,
             price_product:  item.querySelector('h5.price-product').textContent,
