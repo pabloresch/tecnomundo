@@ -144,7 +144,8 @@ i.fa-solid.fa-circle-user{
 
 .user-img {
     margin: 0px 10px;
-    height: 50%;
+    height: 30px;
+    width: 10%;
     flex-grow: 0.2;
     text-align: right;
 }
@@ -158,8 +159,9 @@ i.fa-solid.fa-circle-user{
     
 .user-img img {
         
-        height: 100%;
-        border-radius: 100%;
+    height: 33px;
+    width: 32px;
+    border-radius: 100%;
     }
 
 /*burger-menu*/
@@ -545,20 +547,24 @@ div.col-12{
     margin-top: -37px;
     padding-left: 20px
 }
-.fa-solid.fa-clipboard-list{
-    padding: 10px;
+
+i.fa-solid.fa-clipboard-list{
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 85%;
     box-shadow: 0 0 2px #888;
-    
+    padding: 0.5em 0.6em;
     font-size: 1.3em;
     color: #1bc5cc;
-    margin: 171px 0px 34px 0px;
+    
     border: 1px solid;
+    
+    margin: 171px 0px 34px 0px;
+    
     margin-top: 30vh
 }
+
 .col-12 h2{
     color: #312f38;
     font-size: 1.3em;
@@ -612,6 +618,7 @@ h5#item-name{
 
 .article-style-celulares:hover{
     transform: scale(1.05);
+    cursor: pointer;
 
 }
 .celulares{
@@ -643,7 +650,7 @@ h5#item-name{
     
 }
 
-/*hasta aca modifique*/
+
 
 .article02, .article03, .article04 {
         display: none;
@@ -656,7 +663,7 @@ h5#item-name{
     display: flex;
 }
 
-/*modificado*/
+
 .listProduct{
     padding: 0px 0px 15px;
 }
@@ -725,6 +732,13 @@ div.imgProduct img{
     display: flex;
     max-width: 123px
 }
+div.notFound{
+    margin-bottom: 30px;
+}
+div.notFound img{
+    width: 96vw;
+}
+
 
 
 /* FIN HOME */
@@ -816,6 +830,9 @@ footer {
         
         
         }
+    .user-img {
+             
+            width: 6%;}
     .menu{
             display: flex;
                       
@@ -847,7 +864,7 @@ footer {
         }
         
     .header-menu nav > ul > li >a {
-        margin: 0px 2.5vw;
+        margin: 4px 2.5vw;
         text-decoration: none;
         display: flex;
         color: #ffffff;
@@ -860,12 +877,13 @@ footer {
            
         }
     .header-menu nav > ul > li >a:hover{
-            background-color: #05c0c7;
-                color:white;
-                transform: scale(1.1);
-                border-radius: 10px;
-                padding: 3px;
-        }
+        background-color: #05c0c7;
+        color: white;
+        transform: scale(1.1);
+        border-radius: 10px;
+        padding: 3px;
+        
+    }
 
         .logo img {
             width: 30vw;
@@ -922,6 +940,14 @@ footer {
 
 
 @media (min-width: 500px) {
+
+    /*HEADER*/
+    .user-img {
+        width: 4%;
+    }
+
+    /*HOME*/
+
   div.imgProduct img{
     width: 95%;
     max-width: 146px;
@@ -1155,13 +1181,16 @@ div.col-12 h2{
         .col-md-4{
             width: 33%;
         }
+        div.notFound img{
+            width: 100%;
+        }
        
        
        
 }
 @media (min-width: 900px){
     div.col-12{
-        margin-left: 317px;
+        margin-left: 300px;
         margin-top: -7px;
         padding-left: 11px;
     }
@@ -1180,12 +1209,18 @@ div.col-12 h2{
     .filtrados{
         margin-right: 0px;
     }
+     /*TODOS LOS PRODUCTOS*/
+    
     
 }
 @media (min-width: 1000px){
+    /*HEADER*/
+    .user-img {
+        width: 27px;
+    }
    
     div.col-12{
-        margin-left: 400px;
+        margin-left: 335px;
     }
     .container{
         width: 20vw;

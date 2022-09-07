@@ -1,20 +1,23 @@
 Prioridad @high:
-    ☐ Banner de Index
-    ☐ Servicio Técnico @started(22-09-06 10:34 Jor)
+    ✔ Banner de Index @done(22-09-07 11:36)
+    ✔ Servicio Técnico @started(22-09-06 10:34 Jor) @done(22-09-07 11:36) @lasted(1d1h2m46s)
     ☐ Validación de Login: cuando hay error, se debe hacer dos click para loguearse.
     ☐ Mejorar Base de Datos (chequear fotos especialmente).
-    ☐ Cambiar según corresponda el título en el productList.
-    ☐ Unificar hover sobre botones en NavBar (productList vs resto)
-    ☐ Imagen de usuario (productList y resto). Revisar especialmente el quiebre en la media de 761px-
+    ✔ Cambiar según corresponda el título en el productList. @done(22-09-07 15:56)
+    ✔ Unificar hover sobre botones en NavBar (productList vs resto) @done(22-09-07 16:13)
+    ✔ Imagen de usuario (productList y resto). Revisar especialmente el quiebre en la media de 761px- @done(22-09-07 17:04)
+    ☐ Ver las caracteristicas de los productos , ya que algunas estan mal.
+
+    
 
 
 Prioridad @low:
-    ☐ Icono de productList
-    ☐ Media de 900px en productCart, revisar padding-top
-    ☐ Formulario de creación de producto, revisar padding-top
-    ☐ Revisar botones de admin en productDetail.
-    ☐ Footer del productCart, revisar el logo. El tamaño es chico.
-    ☐ Cuando me registro, que se recargue la página con el login / Cuando hay error en login, que se recargue la pagina en login (no registro)
+    ✔ Icono de productList @done(22-09-07 11:37)
+    ✔ Media de 900px en productCart, revisar padding-top @done(22-09-07 11:37)
+    ✔ Formulario de creación de producto, revisar padding-top @done(22-09-07 16:13)
+    ✔ Revisar botones de admin en productDetail. @done(22-09-07 17:06)
+    ✔ Footer del productCart, revisar el logo. El tamaño es chico. @done(22-09-07 16:29)
+    ✔ Cuando me registro, que se recargue la página con el login / Cuando hay error en login, que se recargue la pagina en login (no registro) @done(22-09-07 16:13)
 
 
 --------------------------COMANDOS--------------------------

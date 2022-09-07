@@ -87,6 +87,14 @@ window.addEventListener('load', function(){
                     4 Validación minúsculas, mayúsculas y caracteres
         4: Completa
                     1 Validación números, minúsculas, mayúsculas y caracteres
+
+
+    G: preventDefault
+        0: Declaración de variables
+        1: Submit datos personales
+        2: Submit patrones predesibles
+        3: Submit fortaleza de contraseña
+
 */
     
 
@@ -176,7 +184,7 @@ window.addEventListener('load', function(){
         let regUpp_13 = /^(?=.*[A-Z])(?=(.*)).{13,}$/
         let regSpecial_13 = /^(?=.*[\!ºª☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~⌂ÇéâüäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£ØƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈıÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯´­±‗¾§÷¸°¨·¹³²■\@#$%&¬*()\\[\]{}\-_+=`~|:"'¿?<>,;./Ç])(?=(.*)).{13,}$/
         
-        
+    
        
 
 
@@ -199,7 +207,7 @@ window.addEventListener('load', function(){
         console.log(pass)
 
         //C-2.1 Estructura de alertas
-        /*****VER COMETARIOS FINALES******/
+        /***** VER COMETARIOS FINALES  ******/
        
         //C-2.2 Captura de alertas  
         let passwordRgErr = document.querySelector('#passwordRgErr') 
@@ -1199,12 +1207,196 @@ window.addEventListener('load', function(){
         
      });
 
+    /************************ preventDefault ************************/
+    formRegister.addEventListener('submit', function(event){
+        //G-0 Declaracion de variables   
+        
+        let name =formRegister.nameRg.value
+        let lastName=formRegister.lastNameRg.value
+        let email =formRegister.emailRg.value   
+        let pass =formRegister.passwordRg.value
+        console.log(pass)
+        
+        
+        /*
+        let nameValidation = pass.includes(name)
+        let lastNameValidation = pass.includes(lastName)
+        let emailValidation = pass.include(email)
+        */
+
+
+        //G-1 Submit datos personales
+/*
+        if(nameValidation){
+            console.log('Tu nombre no debe estar en la contraseña')
+        }else if (lastNameValidation){
+            console.log('Tu apellido no debe estar en la contraseña')
+        }else if(emailValidation){
+            console.log('Tu apellido no debe estar en la contraseña')
+        }
+        else{
+            console.log('ok')
+        }
+*/
+        //G-2 Submit patrones predesibles
+        if (pass.includes('012')|| pass.includes('123')|| pass.includes('234')|| pass.includes('345')|| pass.includes('456')|| pass.includes('567')|| pass.includes('678')|| pass.includes('789')|| pass.includes('890')|| pass.includes('210')|| pass.includes('321')|| pass.includes('432')|| pass.includes('543')|| pass.includes('654')|| pass.includes('765')|| pass.includes('876')|| pass.includes('987')|| pass.includes('098')|| pass.includes('7845')|| pass.includes('4512')|| pass.includes('8956')|| pass.includes('5623')|| pass.includes('7946')|| pass.includes('4613')  || pass.includes('8754')  || pass.includes('5421')  || pass.includes('9865')  || pass.includes('6532')  || pass.includes('9764')  || pass.includes('6431')  || pass.includes('5487')  || pass.includes('2154')  || pass.includes('6598')  || pass.includes('3265')  || pass.includes('6497')  || pass.includes('3164')  || pass.includes('4578')  || pass.includes('1245')  || pass.includes('5689')  || pass.includes('2356')  || pass.includes('4697')  || pass.includes('1346')  || pass.includes('000')  || pass.includes('111')  || pass.includes('222')  || pass.includes('333')  || pass.includes('444')  || pass.includes('555')  || pass.includes('666')  || pass.includes('777')  || pass.includes('888')  || pass.includes('999')  || pass.includes('qwe')  || pass.includes('wer')  || pass.includes('ert')  || pass.includes('rty')  || pass.includes('tyu')  || pass.includes('yui')  || pass.includes('uio')  || pass.includes('iop')  || pass.includes('asd')  || pass.includes('sdf')  || pass.includes('fgh')  || pass.includes('ghj')  || pass.includes('hjk')  || pass.includes('jkl')  || pass.includes('klñ')  || pass.includes('zxc')  || pass.includes('xcv')  || pass.includes('cvb')  || pass.includes('vbn')  || pass.includes('bnm')  || pass.includes('ewq')  || pass.includes('rew')  || pass.includes('tre')  || pass.includes('ytr')  || pass.includes('uyt')  || pass.includes('iuy')  || pass.includes('oiu')  || pass.includes('poi')  || pass.includes('dsa')  || pass.includes('fds')  || pass.includes('gfd')  || pass.includes('hgf')  || pass.includes('jhg')  || pass.includes('kjh')  || pass.includes('lkj')  || pass.includes('ñlk')  || pass.includes('cxz')  || pass.includes('vcx')  || pass.includes('bvc')  || pass.includes('nbv')  || pass.includes('mnb')  || pass.includes('qwas')  || 
+            pass.includes('aszx')  || pass.includes('zxwe')  || pass.includes('wesd')  || pass.includes('sdxc')  || pass.includes('xcer')  || pass.includes('erdf')  || pass.includes('dfcv')  || pass.includes('cvrt')  || pass.includes('rtfg')  || pass.includes('fgvb')  || pass.includes('vbty')  || pass.includes('tygh')  || pass.includes('ghbn')  || pass.includes('bnyu')  || pass.includes('yuhj')  || pass.includes('hjnm')  || pass.includes('nmui')  || pass.includes('uijk')  || pass.includes('jkm,')  || pass.includes('m,io')  || pass.includes('iokl')  || pass.includes('klop')  || pass.includes('oplñ')  || pass.includes('qaz')  || pass.includes('wsx')  || pass.includes('edc')  || pass.includes('rfv')  || pass.includes('tgb')  || pass.includes('yhn')  || pass.includes('ujm')  || pass.includes('ik,')  || pass.includes('ol.')  || pass.includes('pñ-')  || pass.includes('sawq')  || pass.includes('xzsa')  || pass.includes('ewxz')  || pass.includes('dsew')  || pass.includes('cxds')  || pass.includes('recx')  || pass.includes('fdre')  || pass.includes('vcfd')  || pass.includes('trvc')  || pass.includes('gftr')  || pass.includes('bvgf')  || pass.includes('ytbv')  || pass.includes('hgyt')  || pass.includes('nbhg')  || pass.includes('uynb')  || pass.includes('jhuy')  || pass.includes('mnjh')  || pass.includes('iumn')  || pass.includes('kjiu')  || pass.includes(',mkj')  || pass.includes('oi,m')  || pass.includes('lkoi')  || pass.includes('polk')  || pass.includes('ñlpo')  || pass.includes('zaq')  || pass.includes('xsw')  || pass.includes('cde')  || pass.includes('vfr')  || pass.includes('bgt')  || pass.includes('nhy')  || pass.includes('mju')  || pass.includes(',ki')  || pass.includes('.lo')  || pass.includes('-ñp')  || pass.includes('abc')  || pass.includes('bcd')  || pass.includes('cde')  || pass.includes('def')  || pass.includes('efg')  || pass.includes('ghi')  || pass.includes('hij')  || pass.includes('ijk')  || pass.includes('klm')  || pass.includes('lmn')  || pass.includes('mnñ')  || pass.includes('nño')  || pass.includes('ñop')  || pass.includes('opq')  || pass.includes('pqr')  || pass.includes('qrs')  || pass.includes('rst')  || 
+            pass.includes('stu')  || pass.includes('tuv')  || pass.includes('uvw')  || pass.includes('vwx')  || pass.includes('wxy')  || pass.includes('xyz')  || pass.includes('mno')  || pass.includes('nop')  || pass.includes('cba')  || pass.includes('dcb')  || pass.includes('ede')  || pass.includes('fed')  || pass.includes('gfe')  || pass.includes('ihg')  || pass.includes('jih')  || pass.includes('kji')  || pass.includes('mlk')  || pass.includes('nml')  || pass.includes('ñnm')  || pass.includes('oñn')  || pass.includes('poñ')  || pass.includes('qpo')  || pass.includes('rqp')  || pass.includes('srq')  || pass.includes('tsr')  || pass.includes('uts')  || pass.includes('vut')  || pass.includes('wvu')  || pass.includes('xwv')  || pass.includes('yxw')  || pass.includes('zyx')  || pass.includes('onm')  || pass.includes('pon')  || pass.includes('aaa')  || pass.includes('bbb')  || pass.includes('ccc')  || pass.includes('ddd')  || pass.includes('eee')  || pass.includes('fff')  || pass.includes('ggg')  || pass.includes('hhh')  || pass.includes('iii')  || pass.includes('jjj')  || pass.includes('kkk')  || pass.includes('lll')  || pass.includes('mmm')  || pass.includes('nnn')  || pass.includes('ooo')   ||   pass.includes('ppp') ||       pass.includes('qqq') ||       pass.includes('rrr') ||       pass.includes('sss') ||       pass.includes('ttt') ||       pass.includes('uuu') ||       pass.includes('vvv') ||       pass.includes('www') ||       pass.includes('xxx')||      pass.includes('yyy')||      pass.includes('zzz'))
+        {
+            event.preventDefault()
+            alert('Tu contraseña tiene un patrón alfanumérico es muy predecible!') 
+        }else 
+        //G-3 Submit fortaleza de contraseña
+        if ( regNum_0_10.test(pass) && !regLow_0_10.test(pass) && !regUpp_0_10.test(pass) && !regSpecial_0_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números de 0 a 10') 
+        }else if ( regNum_11_15.test(pass) && !regLow_11_15.test(pass) && !regUpp_11_15.test(pass) && !regSpecial_11_15.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números de 11 y 15')
+        }else if ( regNum_16_18.test(pass) && !regLow_16_18.test(pass) && !regUpp_16_18.test(pass) && !regSpecial_16_18.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números de 16 y 18')
+        }else if ( regNum_19.test(pass) && !regLow_19.test(pass) && !regUpp_19.test(pass) && !regSpecial_19.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene sólo 19 números o más')
+        }else if ( !regNum_0_7.test(pass) && regLow_0_7.test(pass) && !regUpp_0_7.test(pass) && !regSpecial_0_7.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas de 0 a 7')
+        }else if ( !regNum_8_10.test(pass) && regLow_8_10.test(pass) && !regUpp_8_10.test(pass) && !regSpecial_8_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas de 8 a 10')
+        }else if ( !regNum_11_13.test(pass) && regLow_11_13.test(pass) && !regUpp_11_13.test(pass) && !regSpecial_11_13.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas de 11 a 13')
+        }else if ( !regNum_0_7.test(pass) && !regLow_0_7.test(pass) && regUpp_0_7.test(pass) && !regSpecial_0_7.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas de 0 a 7')
+        }else if ( !regNum_8_10.test(pass) && !regLow_8_10.test(pass) && regUpp_8_10.test(pass) && !regSpecial_8_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas de 8 a 10')
+        }else if ( !regNum_11_13.test(pass) && !regLow_11_13.test(pass) && regUpp_11_13.test(pass) && !regSpecial_11_13.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas de 11 a 13')
+        }else if ( !regNum_0_7.test(pass) && !regLow_0_7.test(pass) && !regUpp_0_7.test(pass) && regSpecial_0_7.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene caracteres de 0 a 7')
+        }else if ( !regNum_8_10.test(pass) && !regLow_8_10.test(pass) && !regUpp_8_10.test(pass) && regSpecial_8_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene caracteres de 8 a 10')
+        }else if ( !regNum_11_13.test(pass) && !regLow_11_13.test(pass) && !regUpp_11_13.test(pass) && regSpecial_11_13.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene caracteres de 11 a 13')
+        }else if ( regNum_0_6.test(pass) && regLow_0_6.test(pass) && !regUpp_0_6.test(pass) && !regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y minúsculas de 0 a 6')
+        }else if ( regNum_7_9.test(pass) && regLow_7_9.test(pass) && !regUpp_7_9.test(pass) && !regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y minúsculas de 7 a 9')
+        }else if ( regNum_10_11.test(pass) && regLow_10_11.test(pass) && !regUpp_10_11.test(pass) && !regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y minúsculas de 10 a 11')
+        }else if ( regNum_0_6.test(pass) && !regLow_0_6.test(pass) && regUpp_0_6.test(pass) && !regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y mayúsculas de 0 a 6')
+        }else if ( regNum_7_9.test(pass) && !regLow_7_9.test(pass) && regUpp_7_9.test(pass) && !regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y mayúsculas de 7 a 9')
+        }else if ( regNum_10_11.test(pass) && !regLow_10_11.test(pass) && regUpp_10_11.test(pass) && !regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y mayúsculas de 10 a 11')
+        }else if ( regNum_0_6.test(pass) && !regLow_0_6.test(pass) && !regUpp_0_6.test(pass) && regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y caracteres de 0 a 6')
+        }else if ( regNum_7_9.test(pass) && !regLow_7_9.test(pass) && !regUpp_7_9.test(pass) && regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y caracteres de 7 a 9')
+        }else if ( regNum_10_11.test(pass) && !regLow_10_11.test(pass) && !regUpp_10_11.test(pass) && regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números y caracteres de 10 a 11')
+        }else if ( !regNum_0_6.test(pass) && regLow_0_6.test(pass) && regUpp_0_6.test(pass) && !regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y mayúsculas de 0 a 6')
+        }else if ( !regNum_7_9.test(pass) && regLow_7_9.test(pass) && regUpp_7_9.test(pass) && !regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y mayúsculas de 7 a 9')
+        }else if ( !regNum_10_11.test(pass) && regLow_10_11.test(pass) && regUpp_10_11.test(pass) && !regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y mayúsculas de 10 a 11')
+        }else if ( !regNum_0_6.test(pass) && regLow_0_6.test(pass) && !regUpp_0_6.test(pass) && regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y caracteres de 0 a 6')
+        }else if ( !regNum_7_9.test(pass) && regLow_7_9.test(pass) && !regUpp_7_9.test(pass) && regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y caracteres de 7 a 9')
+        }else if ( !regNum_10_11.test(pass) && regLow_10_11.test(pass) && !regUpp_10_11.test(pass) && regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas y caracteres de 10 a 11')
+        }else if ( !regNum_0_6.test(pass) && !regLow_0_6.test(pass) && regUpp_0_6.test(pass) && regSpecial_0_6.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas y caracteres de 0 a 6')
+        }else if ( !regNum_7_9.test(pass) && !regLow_7_9.test(pass) && regUpp_7_9.test(pass) && regSpecial_7_9.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas y caracteres de 7 a 9')
+        }else if ( !regNum_10_11.test(pass) && !regLow_10_11.test(pass) && regUpp_10_11.test(pass) && regSpecial_10_11.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene mayúsculas y caracteres de 10 a 11')
+        }else if ( regNum_0_5.test(pass) && regLow_0_5.test(pass) && regUpp_0_5.test(pass) && !regSpecial_0_5.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas y mayúsculas de 0 a 5')
+        }else if (regNum_6_8.test(pass) && regLow_6_8.test(pass) && regUpp_6_8.test(pass) && !regSpecial_6_8.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas y mayúsculas de 6 a 8')
+        }else if ( regNum_9_10.test(pass) && regLow_9_10.test(pass) && regUpp_9_10.test(pass) && !regSpecial_9_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas y mayúsculas de 9 a 10')
+        }else if ( regNum_0_5.test(pass) && regLow_0_5.test(pass) && !regUpp_0_5.test(pass) && regSpecial_0_5.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas, caracteres de 0 a 5')
+        }else if (regNum_6_8.test(pass) && regLow_6_8.test(pass) && !regUpp_6_8.test(pass) && regSpecial_6_8.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas, caracteres de 6 a 8')
+        }else if ( regNum_9_10.test(pass) && regLow_9_10.test(pass) && !regUpp_9_10.test(pass) && regSpecial_9_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números, minúsculas, caracteres de 9 a 10')
+        }else if ( regNum_0_5.test(pass) && !regLow_0_5.test(pass) && regUpp_0_5.test(pass) && regSpecial_0_5.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números mayusculas y caracteres de 0 a 5')
+        }else if (regNum_6_8.test(pass) && !regLow_6_8.test(pass) && regUpp_6_8.test(pass) && regSpecial_6_8.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números mayusculas y caracteres de 6 a 8')
+        }else if ( regNum_9_10.test(pass) && !regLow_9_10.test(pass) && regUpp_9_10.test(pass) && regSpecial_9_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene números mayusculas y caracteres de 9 a 10')
+        }else if ( !regNum_0_5.test(pass) && regLow_0_5.test(pass) && regUpp_0_5.test(pass) && regSpecial_0_5.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas, mayusculas y caracteres de 0 a 5')
+        }else if (!regNum_6_8.test(pass) && regLow_6_8.test(pass) && regUpp_6_8.test(pass) && regSpecial_6_8.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas, mayusculas y caracteres de 6 a 8')
+        }else if ( !regNum_9_10.test(pass) && regLow_9_10.test(pass) && regUpp_9_10.test(pass) && regSpecial_9_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene minúsculas, mayusculas y caracteres de 9 a 10')
+        }else if ( regNum_0_5.test(pass) && regLow_0_5.test(pass) && regUpp_0_5.test(pass) && regSpecial_0_5.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene todo de 0 a 5')
+        }else if (regNum_6_8.test(pass) && regLow_6_8.test(pass) && regUpp_6_8.test(pass) && regSpecial_6_8.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene todo de 6 a 8')
+        }else if ( regNum_9_10.test(pass) && regLow_9_10.test(pass) && regUpp_9_10.test(pass) && regSpecial_9_10.test(pass) ) {
+            event.preventDefault()
+            alert('Tu contraseña tiene todo de 9 a 10')
+        }
+
+    
+
+    })
+
 })
 
 
 
 /*
-       ***** COMETARIOS FINALES******
+       ***** COMETARIOS FINALES ******
        
 Esta es la estructura HTML declarada en la seccion " //C-2.3 Creacion de variables ""
 
