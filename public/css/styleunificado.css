@@ -29,7 +29,8 @@ body{
 
 .text-danger {
     color: rgb(255, 0, 0);
-    font-size: 11.5px;
+    font-size: 12px;
+    margin: 2px;
 }
 
 
