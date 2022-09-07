@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name: {
             type: dataTypes.STRING(50)
@@ -35,19 +36,14 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'products',
         timestamps: false
-       
     }
     const Product = sequelize.define(alias,col,config);
 
-    Product.associate = function (models) {
-        Product.belongsToMany(models.Sale, {
-            as: "sales",
-            through: 'sales_detail',
-            foreignKey: 'product_id',
-            otherKey: 'sale_id',
-            timestamps: false
-        })
-    }
+    // Product.associate = function (models) {
+    //     Product.hasMany(models.OrderItems, {
+    //         as: "orderItems",
+    //     })
+    // }
 
     return Product
 };

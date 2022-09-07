@@ -18,6 +18,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const productRoutes = require ('./routes/productRoutes');
 const mainRoutes = require ('./routes/mainRoutes');
 const usersRoutes = require ('./routes/usersRoutes');
+const apiRouter = require ('./routes/api');
 
 //Declaracion de puertos
 const port = 3000;
@@ -30,6 +31,8 @@ app.use(express.static(path.join(__dirname,'../public')));
 app.use(express.urlencoded({extended: false}));
 // Put and Delete method
 app.use(methodOverride ('_method'));
+// Para usar JSON
+app.use(express.json())
 
 //EJS
 app.set('view engine', 'ejs');
@@ -53,6 +56,7 @@ app.use(userLoggedMiddleware);
 app.use('/',mainRoutes);
 app.use('/user',usersRoutes);
 app.use('/product', productRoutes);
+app.use('/api', apiRouter);
 
 //montar el servidor                                                                                                                                                                                                                                                                                                                             
 app.listen(port, () => {

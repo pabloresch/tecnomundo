@@ -2,8 +2,9 @@ window.addEventListener('load', function () {
 
 
 const carritoHeader = JSON.parse(localStorage.getItem('carrito')) 
-  
-let contadorSpan = Object.keys(carritoHeader).length
+
+if (carritoHeader) {
+  let contadorSpan = Object.keys(carritoHeader).length
 
   const cartIcon = () => {
         if (localStorage.carrito && localStorage.carrito != '{}') {
@@ -12,4 +13,7 @@ let contadorSpan = Object.keys(carritoHeader).length
       }
     
       cartIcon()
+}
+  
+
 })
