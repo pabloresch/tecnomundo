@@ -169,7 +169,8 @@ body{
 
  .user-img {
     margin: 0px 10px;
-    height: 50%;
+    height: 30px;
+    width: 10%;
     flex-grow: 0.2;
     text-align: right;
 }
@@ -183,8 +184,8 @@ margin: 0px 0px 0px 5px;
 
 .user-img img {
     
-    height: 100%;
-    width: 27px;
+    height: 33px;
+    width: 32px;
     border-radius: 100%;
 }
 
@@ -432,7 +433,7 @@ h2{
 
 .slider-frame img {
 	width: 24.3%;
-    /* padding-top: 10px; */
+    padding-top: 10px;
     max-height: 50vh;
     
     
@@ -1110,7 +1111,7 @@ div.fotos article{
 
 button.btn.btn-primary {
     width: 36vw;
-    background-color: #00c0c7;
+    background-color: #27868a;
     border: none;
     justify-self: center;
     height: 4vh
@@ -1118,8 +1119,8 @@ button.btn.btn-primary {
     
 }
 .button-productDetail  button:hover{
-    background-color: #1c063b;
-   transform: scale(1.03);
+   
+   transform: scale(1.1);
    transition: 00.5s;
 }
 
@@ -1429,6 +1430,7 @@ div.recuerdame-box{
 
   .submit-login:hover{
     transform: scale(1.1);  
+    transition: all 0.5s ease;
   }
   .submit-login.buttonLogin{
     padding-bottom: 21px;
@@ -1574,6 +1576,7 @@ div.recuerdame-box{
 /* Main <---> Seccion de articulos a comprar */
 
 .shopping-cart {
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1741,13 +1744,14 @@ margin-bottom: 12px;
   
     border:2px solid #312f38;
     box-shadow: 2px 2px 4px #000000;
-    height: 70%;
-    width: 60%;
+    height: 54%;
+    width: 51%;
     margin: 0px 10px 10px 0px;
     border-radius: 10px;
 }
 
 .discount-button {
+    border: #312f38;
     font-size: 1em;
     margin-bottom: 20px;
     font-weight: 700;
@@ -1762,7 +1766,7 @@ margin-bottom: 12px;
 }
 
 .discount-button:hover {
-    background-color:#1c063b;
+    background-color:#312f38;
     color: white;
     transform: scale(1.1)
 }
@@ -1790,9 +1794,9 @@ margin-bottom: 12px;
     font-size: 1em;
     font-weight: 700;
     padding: 5px 15px;
-    width: 80%;
-    background-color: #07c1c9;
-    border: #07c1c9;
+    width: 81%;
+    background-color: #27868a;
+    border: #27868a;
     /* opacity: 0.8; */
     color: white;
     cursor: pointer;
@@ -1802,7 +1806,8 @@ margin-bottom: 12px;
 }
 
 .checkout-buttom button:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
+    transition: all 0.5s ease;
     /* opacity: 1; */
 }
 .checkout-continue {
@@ -1812,23 +1817,25 @@ margin-bottom: 12px;
 }
 
 .checkout-continue button {
+    border: #312f38;
     font-size: 1em;
     font-weight: 700;
     padding: 5px 15px;
-    width: 80%;
+    width: 81%;
     background-color: #312f38;
     color: white;
     cursor: pointer;
     /* opacity: 0.8; */
     border-radius: 4px;
     /* box-shadow: 2px 2px 4px #000000; */
-    transition: all 0.2s;
+    transition: all 0.5s ease;
 }
 
 .checkout-continue button:hover {
-    background-color:#1c063b;
+    background-color:#312f38;
     color: white;
-    transform: scale(1.1)
+    transform: scale(1.1);
+
 }
 
 /* Main <---> Seccion de sugerencias */
@@ -1907,11 +1914,11 @@ div.suggestion-title-box h2 {
 
 .footer-logo {
     padding: 10px;
-    margin: 15px 0px;
+    margin: 4px 0px 0px 7px;
 }
 
 .footer-logo a img {
-    width: 120px;
+    width: 152px;
 }
 
 .tyc {
@@ -1949,7 +1956,7 @@ div.suggestion-title-box h2 {
 
 .newProductSection {
     width: 90%;
-    margin: 15vh auto 100px auto;
+    margin: 24vh auto 100px auto;
     border-radius: 30px;
  
 }
@@ -2204,8 +2211,7 @@ h4.titleError.text-danger{
     align-items: center;
 }
 .contact-container ul li{
-    margin-left: 20vw;
-    
+        
     display: flex;
     align-items: center;
     gap: 10px
@@ -2222,6 +2228,10 @@ h4.titleError.text-danger{
     text-align: -webkit-center;
     font-size: 14px;
     color: white
+}
+.contactos{
+    display: flex;
+    justify-content: center;
 }
 .fa-solid.fa-screwdriver-wrench{
     
@@ -2281,6 +2291,16 @@ i.fa-solid.fa-envelope{
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
            
                      }
+
+        .user-img {
+             
+         width: 6%;
+                       
+                    }
+        .slider-frame img{
+            padding: 0;
+
+                     }
         .menu{
             display: flex;          
              }
@@ -2327,7 +2347,7 @@ i.fa-solid.fa-envelope{
             transform: scale(1.1);
             border-radius: 10px;
             padding: 3px;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             }
         section.section-set-display.info{
             padding-bottom: 19px
@@ -2446,6 +2466,10 @@ i.fa-solid.fa-envelope{
                 padding-top: 170px
 
             }
+        .shopping-cart {
+                margin-top: 0
+               
+            }
 
         /* New Product */
         h2.products-title {
@@ -2453,7 +2477,7 @@ i.fa-solid.fa-envelope{
         }
 
          .newProductSection {
-            margin-top: 20vh;
+            margin-top: 30vh;
                
         } 
     div.form-group.row h4, .price-discount h4{
@@ -2473,15 +2497,10 @@ i.fa-solid.fa-envelope{
 .servicioTecnico{
     margin-top: 149px;
 }
-.contact-container ul li{
-margin-left: 11vh;
-}
 
 @media (min-width: 600px) {
 
-    /* .info ul{
-        
-    } */
+    
     /*HOME*/
     section.section-set-display.carrusel{
         margin-top: 160px;
@@ -2596,7 +2615,9 @@ margin-left: 11vh;
     width: 16vw;
     height: 4vh;
 }
-
+.margin-productDetail{
+    margin-top: 29vh;
+}
 /*NEW PRODUCT*/
 div.form-group.row h4{
     margin-top: 0px;
@@ -2607,6 +2628,9 @@ div.form-group.row h4{
 
 .input-category{
     margin-bottom: 0px
+}
+.newProductSection {
+    margin-top: 31vh;
 }
 
 /*SERVICIO TECNICO*/
@@ -2622,9 +2646,7 @@ div.form-group.row h4{
     height: 268px;
     margin-right: 10px;
 }
-.contact-container ul li {
-    margin-left: 5vh;
-}
+
 .contact-title h5 {
     padding: 5px;
 }
@@ -2755,8 +2777,8 @@ div.form-group.row h4{
         justify-content: center;
         margin: auto;
         width: 100%;
-        height: 100%;
-        bottom: 0px;
+        height: 90%;
+        bottom: 34px;
         left: 0px;
         border-radius: inherit;
         white-space: nowrap;
@@ -2765,6 +2787,7 @@ div.form-group.row h4{
         opacity: 0;
         transition: 0.5s;
         position: absolute;
+        border-radius: 7px;
 
     }
     div.buttomVerProducto a{
@@ -2787,6 +2810,7 @@ div.form-group.row h4{
     /* CARRITO */
 
     .main-carrito {
+        gap: 23px;
         padding-top: 21vh;
         display: flex;
         flex-wrap: wrap;
@@ -2803,6 +2827,7 @@ div.form-group.row h4{
 
     .shopping-cart {
         width: 100%;
+        margin-top: 10px;
     }
 
     .shopping-cart i {
@@ -2870,11 +2895,11 @@ div.form-group.row h4{
     .checkout-buttom button {
         font-size: 1em;
         padding: 5px 15px;
-        width: 100%;
+        width: 81%;
     }
 
     .checkout-continue button {
-        width: 100%;
+        width: 81%;
     }    
     
     .description-item {
@@ -2884,6 +2909,11 @@ div.form-group.row h4{
 
 /* FIN CARRITO */
 
+/*NEW PRODUCT*/
+
+.newProductSection {
+    margin-top: 25vh;
+}
 /*PRODUCT DETAIL*/
 div.container.products-wrapper.margin-productDetail{
     text-align: -webkit-center;
@@ -2893,7 +2923,7 @@ div.container.products-wrapper.margin-productDetail{
     margin-top: 25px;
 }
 div.card.mb-3{
-    height: 53vh;
+    height: 57vh;
 }
 p.card-text{
     font-size: 12px;
@@ -2978,9 +3008,7 @@ p.card-text{
     .garantia ul li strong{
         font-size: 14px;
     }
-    .contact-container ul li {
-        margin-left: 5vh;
-    }
+    
 
         
     } 
@@ -3028,6 +3056,9 @@ p.card-text{
     .main-productDetail {
         margin-top:  30vh;
     }
+    .margin-productDetail{
+        margin-top: 24vh;
+    }
     div.card-body{
         margin-top: 25px;
     }
@@ -3037,11 +3068,18 @@ p.card-text{
     }
     /*fin productDetail*/
 
+    /*NEW PRODUCT*/
+
+    .newProductSection {
+        margin-top: 23vh;
+    }
+
     /*LOGIN*/
     .main.login-registro{
         margin-top:25vh
         
     }
+   
 
     /*SERVICIO TECNICO*/
  .servicioTecnico{
@@ -3051,9 +3089,7 @@ p.card-text{
         margin-right: 17px;
         width: 65%;
     }
-    .contact-container ul li {
-        margin-left: 19vh;
-    }
+   
  
     }
 
@@ -3192,10 +3228,8 @@ p.card-text{
     }
    
 
-    /*NEW PRODUCT*/
-    .newProductSection {
-        margin-top: 22vh;
-    }
+
+    
        /*SERVICIO TECNICO*/
  .servicioTecnico{
     margin-top: 160px
@@ -3208,9 +3242,7 @@ p.card-text{
         width: 50%;
         height: 300px;
     }
-    .contact-container ul li {
-        margin-left: 19vh;
-    }
+    
     .contact-title h5 {
        font-size: 15px;
         width: 93%;
