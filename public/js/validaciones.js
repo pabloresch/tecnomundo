@@ -10,67 +10,53 @@ window.addEventListener('load', function(){
   let formLogIn = document.querySelector('#login');
 
   //on time validations
-  let error = {};
   let regExp = /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
 
   //--- Log In ---//
   //email
   emailLogIn.addEventListener('blur', () => {
     if(emailLogIn.value == '') {
-      error.emailLogIn = 'Este campo es obligatorio';
-      emailLogInErr.innerHTML = error.emailLogIn;
+      emailLogInErr.innerText = 'Este campo es obligatorio';
     } else if(!emailLogIn.value.match(regExp)) {
-      error.emailLogIn = 'Correo invalido';
-      emailLogInErr.innerHTML = error.emailLogIn;
+      emailLogInErr.innerText = 'Correo invalido';
     } else {
-      emailLogInErr.innerHTML = '';
+      emailLogInErr.innerText = '';
     }
   });
 
   //contrasena
   passwordLogIn.addEventListener('blur', () => {
     if(passwordLogIn.value == '') {
-      error.passwordLogIn = 'Este campo es obligatorio';
-      passwordLogInErr.innerHTML = error.passwordLogIn;
-      console.log(Object.keys(error).length);
+      passwordLogInErr.innerText = 'Este campo es obligatorio';
     } else {
-      passwordLogInErr.innerHTML = '';
+      passwordLogInErr.innerText = '';
     }
   });
 
   //prevent default
   formLogIn.addEventListener('submit', (e) => {
     //email
-    // emailLogIn.addEventListener('blur', () => {
       if(emailLogIn.value == '') {
-        error.emailLogIn = 'Este campo es obligatorio';
-        emailLogInErr.innerHTML = error.emailLogIn;
+        emailLogInErr.innerText = 'Este campo es obligatorio';
+        e.preventDefault();
+        alert ('Ups! No has completado bien el formulario de login')
       } else if(!emailLogIn.value.match(regExp)) {
-        error.emailLogIn = 'Correo invalido';
-        emailLogInErr.innerHTML = error.emailLogIn;
+        emailLogInErr.innerText = 'Correo invalido';
+        e.preventDefault();
+        alert ('Ups! No has completado bien el formulario de login')
       } else {
-        emailLogInErr.innerHTML = '';
+        emailLogInErr.innerText = '';
       }
-    // });
+
     
     //contrasena
-    // passwordLogIn.addEventListener('blur', () => {
       if(passwordLogIn.value == '') {
-        error.passwordLogIn = 'Este campo es obligatorio';
-        passwordLogInErr.innerHTML = error.passwordLogIn;
+        passwordLogInErr.innerText = 'Este campo es obligatorio';
+        e.preventDefault();
+        alert ('Ups! No has completado bien el formulario de login')
       } else {
-        passwordLogInErr.innerHTML = '';
+        passwordLogInErr.innerText = '';
       }
-    // });
-
-    //errors
-    if(Object.keys(error).length > 0) {
-      e.preventDefault();
-       alert ('Ups! No has completado bien el formulario de login')
-      // emailLogInErr.innerHTML = '';
-      // emailLogInErr.innerHTML = 'Correo o contraseña incorrectos';
-      error = {};
-    };
     //--- END LOGIN ---//
   });
 
