@@ -2304,6 +2304,17 @@ td {
 
 .td-2 {
     width: 30%;
+}       
+    
+    /* 404 NOT FOUND */
+
+.notFound404 {
+    text-align: center;
+    margin-top: 84px;
+}
+
+.notFound404Alert {
+    font-family: monospace;
 }
 
 /* MEDIA QUERIES */
@@ -2521,8 +2532,8 @@ td {
             margin-top: 30vh;
                
         } 
-    div.form-group.row h4, .price-discount h4{
-        
+        div.form-group.row h4, .price-discount h4{
+
         font-size: 16px;
         
     }
@@ -2531,7 +2542,13 @@ td {
         .margin-productDetail {
             /* margin-bottom: 7vh; */
             margin-top: 28vh
-}
+    }
+    
+        /* 404 NOT FOUND */
+    .notFound404 {
+        text-align: center;
+        margin-top: 165px;
+    }
 
 /*SERVICIO TECNICO*/
 
@@ -3050,7 +3067,10 @@ p.card-text{
         font-size: 14px;
     }
     
-
+    /* 404 NOT FOUND */
+    .notFound404 {
+        margin-top: 165px;
+    }
         
     } 
 
@@ -3130,9 +3150,14 @@ p.card-text{
         margin-right: 17px;
         width: 65%;
     }
-   
- 
+
+    /* 404 NOT FOUND */
+    .notFound404 {
+        text-align: center;
+        margin-top: 165px;
     }
+ 
+}
 
 
 
@@ -3294,7 +3319,11 @@ p.card-text{
     .garantia ul li strong {
         font-size: 16px;
     }
-    
+
+        /*404 NOT FOUND*/
+    .notFound404 {
+        margin-top: 165px;
+    }
     
 }}}
     
