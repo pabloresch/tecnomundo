@@ -2265,6 +2265,47 @@ h4.titleError.text-danger{
 i.fa-solid.fa-envelope{
     font-size: 19px;
 }
+
+
+/* Checkout */
+
+.container-checkout {
+    margin-top:145px
+}
+
+.msg-congrats {
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.order-number {
+    padding: 0px 15px;
+}
+
+.table {
+    border: solid 1px;
+    margin: 2px
+}
+
+th {
+    padding: 2px;
+    /* white-space: nowrap; */
+}
+.th-1{
+    padding: 0px;
+    width: 5%;
+}
+
+td {
+    padding: 2px;
+    text-align: center;
+    /* white-space: nowrap; */
+}
+
+.td-2 {
+    width: 30%;
+}
+
 /* MEDIA QUERIES */
     /* tabs */
     @media (min-width: 361px) {

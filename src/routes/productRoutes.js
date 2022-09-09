@@ -100,6 +100,9 @@ router.delete("/delete/:id", adminMiddleware, productControllers.delete)
 router.get("/edit/:id", adminMiddleware, productControllers.editView)
 router.put("/edit/:id", adminMiddleware, uploadFile.single("images"), validationsEditProduct, productControllers.editProduct)
 
+//Checkout 
+router.get("/checkout", productControllers.checkout);
+
 
 module.exports = router;
 

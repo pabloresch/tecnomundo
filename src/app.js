@@ -58,6 +58,7 @@ app.use('/user',usersRoutes);
 app.use('/product', productRoutes);
 app.use('/api', apiRouter);
 
+
 //montar el servidor                                                                                                                                                                                                                                                                                                                             
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
