@@ -12,13 +12,13 @@
         <div class="container-checkout">
         <h1 class="msg-congrats">¡SE HA EMITIDO LA ORDEN DE COMPRA CON ÉXITO!</h1>
         </div>
-        <div class="">
+        <div class="msjEntregaProducto">
             <p>A la brevedad nos contactaremos con usted para organizar la entrega/envio</p>
         </div>
         <h2 class="order-number"> Pedido Nro <%= lastOrder.id %>
         </h2>
         <div class="card my-5">
-            <div class="card-body">
+            <div class="card-body tabla">
                 <table class="table table-responsive-md mb-0">
                     <thead>
                         <tr>
@@ -61,22 +61,22 @@
                             <% } %>
                     </tbody>
                 </table>
-                <div class="card-footer text-right">
-                  <h2>Subtotal: <span class="subtotalAmount"><%= lastOrder.total %> </span></h2>
+                <div class="card-footer text-right subtotal">
+                  <h2>Subtotal: <span class="subtotalAmount"> $ <%= lastOrder.total %> </span></h2>
               </div>
                 <div class="card-footer text-right ">
-                  <h2>Descuento: <span class="discountAmount">0</span></h2>
+                  <h2>Descuento: <span class="discountAmount">$ 0</span></h2>
               </div>
-                <div class="card-footer text-right">
-                    <h2>Total: <span class="totalAmount"><%= lastOrder.total %></span></h2>
+                <div class="card-footer text-right total">
+                    <h2>Total: <span class="totalAmount">$ <%= lastOrder.total %></span></h2>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card purchaseDetail">
             <div class="card-header text-center">
                 Detalles de la compra
             </div>
-            <div class="card-body" id="checkoutCart">
+            <div class="card-body purchaseDetail" id="checkoutCart">
                 <div class="row">
                     <div class=" col-md-6">
                         <p class="mb-0"><strong>Tipo Envio:</strong>

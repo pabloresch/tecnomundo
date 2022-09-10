@@ -1966,6 +1966,8 @@ div.suggestion-title-box h2 {
     display: none;
 }
 
+
+
 /* Footer de CARRITO*/
 
 
@@ -2333,6 +2335,18 @@ i.fa-solid.fa-envelope{
 
 /* Checkout */
 
+div.msjEntregaProducto{
+    margin-left: 10px ;
+}
+h2.order-number{
+    background-color: #e8e8e8;
+    padding: 8px;
+    text-align: -webkit-center
+}
+div.card.my-5{
+    margin-top: 15px;
+}
+
 .container-checkout {
     margin-top:145px
 }
@@ -2347,15 +2361,17 @@ i.fa-solid.fa-envelope{
 }
 
 .table {
-    border: solid 1px;
+    border: solid 1px #2d9a9e;
     margin: 2px
 }
 
 th {
+    color: #2d9a9e;
     padding: 2px;
     /* white-space: nowrap; */
 }
 .th-1{
+    color: #2d9a9e;
     padding: 0px;
     width: 5%;
 }
@@ -2368,7 +2384,37 @@ td {
 
 .td-2 {
     width: 30%;
-}       
+}  
+div.card-footer.text-right.subtotal{
+    margin-top: 12px;
+}
+
+div.card-footer.text-right h2 {
+    justify-content: space-between;
+    display: flex;
+    background-color: #ebebeb82;
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 41px 10px 8px
+}
+div.card-footer.text-right.total{
+    background-color: #e8e8e8;
+}
+div.card.purchaseDetail{
+    margin-left: 14px;
+    margin-top: 10px;
+}
+div.card-header.text-center{
+    font-weight: bold;
+    text-decoration-line: underline
+}
+div.card-body.purchaseDetail{
+    text-align-last: left
+}
+div.card-footer{
+    font-size: 8px;
+}
+     
     
     /* 404 NOT FOUND */
 
@@ -2620,6 +2666,26 @@ td {
     margin-top: 149px;
 }
 
+/*CHEKOUT*/
+.container-checkout {
+    margin-top: 176px;
+}
+h2.order-number{
+    margin: 0px 10px 0px 10px
+}
+div.card-body{
+    margin: 0px 10px 0px 10px
+}
+div.card.purchaseDetail{
+    margin: 10px 10px
+}
+div.card-header.text-center {
+    font-size: 14px;
+}
+p.mb-0{
+    font-size: 14px;
+}
+
 @media (min-width: 600px) {
 
     
@@ -2771,6 +2837,29 @@ div.form-group.row h4{
 
 .contact-title h5 {
     padding: 5px;
+}
+/*chekout*/
+.msg-congrats {
+    padding: 0px 60px;
+    text-align: center;
+}
+div.msjEntregaProducto{
+    margin-left: 14px;
+}
+div.msjEntregaProducto p{
+    font-size: 14px;
+}
+h2.order-number {
+    margin: 0px 20px 0px 20px;
+}
+.table {
+    font-size: 14px
+}
+div.card-body {
+    margin: 0px 20px 0px 20px;
+}
+div.card.purchaseDetail {
+    margin: 10px 20px;
 }
 
 @media (min-width: 761px) {
@@ -3140,6 +3229,30 @@ p.card-text{
     .notFound404 {
         margin-top: 165px;
     }
+
+    /*CHEKOUT*/
+    .container-checkout {
+        margin-top: 149px;
+    }
+    h2.order-number {
+        margin: 0px 30px 0px 30px;
+    }
+    div.msjEntregaProducto {
+        margin-left: 30px;
+    }
+    div.card-body {
+        margin: 0px 30px 0px 30px;
+    }
+    .table {
+        font-size: 15px;
+    }
+    div.card.purchaseDetail {
+            margin: 24px 30px;
+        }
+    div.card-header.text-center {
+            font-size: 15px;
+          
+        }
         
     } 
 
@@ -3392,6 +3505,37 @@ p.card-text{
         /*404 NOT FOUND*/
     .notFound404 {
         margin-top: 165px;
+    }
+
+    /*CHEKOUT*/
+    .container-checkout {
+        margin-top: 182px;
+    }
+    div.msjEntregaProducto p{
+        font-size: 16px
+    }
+    div.msjEntregaProducto {
+        margin-left: 50px;
+    }
+    h2.order-number {
+        margin: 0px 50px 0px 50px;
+    }
+    div.card-body.tabla {
+        text-align: -webkit-center
+    }
+    div.card-footer.text-right h2{
+        text-align: left;
+    }
+    div.card.purchaseDetail {
+        margin: 24px 50px;
+    }
+    div.card-header.text-center p {
+        font-size: 16px;
+    }
+    p.mb-0 {
+        
+            font-size: 15px;
+
     }
     
 }}}
