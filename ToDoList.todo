@@ -1,7 +1,7 @@
 Prioridad @high:
     ✔ Banner de Index @done(22-09-07 11:36)
     ✔ Servicio Técnico @started(22-09-06 10:34 Jor) @done(22-09-07 11:36) @lasted(1d1h2m46s)
-    ☐ Validación de Login: cuando hay error, se debe hacer dos click para loguearse.
+    ✔ Validación de Login: cuando hay error, se debe hacer dos click para loguearse. @done(22-09-09 20:04)
     ☐ Mejorar Base de Datos (chequear fotos especialmente).
     ✔ Cambiar según corresponda el título en el productList. @done(22-09-07 15:56)
     ✔ Unificar hover sobre botones en NavBar (productList vs resto) @done(22-09-07 16:13)

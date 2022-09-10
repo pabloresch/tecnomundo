@@ -1,10 +1,10 @@
 Validacion de Login:
     email:
         ✔ No vacio @done(22-08-15 15:40)
-        ☐ Sea email
+        ✔ Sea email @done(22-09-07 19:31)
     contraseña:
-        ☐ No vacio
-        ☐ Al menos 6 caracteres
+        ✔ No vacio @done(22-09-07 19:31)
+        ✔ Al menos 6 caracteres @done(22-09-07 19:31)
 
 Validacion de Register:
     firstName:
@@ -17,16 +17,16 @@ Validacion de Register:
         ✔ No vacio @done(22-08-20 11:32)
         ✔ Sea email @done(22-08-20 11:12)
     contraseña:
-        ☐ No vacio
-        ☐ Al menos 6 caracteres
-        ☐ Que tenga mayuscula y numeros
+        ✔ No vacio @done(22-09-07 19:31)
+        ✔ Al menos 6 caracteres @done(22-09-07 19:31)
+        ✔ Que tenga mayuscula y numeros @done(22-09-07 19:31)
     confirmContraseña:
-        ☐ No vacio
-        ☐ Al menos 6 caracteres
-        ☐ Que tenga mayuscula y numeros
+        ✔ No vacio @done(22-09-07 19:32)
+        ✔ Al menos 6 caracteres @done(22-09-07 19:32)
+        ✔ Que tenga mayuscula y numeros @done(22-09-07 19:32)
     imagen:
-        ☐ No vacio
-        ☐ formato (JPEG, etc)
+        ✔ No vacio @done(22-09-07 19:32)
+        ✔ formato (JPEG, etc) @done(22-09-07 19:32)
 
         --------------------------COMANDOS--------------------------
 Commandos:

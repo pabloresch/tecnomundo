@@ -186,8 +186,6 @@ formCheckout.onsubmit = (e) => {
     shippingMethod: shippingMethod.value,
     total: totalFinalizar,
   };
-
-
   
   fetch("/api/checkout", {
     method: "POST",
@@ -202,7 +200,7 @@ formCheckout.onsubmit = (e) => {
       if (res.ok) {
         //borro el carrito
         localStorage.removeItem('carrito')
-        location.href = "/";
+        location.href = "/product/checkout";
       } else {
         toastr.error("No se pudo realizar la compra, intente mas tarde");
       }

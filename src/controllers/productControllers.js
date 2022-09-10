@@ -119,6 +119,22 @@ const controllers = {
                 return res.redirect('/product')
               
 
+        },
+
+        checkout: async(req, res) => {
+            let id
+            if (req.session.usuario) {
+                 id = req.session.usuario.id
+            }
+           let order = await db.Order.findAll(
+            { include: 'orderItems' },
+            {where: {userId: id}},
+           )
+
+            let lastOrder = order[order.length - 1]
+           
+            
+            return res.render ('checkoutProduct.ejs', {lastOrder: lastOrder})
         }
 }
 

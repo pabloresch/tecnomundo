@@ -58,6 +58,11 @@ app.use('/user',usersRoutes);
 app.use('/product', productRoutes);
 app.use('/api', apiRouter);
 
+//404 not-found
+app.use((req, res, next) => {
+    res.status(404).render('notFound');
+});
+
 //montar el servidor                                                                                                                                                                                                                                                                                                                             
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
