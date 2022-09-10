@@ -802,6 +802,7 @@ div.verProducto.seccion1{
     height: 67%;
     border-radius: 5px;
     object-fit: contain;
+    filter: drop-shadow(2px 4px 6px black);
     }
     div.imgProduct{
        
@@ -840,7 +841,7 @@ div.verProducto.seccion1{
         
         height: 37%;
         position: relative;
-        bottom: 46px;
+        bottom: 35px;
         padding-top: 4px;
         display: flex;
         flex-direction: column;
@@ -978,7 +979,29 @@ div.verProducto.seccion1{
         background-color: #1abc9c;
         color: #1c063b
     }
-    
+    div.imgofertas{
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-around;
+        text-align: center
+    }
+    div.imgofertas img{
+        width: 41%;
+        filter: drop-shadow(2px 4px 6px black)
+    }
+
+    div.imgDelivery{
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 18px;
+        text-align: center;
+        
+    }
+    div.imgDelivery img{
+        width: 63%;
+        margin-left: -16vw;
+       
+    }
 
 /* FIN HOME */
 
@@ -1219,7 +1242,7 @@ button.button-delete {
     justify-content: space-around;
     align-items: center;
     text-align: justify;
-    background-color: #ebebeb82;
+    /* background-color: #ebebeb82; */
     border-radius: 10px;
     /* border: 2px  solid #4D4C7D; */
 }
@@ -1656,7 +1679,7 @@ h4.description.h4-carrito{
     padding: 5px;
 } 
 .counter {
-    padding-bottom: 10px;
+  
     font-size: 8px;
     display: flex;
     flex-wrap: wrap;
@@ -1686,7 +1709,8 @@ span.number {
 }
 
 .remove-button button {
-    font-size: 10px;
+    font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
     border-radius: 4px;
     /* box-shadow: 2px 2px #000000; */
@@ -1770,7 +1794,12 @@ margin-bottom: 12px;
     color: white;
     transform: scale(1.1)
 }
-
+div.total-box{
+    margin-bottom: 21px;
+    align-items: center;
+    height: 40px;
+    background-color: #ffffff
+}
 /* Checkout */
 
 .subtotal-box {
@@ -1791,7 +1820,8 @@ margin-bottom: 12px;
 }
 
 .checkout-buttom button {
-    font-size: 1em;
+    margin-top: 20px;
+    font-size: 1.3em;
     font-weight: 700;
     padding: 5px 15px;
     width: 81%;
@@ -1818,7 +1848,7 @@ margin-bottom: 12px;
 
 .checkout-continue button {
     border: #312f38;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 700;
     padding: 5px 15px;
     width: 81%;
@@ -1836,6 +1866,40 @@ margin-bottom: 12px;
     color: white;
     transform: scale(1.1);
 
+}
+div.row.checkout{
+    text-align-last: left;
+    border-bottom: solid 1px #a9a8ab;
+    padding-bottom: 17px;
+}
+div.select-sender{
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-decoration: underline
+}
+div.col-md-6.mb-4.tipoenvio{
+    margin-bottom: 11px
+
+}
+label.tipoEnvio{
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 13px
+
+}
+.select-payment{
+    text-decoration: underline;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px
+}
+label.formaPago{
+    margin-right: 44px;
+    font-weight: bold;
+    font-size: 13px
+}
+
+select.custom-select {
+    width: 128px;
 }
 
 /* Main <---> Seccion de sugerencias */
@@ -2804,6 +2868,11 @@ div.form-group.row h4{
         opacity: 1;
         background-color: rgba(0,0,0,0, 0.5);
     }
+
+    div.imgofertas img{
+        width: 40%;
+    max-width: 34%;
+    }
     /* FIN HOME */
 
 
@@ -2893,7 +2962,7 @@ div.form-group.row h4{
     }
 
     .checkout-buttom button {
-        font-size: 1em;
+        font-size: 1.3em;
         padding: 5px 15px;
         width: 81%;
     }
