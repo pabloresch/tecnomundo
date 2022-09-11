@@ -136,8 +136,11 @@
                         <input class="input-formulario-rcuerdame" type="checkbox" name="recordarme" id="recordarme" style="width: 10px;">
                            
                     </div>
-                    <% if(locals.message) { %> 
-                        <%= message %>
+                    <% if(locals.message) { %>
+                        <div class="msg-middleware">
+                            <%= message %>
+                        </div> 
+                        
                     <% } %> 
             </form>
             </div>

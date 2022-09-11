@@ -1413,6 +1413,16 @@ div.recuerdame-box{
     align-items: center;
 }
 
+.msg-middleware {
+    font-size: 16px;
+    padding: 10px 26px;
+    margin: 10px 35px;
+    border: 1px solid red;
+    background-color: #f1f8fd;
+    border-radius: 10px;
+    color: #312f38;
+}
+
 /* .input-formulario-rcuerdame {
     height: 2.5vh;
     padding: 12px 20px;
@@ -2414,6 +2424,18 @@ div.card-body.purchaseDetail{
 div.card-footer{
     font-size: 8px;
 }
+
+.subtotalAmount::before{
+    content: "$ ";
+}
+
+.discountAmount::before {
+    content: "$ ";
+}
+
+.totalAmount::before {
+    content:"$ "
+}
      
     
     /* 404 NOT FOUND */
@@ -2855,9 +2877,9 @@ h2.order-number {
 .table {
     font-size: 14px
 }
-div.card-body {
+/* div.card-body {
     margin: 0px 20px 0px 20px;
-}
+} */
 div.card.purchaseDetail {
     margin: 10px 20px;
 }
@@ -3138,9 +3160,9 @@ div.container.products-wrapper.margin-productDetail{
  div.card-body{
     margin-top: 25px;
 }
-div.card.mb-3{
+/* div.card.mb-3{
     height: 57vh;
-}
+} */
 p.card-text{
     font-size: 12px;
 }
@@ -3240,9 +3262,9 @@ p.card-text{
     div.msjEntregaProducto {
         margin-left: 30px;
     }
-    div.card-body {
+    /* div.card-body {
         margin: 0px 30px 0px 30px;
-    }
+    } */
     .table {
         font-size: 15px;
     }
@@ -3438,8 +3460,6 @@ p.card-text{
     }
     div.card.mb-3{
     justify-content: center;
-    width: 813px;
-    height: 53vh;
     max-width: 850px
     }
     div.row.g-0.container-detail{
