@@ -2350,6 +2350,9 @@ i.fa-solid.fa-envelope{
 div.msjEntregaProducto{
     margin-left: 10px ;
 }
+div.msjEntregaProducto p{
+    text-align: center ;
+}
 h2.order-number{
     background-color: #e8e8e8;
     padding: 8px;
@@ -2415,14 +2418,20 @@ div.card-footer.text-right.total{
 div.card.purchaseDetail{
     margin-left: 14px;
     margin-top: 10px;
+    text-align: center;
 }
 div.card-header.text-center{
     font-weight: bold;
     text-decoration-line: underline
 }
-div.card-body.purchaseDetail{
+/* div.card-body.purchaseDetail{
     text-align-last: left
+} */
+
+.row1 {
+    text-align: -webkit-center;
 }
+
 div.card-footer{
     font-size: 8px;
 }
@@ -2691,6 +2700,9 @@ div.card-footer{
 }
 
 /*CHEKOUT*/
+.main-checkout{
+    max-width: 650px;
+}
 .container-checkout {
     margin-top: 176px;
 }
@@ -3502,7 +3514,7 @@ p.card-text{
     
        /*SERVICIO TECNICO*/
  .servicioTecnico{
-    margin-top: 160px
+    margin-top: 13vw
  }
  div.contact-container{
     margin-top: 16px;
