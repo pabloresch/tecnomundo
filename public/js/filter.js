@@ -72,6 +72,7 @@ let arrayFilterPrice, arrayNoFilterPrice
 for(i = 0; i < checkboxPrice.length; i++) {
 
     checkboxPrice[i].addEventListener('change', function() {
+        console.log('Entro al filter')
         let arr3 = []
         let arr4 = [] 
         for(i = 0; i < checkboxPrice.length; i++) {
@@ -91,10 +92,12 @@ for(i = 0; i < checkboxPrice.length; i++) {
             newArrayFilterPrice = arrayFilterPrice.join()
             
            
-          
+       
             if (cardsFilterByBrand.length != 0) {
+                console.log(cardsFilterByBrand)
                 filterPrice(cardsFilterByBrand)
             } else {
+                console.log('chau')
                 filterPrice(cards)
             } 
          
@@ -159,7 +162,7 @@ for(i = 0; i < checkboxPrice.length; i++) {
 
 // Funcion para filtrar precios
     const filterPrice = (arrayCards) => {
-       
+       console.log()
         for(i = 0; i < arrayCards.length; i++) {
             if (arrayFilterPrice.length != 0) {                              
                 // revisar condiciones y precios
@@ -216,6 +219,7 @@ for(i = 0; i < checkboxPrice.length; i++) {
             checkbox[i].checked = false;
             console.log(arrayFilter)
             arrayFilter = []
+            cardsFilterByBrand = []
             filterBrand()
             
             if (newArrayFilterPrice) {

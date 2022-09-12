@@ -57,7 +57,7 @@ window.addEventListener('load', ()=> {
         let imgProduct = imagesNewProduct.value
         let extProduct = imgProduct.split('.').pop();
 
-        if(extProduct == 'jpg' || extProduct == 'jpeg' || extProduct == 'jng' || extProduct == 'gif') {
+        if(extProduct == 'jpg' || extProduct == 'jpeg' || extProduct == 'png' || extProduct == 'gif') {
             imagesError.innerHTML = '';
         } else {
             erroresNewProduct.images = 'Ingrese un archivo válido';
@@ -136,7 +136,7 @@ window.addEventListener('load', ()=> {
             let imgProduct = imagesNewProduct.value
             let extProduct = imgProduct.split('.').pop();
 
-            if(extProduct == 'jpg' || extProduct == 'jpeg' || extProduct == 'jng' || extProduct == 'gif') {
+            if(extProduct == 'jpg' || extProduct == 'jpeg' || extProduct == 'png' || extProduct == 'gif') {
                 imagesError.innerHTML = '';
             } else {
                 erroresNewProduct.images = 'Ingrese un archivo válido';
