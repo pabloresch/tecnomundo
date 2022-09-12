@@ -38,16 +38,19 @@ window.addEventListener('load', ()=> {
             titleError.innerHTML = erroresNewProduct.name;
         } else {
             titleError.innerHTML = '';
+            delete erroresNewProduct.name
+            console.log(erroresNewProduct);
         }
     });
 
     //description
     descriptionNewProduct.addEventListener('blur', () => {
         if(descriptionNewProduct.value.length < 20) {
-            descriptionNewProduct.name = 'Debe ingresar mínimo 20 caracteres';
-            descriptionError.innerHTML = descriptionNewProduct.name;
+            erroresNewProduct.description = 'Debe ingresar mínimo 20 caracteres';
+            descriptionError.innerHTML = erroresNewProduct.description;
         } else {
             descriptionError.innerHTML = '';
+            delete erroresNewProduct.description;
         }
     });
 
@@ -59,6 +62,7 @@ window.addEventListener('load', ()=> {
 
         if(extProduct == 'jpg' || extProduct == 'jpeg' || extProduct == 'png' || extProduct == 'gif') {
             imagesError.innerHTML = '';
+            delete erroresNewProduct.images;
         } else {
             erroresNewProduct.images = 'Ingrese un archivo válido';
             imagesError.innerHTML = erroresNewProduct.images;
@@ -72,6 +76,7 @@ window.addEventListener('load', ()=> {
             brandError.innerHTML = erroresNewProduct.brand;
         } else {
             brandError.innerHTML = '';
+            delete erroresNewProduct.brand;
         }
     });
 
@@ -82,6 +87,7 @@ window.addEventListener('load', ()=> {
             sectionError.innerHTML = erroresNewProduct.section;
         } else {
             sectionError.innerHTML = '';
+            delete erroresNewProduct.section;
         }
     });
 
@@ -92,6 +98,7 @@ window.addEventListener('load', ()=> {
             errorPrice.innerHTML = erroresNewProduct.price;
         } else {
             errorPrice.innerHTML = '';
+            delete erroresNewProduct.price;
         }
     });
 
@@ -102,6 +109,7 @@ window.addEventListener('load', ()=> {
             discountError.innerHTML = erroresNewProduct.discount;
         } else {
             discountError.innerHTML = '';
+            delete erroresNewProduct.discount;
         }
     });
 
