@@ -1405,22 +1405,24 @@ div.login h2{
 } */
 
 div.recuerdame-box{
+    font-size: 16px;
     width: 30%;
-    color: #1259e6;
+    color: #184297;
     justify-content: center;
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 10px;
 }
 
 .msg-middleware {
-    font-size: 16px;
-    padding: 10px 26px;
-    margin: 10px 35px;
-    border: 1px solid red;
-    background-color: #f1f8fd;
-    border-radius: 10px;
-    color: #312f38;
+    font-size: 15px;
+    padding: 25px 26px;
+   
+    color: #d82003
+}
+input#recordarme{
+    width: 13px;
 }
 
 /* .input-formulario-rcuerdame {
