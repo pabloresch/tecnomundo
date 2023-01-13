@@ -201,8 +201,6 @@ formCheckout.onsubmit = (e) => {
         //borro el carrito
         localStorage.removeItem('carrito')
         location.href = "/product/checkout";
-      } else {
-        toastr.error("No se pudo realizar la compra, intente mas tarde");
       }
     })
     .catch((error) => console.log(error));

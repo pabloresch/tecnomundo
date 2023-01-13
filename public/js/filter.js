@@ -44,7 +44,7 @@ window.addEventListener('load', function(){
                 let combineValueCategoryNo = checkbox[i].value + "-" + checkbox[i].dataset.category
                 arr2.push(combineValueCategoryNo)
                 arrayNoFilter = Array.from(new Set(arr2))
-                // el 14 corresponde al numero de filtros seteados. De agregar o reducir la cantidad, se debe modificar este numero
+                // el 9 corresponde al numero de filtros seteados. De agregar o reducir la cantidad, se debe modificar este numero
                 if (arrayNoFilter.length == 9) {
                     arrayFilter = []
                 }   
