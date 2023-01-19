@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const methodOverride = require ('method-override') 
+const methodOverride = require ('method-override') // es necesario para usar los metodos de HTTP como path/put/delete 
 
 //Requiero los paquetes para trabajar lo referido a session y cookies
 const session = require('express-session');
@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 //Requerir nuestro middleware - Aplicación
 //Requiero el middleware que controla si el sitio está o no culminado
-const mantenimiento = require('./middlewares/mantenimiento');
+const mantenimiento = require('./middlewares/mantenimiento'); // NO EXISTE LA VISTA, EL MIDDLEWARE NO ESTA FUNCIONANDO
 //Requerir el middleware que controla si el usuario está o no Logueado
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 

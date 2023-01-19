@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const db = require ('../database/models')
         
 let userLoggedMiddleware = async (req,res,next) =>{
@@ -20,4 +18,5 @@ let userLoggedMiddleware = async (req,res,next) =>{
     }
 }
 
-module.exports = userLoggedMiddleware 
+
+module.exports = userLoggedMiddleware

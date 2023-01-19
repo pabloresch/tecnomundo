@@ -121,6 +121,13 @@ const controllers = {
 
         },
 
+        // discount: async(req, res) => {
+        // 
+        //PRIMERO) let discount = await db.Discount.findOne({where: {code: req.body.discount}})
+        // SEGUNDO) El descuento que venga con discount, tomar ese numero y mandar a la vista  
+        //
+        // }
+
         checkout: async(req, res) => {
             let id
             if (req.session.usuario) {
@@ -132,9 +139,13 @@ const controllers = {
            )
 
             let lastOrder = order[order.length - 1]
-           
-            
-            return res.render ('checkoutProduct.ejs', {lastOrder: lastOrder})
+
+            let total = 0
+            for (let i=0; i < lastOrder.orderItems.length; i++) {
+                total = total + parseInt(lastOrder.orderItems[i].price*lastOrder.orderItems[i].cantidad)
+                }
+
+            return res.render ('checkoutProduct.ejs', {lastOrder: lastOrder, total: total})
         }
 }
 

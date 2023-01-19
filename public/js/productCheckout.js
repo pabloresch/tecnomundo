@@ -3,14 +3,18 @@ let subtotalAmount = document.querySelector('.subtotalAmount')
 let discountAmount = document.querySelector('.discountAmount')
 let totalAmount = document.querySelector('.totalAmount')
 
-    if (sessionStorage.discount == 'MEGAOFERTA') {
+    if (sessionStorage.discount) {
    
         let subtotal = subtotalAmount.textContent;
-    
-        discountAmount.innerHTML = (subtotal * 0.15).toFixed(2)
-        let discount = (subtotal * 0.15).toFixed(2)
+
+        let discount = (subtotal * (sessionStorage.discount/100)).toFixed(2)
+
+        discountAmount.innerHTML = discount
+        
 
         totalAmount.innerHTML = (subtotal - discount).toFixed(2)
 
 }
+
+
 })

@@ -1,6 +1,6 @@
 const db = require("../database/models");
 
-module.exports = {
+const apiControllers = {
 
   checkout: async function (req, res) {
 
@@ -13,6 +13,21 @@ module.exports = {
     res.json({ ok: true, status: 200, order: order });
   },
 
+  discount: async function (req,res) {
+    
+    let discount = await db.Discount.findOne({where: {discountCode: req.body.discount}});
+
+    if(discount != null) {
+      
+      res.json({ ok: true, status: 200, discount: discount.porcentage});
   
+    }
+    
+    
+    
+    
+  }
    
 };
+
+module.exports = apiControllers

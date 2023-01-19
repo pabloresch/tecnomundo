@@ -45,12 +45,12 @@ const subtotalImprimir = () => {
 }
 
 const discountImprimir = () => {
-    if (sessionStorage.discount == 'MEGAOFERTA') {
+    if (sessionStorage.discount) {
         price = subtotal.textContent
 
         document.getElementById('discount-code-box').style.display = 'flex'
-        document.querySelector('.h4-discount').innerText = "Descuento (15%)"
-        document.getElementById('discount').innerText = (price * 0.15).toFixed(2)
+        document.querySelector('.h4-discount').innerText = `Descuento (${sessionStorage.discount} %)`
+        document.getElementById('discount').innerText = (price * (sessionStorage.discount/100)).toFixed(2)
         
 }
 }
@@ -143,21 +143,45 @@ container.addEventListener('click', (e) => {
 })
 
 
+
 button.addEventListener('click', (e) => {
-    e.preventDefault()
-    if (input.value == 'MEGAOFERTA') {
-        sessionStorage.setItem('discount', 'MEGAOFERTA' )
-        price = subtotal.textContent
-
-        document.getElementById('discount-code-box').style.display = 'flex'
-        document.querySelector('.h4-discount').innerText = "Descuento (15 %)"
-        document.getElementById('discount').innerText = (price * 0.15).toFixed(2)
-
-        totalImprimir()
-        
+    e.preventDefault();
+    const inputDiscount = {
+        discount: input.value
     }
+    if (inputDiscount != "") {
+        fetch("/api/discount", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(inputDiscount),
+          })
+            .then((r) => r.json())
+            .then((res) => {
+            
+            sessionStorage.setItem('discount', res.discount )
+            price = subtotal.textContent
+
+            document.getElementById('discount-code-box').style.display = 'flex'
+            document.querySelector('.h4-discount').innerText = `Descuento (${res.discount} %)`
+            document.getElementById('discount').innerText = (price * (res.discount/100)).toFixed(2),
+
+            console.log(sessionStorage.discount)
+            
+          
+
+            totalImprimir()
+
+    })
+}})
+    
+            
+  
+    
+    
    
-})
+
 
 const paymentMethod = document.getElementById("paymentMethod")
 const shippingMethod = document.getElementById("shippingMethod")
